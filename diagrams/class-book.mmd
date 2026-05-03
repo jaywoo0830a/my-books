@@ -1,0 +1,18 @@
+classDiagram
+  class Book {
+    +int id
+    +string title
+    +string author
+    +string status
+    +DateTimeImmutable readAt
+    +getTitle() string
+    +setTitle(string) void
+  }
+  class BookRepository {
+    +findByStatus(string) array
+    +save(Book) void
+    +remove(Book) void
+  }
+  class ServiceEntityRepository
+  BookRepository --|> ServiceEntityRepository
+  BookRepository ..> Book : manages

@@ -1,0 +1,18 @@
+sequenceDiagram
+  participant U as User
+  participant C as Controller
+  participant F as Form
+  participant V as Validator
+  participant D as Doctrine
+  U->>C: POST /books/new
+  C->>F: handleRequest(request)
+  F->>V: validate(book)
+  V-->>F: violations or empty
+  alt valid
+    F-->>C: submitted and valid
+    C->>D: persist + flush
+    C-->>U: 302 /books
+  else invalid
+    F-->>C: errors attached
+    C-->>U: 200 form with errors
+  end

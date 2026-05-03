@@ -1,0 +1,23 @@
+{
+  "name": "my-books",
+  "version": "1.0.0",
+  "description": "심포니에 들어서며 — a small print-ready book",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "pdf": "node scripts/pdf.mjs",
+    "inspect": "node scripts/inspect.mjs",
+    "all": "npm run build && npm run inspect && npm run pdf",
+    "preview": "npx http-server -p 8000 -c-1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaywoo0830a/my-books.git"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@mermaid-js/mermaid-cli": "^11.14.0",
+    "htmlasitis": "^0.1.0",
+    "playwright": "^1.59.1"
+  }
+}

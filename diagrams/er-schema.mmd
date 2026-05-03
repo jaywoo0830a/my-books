@@ -1,0 +1,15 @@
+erDiagram
+  USER ||--o{ BOOK : keeps
+  USER {
+    int id PK
+    string email UK
+    string password
+  }
+  BOOK {
+    int id PK
+    int user_id FK
+    string title
+    string author
+    string status
+    datetime read_at
+  }

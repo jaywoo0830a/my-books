@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node /home/rlawjddn/projects/my-books/scripts/preview-page.mjs 1,3,6,13,17,23)"
+    ]
+  }
+}

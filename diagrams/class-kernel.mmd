@@ -1,0 +1,20 @@
+classDiagram
+  class HttpKernel {
+    +handle(Request) Response
+  }
+  class Router {
+    +match(Request)
+  }
+  class ControllerResolver {
+    +getController(Request)
+  }
+  class EventDispatcher {
+    +dispatch(event)
+  }
+  class Container {
+    +get(id) object
+  }
+  HttpKernel --> Router : asks
+  HttpKernel --> ControllerResolver : asks
+  HttpKernel --> EventDispatcher : announces
+  ControllerResolver --> Container : reads

@@ -1,0 +1,14 @@
+sequenceDiagram
+  participant B as Browser
+  participant K as HttpKernel
+  participant R as Router
+  participant C as Controller
+  participant T as Twig
+  B->>K: GET /books
+  K->>R: match(/books)
+  R-->>K: route + controller
+  K->>C: __invoke()
+  C->>T: render('list.html.twig')
+  T-->>C: HTML
+  C-->>K: Response
+  K-->>B: 200 OK
