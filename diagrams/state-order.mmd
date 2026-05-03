@@ -1,0 +1,11 @@
+stateDiagram-v2
+  [*] --> Pending: create
+  Pending --> Paid: payment ok
+  Pending --> Cancelled: timeout or cancel
+  Paid --> Shipped: pack and ship
+  Paid --> Refunding: customer asks
+  Refunding --> Refunded: money back
+  Refunded --> [*]
+  Shipped --> Delivered: courier confirms
+  Delivered --> [*]
+  Cancelled --> [*]

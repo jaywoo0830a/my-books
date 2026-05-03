@@ -7,7 +7,7 @@ import { pathToFileURL } from 'node:url';
 const ROOT = join(import.meta.dirname, '..');
 const HTML = join(ROOT, 'book.html');
 const OUT_DIR = join(ROOT, 'dist');
-const OUT_PDF = join(OUT_DIR, 'symphony-into-symfony.pdf');
+const OUT_PDF = join(OUT_DIR, 'slow-bookstore.pdf');
 
 if (!existsSync(HTML)) {
   console.error(`book.html not found. Run: npm run build`);

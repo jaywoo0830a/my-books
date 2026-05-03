@@ -1,0 +1,20 @@
+sequenceDiagram
+  participant U as User
+  participant C as CheckoutController
+  participant S as SessionStorage
+  participant V as Validator
+  participant D as Doctrine
+  participant P as PaymentGateway
+  U->>C: GET /checkout (step 1: address)
+  C-->>U: address form
+  U->>C: POST address
+  C->>V: validate
+  V-->>C: ok
+  C->>S: stash address
+  C-->>U: GET /checkout/payment (step 2)
+  U->>C: POST payment method
+  C->>P: charge(amount, method)
+  P-->>C: success
+  C->>D: persist Order, OrderItem, Payment
+  C->>S: clear cart
+  C-->>U: 302 /orders/{id}

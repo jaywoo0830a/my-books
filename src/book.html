@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>심포니에 들어서며</title>
+<title>느린 책방을 짓다</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
@@ -12,24 +12,24 @@
     --hai-font-body: "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
     --hai-font-mono: "Roboto Mono", ui-monospace, "SF Mono", Monaco, Consolas, monospace;
     --hai-font-size-body: 10.5pt;
-    --hai-line-height-body: 1.65;
+    --hai-line-height-body: 1.6;
     --hai-line-height-heading: 1.35;
     --hai-color-faint: #888;
     --hai-color-soft: #555;
   }
   body { letter-spacing: -0.01em; word-break: keep-all; }
-  p { text-align: justify; margin: 6px 0; }
-  pre { font-size: 8.5pt; line-height: 1.5; padding: 8px 12px; margin: 9px 0; }
+  p { text-align: justify; margin: 5px 0; }
+  pre { font-size: 8.3pt; line-height: 1.45; padding: 7px 11px; margin: 7px 0; }
   code { font-size: 9pt; }
-  h1 { margin: 0 0 14px 0; font-weight: 700; }
-  h2 { font-size: 12.5pt; margin: 14px 0 6px 0; }
-  ul, ol { margin: 6px 0; padding-left: 20px; }
-  li { margin: 2px 0; }
+  h1 { margin: 0 0 12px 0; font-weight: 700; font-size: 19pt; }
+  h2 { font-size: 12pt; margin: 11px 0 4px 0; }
+  ul, ol { margin: 4px 0; padding-left: 19px; }
+  li { margin: 1px 0; }
   .hai-figure {
     display: block;
-    margin: 10px auto;
+    margin: 8px auto;
     max-width: 100%;
-    max-height: 105mm;
+    max-height: 95mm;
     height: auto;
   }
   .hai-figure-caption {
@@ -37,7 +37,7 @@
     font-size: 8.5pt;
     color: var(--hai-color-faint);
     font-style: italic;
-    margin: 2px 0 8px 0;
+    margin: 0 0 6px 0;
   }
   .hai-cover .hai-cover-volume {
     font-family: "Roboto Mono", monospace;
@@ -51,557 +51,2344 @@
   .hai-cover .hai-cover-author { font-family: "Roboto Mono", monospace; font-size: 9.5pt; letter-spacing: 0.15em; }
   .hai-divider h1 { font-size: 30pt; letter-spacing: -0.02em; }
   .hai-divider-subtitle { font-family: "Roboto Mono", monospace; font-size: 11pt; letter-spacing: 0.2em; color: var(--hai-color-soft); margin-top: 12px; }
-  .hai-toc { font-size: 11pt; line-height: 1.9; }
-  .hai-toc .hai-toc-row { display: flex; align-items: baseline; gap: 6px; }
-  .hai-toc .hai-toc-row .hai-toc-dots { flex: 1; border-bottom: 1px dotted var(--hai-color-faint); margin: 0 4px; transform: translateY(-4px); }
-  .hai-toc .hai-toc-part { font-weight: 700; margin-top: 16px; }
-  .hai-toc .hai-toc-row.hai-toc-sub { padding-left: 14px; font-size: 10pt; }
+  .hai-toc { font-size: 10pt; line-height: 1.55; }
+  .hai-toc-row { display: flex; align-items: baseline; gap: 4px; }
+  .hai-toc-row .hai-toc-dots { flex: 1; border-bottom: 1px dotted var(--hai-color-faint); margin: 0 4px; transform: translateY(-3px); }
+  .hai-toc-part { font-weight: 700; margin-top: 7px; }
+  .hai-toc-row.hai-toc-sub { padding-left: 12px; font-size: 9.8pt; }
   .hai-pn { font-family: "Roboto Mono", monospace; font-size: 9pt; color: var(--hai-color-faint); }
   blockquote { font-size: 10pt; }
-  .hai-callout { font-size: 10pt; }
-  .hai-annotation { font-size: 9.5pt; }
+  .hai-callout { font-size: 9.8pt; padding: 8px 11px; margin: 9px 0; }
+  .hai-annotation { font-size: 9.5pt; padding: 7px 11px; margin: 8px 0; }
 </style>
 </head>
 <body>
 
 <!-- 1 / cover -->
 <section class="hai-page hai-cover">
-  <div class="hai-cover-volume">SLIM SERIES · 01</div>
-  <h1>심포니에 들어서며</h1>
-  <div class="hai-cover-subtitle">라라벨을 지나온 PHP 개발자를 위한 작은 안내서<br>Symfony 8.0 · PHP 8.5</div>
+  <div class="hai-cover-volume">SLIM SERIES · 02</div>
+  <h1>느린 책방을 짓다</h1>
+  <div class="hai-cover-subtitle">라라벨을 지나온 PHP 개발자를 위한 심포니 8.0 안내서<br>Symfony 8.0 · PHP 8.5 · 100면</div>
   <div class="hai-cover-author">JAYWOO · 2026</div>
 </section>
 
-<!-- 2 / table of contents -->
+<!-- 2 / TOC pt 1 -->
 <section class="hai-page">
-  <h1>차례</h1>
+  <h1>차례 (1)</h1>
   <div class="hai-toc">
-    <div class="hai-toc-row"><span>머리말</span><span class="hai-toc-dots"></span><span class="hai-pn">3</span></div>
+    <div class="hai-toc-row"><span>머리말</span><span class="hai-toc-dots"></span><span class="hai-pn">4</span></div>
     <div class="hai-toc-part">1부 — 두 풍경</div>
-    <div class="hai-toc-row hai-toc-sub"><span>1. 라라벨이 길러준 직관</span><span class="hai-toc-dots"></span><span class="hai-pn">5</span></div>
-    <div class="hai-toc-row hai-toc-sub"><span>2. 심포니라는 풍경</span><span class="hai-toc-dots"></span><span class="hai-pn">6</span></div>
-    <div class="hai-toc-row hai-toc-sub"><span>3. PHP 8.5라는 시대</span><span class="hai-toc-dots"></span><span class="hai-pn">7</span></div>
-    <div class="hai-toc-part">2부 — 독서 일지를 짓다</div>
-    <div class="hai-toc-row hai-toc-sub"><span>4. 시작</span><span class="hai-toc-dots"></span><span class="hai-pn">9</span></div>
-    <div class="hai-toc-row hai-toc-sub"><span>5. 디렉터리를 읽다</span><span class="hai-toc-dots"></span><span class="hai-pn">10</span></div>
-    <div class="hai-toc-row hai-toc-sub"><span>6. 첫 라우트, 첫 응답</span><span class="hai-toc-dots"></span><span class="hai-pn">11</span></div>
-    <div class="hai-toc-row hai-toc-sub"><span>7. 컨트롤러는 함수다</span><span class="hai-toc-dots"></span><span class="hai-pn">12</span></div>
-    <div class="hai-toc-row hai-toc-sub"><span>8. 요청의 일생</span><span class="hai-toc-dots"></span><span class="hai-pn">13</span></div>
-    <div class="hai-toc-row hai-toc-sub"><span>9. Twig — 보여주는 일은 따로</span><span class="hai-toc-dots"></span><span class="hai-pn">14</span></div>
-    <div class="hai-toc-row hai-toc-sub"><span>10. Book이라는 사물</span><span class="hai-toc-dots"></span><span class="hai-pn">15</span></div>
-    <div class="hai-toc-row hai-toc-sub"><span>11. Doctrine과 마이그레이션</span><span class="hai-toc-dots"></span><span class="hai-pn">16</span></div>
-    <div class="hai-toc-row hai-toc-sub"><span>12. 데이터의 모양</span><span class="hai-toc-dots"></span><span class="hai-pn">17</span></div>
-    <div class="hai-toc-row hai-toc-sub"><span>13. 목록을 짓다</span><span class="hai-toc-dots"></span><span class="hai-pn">18</span></div>
-    <div class="hai-toc-row hai-toc-sub"><span>14. 폼 — 입력의 고요함</span><span class="hai-toc-dots"></span><span class="hai-pn">19</span></div>
-    <div class="hai-toc-row hai-toc-sub"><span>15. 폼의 일생</span><span class="hai-toc-dots"></span><span class="hai-pn">20</span></div>
-    <div class="hai-toc-row hai-toc-sub"><span>16. 검증과 작은 친절</span><span class="hai-toc-dots"></span><span class="hai-pn">21</span></div>
-    <div class="hai-toc-row hai-toc-sub"><span>17. 수정과 삭제</span><span class="hai-toc-dots"></span><span class="hai-pn">22</span></div>
-    <div class="hai-toc-row hai-toc-sub"><span>18. 책의 일생</span><span class="hai-toc-dots"></span><span class="hai-pn">23</span></div>
-    <div class="hai-toc-row hai-toc-sub"><span>19. AssetMapper</span><span class="hai-toc-dots"></span><span class="hai-pn">24</span></div>
-    <div class="hai-toc-row hai-toc-sub"><span>20. 콘솔 — 작은 자동화</span><span class="hai-toc-dots"></span><span class="hai-pn">25</span></div>
-    <div class="hai-toc-row hai-toc-sub"><span>21. 띄워 보다</span><span class="hai-toc-dots"></span><span class="hai-pn">26</span></div>
-    <div class="hai-toc-part">3부 — 다음 한 걸음</div>
-    <div class="hai-toc-row hai-toc-sub"><span>22. 가져갈 직관, 두고 갈 습관</span><span class="hai-toc-dots"></span><span class="hai-pn">28</span></div>
-    <div class="hai-toc-row hai-toc-sub"><span>23. 더 깊은 방들</span><span class="hai-toc-dots"></span><span class="hai-pn">29</span></div>
-    <div class="hai-toc-row"><span>닫는 글 · 콜로폰</span><span class="hai-toc-dots"></span><span class="hai-pn">30</span></div>
+    <div class="hai-toc-row hai-toc-sub"><span>1. 라라벨이 길러준 직관</span><span class="hai-toc-dots"></span><span class="hai-pn">6</span></div>
+    <div class="hai-toc-row hai-toc-sub"><span>2. 심포니라는 풍경</span><span class="hai-toc-dots"></span><span class="hai-pn">7</span></div>
+    <div class="hai-toc-row hai-toc-sub"><span>3. PHP 8.5라는 시대</span><span class="hai-toc-dots"></span><span class="hai-pn">8</span></div>
+    <div class="hai-toc-row hai-toc-sub"><span>4. 의존성 주입의 두 풍경</span><span class="hai-toc-dots"></span><span class="hai-pn">9</span></div>
+    <div class="hai-toc-row hai-toc-sub"><span>5. ORM의 두 풍경</span><span class="hai-toc-dots"></span><span class="hai-pn">10</span></div>
+    <div class="hai-toc-row hai-toc-sub"><span>6. 폼의 두 풍경</span><span class="hai-toc-dots"></span><span class="hai-pn">11</span></div>
+    <div class="hai-toc-row hai-toc-sub"><span>7. 환경설정의 두 풍경</span><span class="hai-toc-dots"></span><span class="hai-pn">12</span></div>
+    <div class="hai-toc-part">2부 — 빈 가게</div>
+    <div class="hai-toc-row hai-toc-sub"><span>8. 시작</span><span class="hai-toc-dots"></span><span class="hai-pn">14</span></div>
+    <div class="hai-toc-row hai-toc-sub"><span>9. 디렉터리 읽기</span><span class="hai-toc-dots"></span><span class="hai-pn">15</span></div>
+    <div class="hai-toc-row hai-toc-sub"><span>10. 도커로 데이터베이스 띄우기</span><span class="hai-toc-dots"></span><span class="hai-pn">16</span></div>
+    <div class="hai-toc-row hai-toc-sub"><span>11. .env과 환경 분리</span><span class="hai-toc-dots"></span><span class="hai-pn">17</span></div>
+    <div class="hai-toc-row hai-toc-sub"><span>12. 첫 라우트</span><span class="hai-toc-dots"></span><span class="hai-pn">18</span></div>
+    <div class="hai-toc-row hai-toc-sub"><span>13. 첫 컨트롤러</span><span class="hai-toc-dots"></span><span class="hai-pn">19</span></div>
+    <div class="hai-toc-row hai-toc-sub"><span>14. 요청의 일생</span><span class="hai-toc-dots"></span><span class="hai-pn">20</span></div>
+    <div class="hai-toc-row hai-toc-sub"><span>15. AbstractController의 도구들</span><span class="hai-toc-dots"></span><span class="hai-pn">21</span></div>
+    <div class="hai-toc-row hai-toc-sub"><span>16. base.html.twig</span><span class="hai-toc-dots"></span><span class="hai-pn">22</span></div>
+    <div class="hai-toc-part">3부 — 진열</div>
+    <div class="hai-toc-row hai-toc-sub"><span>17. 도메인 — Product와 Category</span><span class="hai-toc-dots"></span><span class="hai-pn">24</span></div>
+    <div class="hai-toc-row hai-toc-sub"><span>18. ER 다이어그램</span><span class="hai-toc-dots"></span><span class="hai-pn">25</span></div>
+    <div class="hai-toc-row hai-toc-sub"><span>19. Product 엔티티</span><span class="hai-toc-dots"></span><span class="hai-pn">26</span></div>
+    <div class="hai-toc-row hai-toc-sub"><span>20. Category와 ManyToMany</span><span class="hai-toc-dots"></span><span class="hai-pn">27</span></div>
+    <div class="hai-toc-row hai-toc-sub"><span>21. ProductImage</span><span class="hai-toc-dots"></span><span class="hai-pn">28</span></div>
+    <div class="hai-toc-row hai-toc-sub"><span>22. 마이그레이션</span><span class="hai-toc-dots"></span><span class="hai-pn">29</span></div>
+    <div class="hai-toc-row hai-toc-sub"><span>23. 픽스처로 시드 만들기</span><span class="hai-toc-dots"></span><span class="hai-pn">30</span></div>
+    <div class="hai-toc-row hai-toc-sub"><span>24. ProductRepository — QueryBuilder</span><span class="hai-toc-dots"></span><span class="hai-pn">31</span></div>
+    <div class="hai-toc-row hai-toc-sub"><span>25. 카탈로그 컨트롤러</span><span class="hai-toc-dots"></span><span class="hai-pn">32</span></div>
+    <div class="hai-toc-row hai-toc-sub"><span>26. 카탈로그 템플릿</span><span class="hai-toc-dots"></span><span class="hai-pn">33</span></div>
+    <div class="hai-toc-row hai-toc-sub"><span>27. 페이지네이션</span><span class="hai-toc-dots"></span><span class="hai-pn">34</span></div>
+    <div class="hai-toc-row hai-toc-sub"><span>28. 상품 상세 페이지</span><span class="hai-toc-dots"></span><span class="hai-pn">35</span></div>
+    <div class="hai-toc-row hai-toc-sub"><span>29. 검색</span><span class="hai-toc-dots"></span><span class="hai-pn">36</span></div>
+    <div class="hai-toc-row hai-toc-sub"><span>30. 트위그 매크로</span><span class="hai-toc-dots"></span><span class="hai-pn">37</span></div>
   </div>
 </section>
 
-<!-- 3 / preface -->
+<!-- 3 / TOC pt 2 -->
 <section class="hai-page">
-  <h1>머리말</h1>
-  <p>이 책은 라라벨을 충분히 만져본 PHP 개발자를 위해 쓰였다. 우리는 이미 컨트롤러를 짓고, 마이그레이션을 만들고, Blade로 화면을 그릴 줄 안다. 그 손이 심포니라는 다른 도시에 닿았을 때 우왕좌왕하지 않도록, 길의 폭과 길의 이름을 적어 두는 일이 이 책의 일이다.</p>
-  <p>라라벨은 친절한 동네다. 길이 잘 닦여 있고, 어디에 무엇이 있는지 보이지 않는 손이 미리 정리해 둔다. 그 친절함이 우리를 빠르게 자라게 했다.</p>
-  <p>심포니는 그보다 조금 더 조용한 동네다. 길이 적게 닦여 있다는 뜻이 아니라, 우리가 길을 직접 고를 수 있다는 뜻이다. 라라벨이 거실이라면, 심포니는 가구 없이 비워 둔 큰 방에 가깝다. 어디든 책상을 둘 수 있다.</p>
-  <p>서른 쪽이라는 분량은 의도된 제약이다. 심포니의 모든 방을 안내하기에는 턱없이 부족하다. 그래서 이 책은 한 가지 작은 일을 함께 한다. 우리가 읽은 책을 기록하는 작은 웹 애플리케이션을 짓는 것이다. 이름은 '독서 일지'.</p>
-  <p>일을 마치고 나면 두 가지가 남는다. 하나는 작동하는 코드 한 폴더, 다른 하나는 심포니의 골격에 대한 감각이다. 두 번째가 사실은 더 오래 남는다.</p>
-  <p>코드는 읽을 만큼만 쓴다. 명령어는 따라칠 만큼만 적는다. 다이어그램은 머릿속에 남을 만한 것만 그린다. 나머지 시간은 읽고 생각하는 데 쓰자.</p>
-  <div class="hai-page-number">— 3 —</div>
+  <h1>차례 (2)</h1>
+  <div class="hai-toc">
+    <div class="hai-toc-part">4부 — 장바구니</div>
+    <div class="hai-toc-row hai-toc-sub"><span>31. 두 가지 장바구니</span><span class="hai-toc-dots"></span><span class="hai-pn">39</span></div>
+    <div class="hai-toc-row hai-toc-sub"><span>32. Cart 도메인</span><span class="hai-toc-dots"></span><span class="hai-pn">40</span></div>
+    <div class="hai-toc-row hai-toc-sub"><span>33. 장바구니의 상태</span><span class="hai-toc-dots"></span><span class="hai-pn">41</span></div>
+    <div class="hai-toc-row hai-toc-sub"><span>34. CartFactory — 손님과 회원</span><span class="hai-toc-dots"></span><span class="hai-pn">42</span></div>
+    <div class="hai-toc-row hai-toc-sub"><span>35. 담기</span><span class="hai-toc-dots"></span><span class="hai-pn">43</span></div>
+    <div class="hai-toc-row hai-toc-sub"><span>36. 빼기와 수량 변경</span><span class="hai-toc-dots"></span><span class="hai-pn">44</span></div>
+    <div class="hai-toc-row hai-toc-sub"><span>37. 합계 계산 — Money 객체</span><span class="hai-toc-dots"></span><span class="hai-pn">45</span></div>
+    <div class="hai-toc-row hai-toc-sub"><span>38. 장바구니 머지</span><span class="hai-toc-dots"></span><span class="hai-pn">46</span></div>
+    <div class="hai-toc-row hai-toc-sub"><span>39. 미니 카트 위젯</span><span class="hai-toc-dots"></span><span class="hai-pn">47</span></div>
+    <div class="hai-toc-row hai-toc-sub"><span>40. 빈 장바구니의 친절</span><span class="hai-toc-dots"></span><span class="hai-pn">48</span></div>
+    <div class="hai-toc-row hai-toc-sub"><span>41. 재고를 흘리지 않게</span><span class="hai-toc-dots"></span><span class="hai-pn">49</span></div>
+    <div class="hai-toc-part">5부 — 사람과 자물쇠</div>
+    <div class="hai-toc-row hai-toc-sub"><span>42. Symfony Security 풍경</span><span class="hai-toc-dots"></span><span class="hai-pn">51</span></div>
+    <div class="hai-toc-row hai-toc-sub"><span>43. User 엔티티</span><span class="hai-toc-dots"></span><span class="hai-pn">52</span></div>
+    <div class="hai-toc-row hai-toc-sub"><span>44. 비밀번호 해싱</span><span class="hai-toc-dots"></span><span class="hai-pn">53</span></div>
+    <div class="hai-toc-row hai-toc-sub"><span>45. 회원가입 폼</span><span class="hai-toc-dots"></span><span class="hai-pn">54</span></div>
+    <div class="hai-toc-row hai-toc-sub"><span>46. 로그인 폼</span><span class="hai-toc-dots"></span><span class="hai-pn">55</span></div>
+    <div class="hai-toc-row hai-toc-sub"><span>47. firewall.yaml 핵심</span><span class="hai-toc-dots"></span><span class="hai-pn">56</span></div>
+    <div class="hai-toc-row hai-toc-sub"><span>48. ROLE 관리</span><span class="hai-toc-dots"></span><span class="hai-pn">57</span></div>
+    <div class="hai-toc-row hai-toc-sub"><span>49. #[IsGranted]</span><span class="hai-toc-dots"></span><span class="hai-pn">58</span></div>
+    <div class="hai-toc-row hai-toc-sub"><span>50. Voter — 도메인 권한</span><span class="hai-toc-dots"></span><span class="hai-pn">59</span></div>
+    <div class="hai-toc-row hai-toc-sub"><span>51. 비밀번호 재설정</span><span class="hai-toc-dots"></span><span class="hai-pn">60</span></div>
+    <div class="hai-toc-row hai-toc-sub"><span>52. 로그아웃과 세션</span><span class="hai-toc-dots"></span><span class="hai-pn">61</span></div>
+    <div class="hai-toc-part">6부 — 주문</div>
+    <div class="hai-toc-row hai-toc-sub"><span>53. Order 도메인</span><span class="hai-toc-dots"></span><span class="hai-pn">63</span></div>
+    <div class="hai-toc-row hai-toc-sub"><span>54. ER — 주문 데이터</span><span class="hai-toc-dots"></span><span class="hai-pn">64</span></div>
+    <div class="hai-toc-row hai-toc-sub"><span>55. 주문의 상태</span><span class="hai-toc-dots"></span><span class="hai-pn">65</span></div>
+    <div class="hai-toc-row hai-toc-sub"><span>56. 다단계 폼</span><span class="hai-toc-dots"></span><span class="hai-pn">66</span></div>
+    <div class="hai-toc-row hai-toc-sub"><span>57. 배송 주소 폼</span><span class="hai-toc-dots"></span><span class="hai-pn">67</span></div>
+    <div class="hai-toc-row hai-toc-sub"><span>58. 결제 폼</span><span class="hai-toc-dots"></span><span class="hai-pn">68</span></div>
+    <div class="hai-toc-row hai-toc-sub"><span>59. Cart에서 Order로</span><span class="hai-toc-dots"></span><span class="hai-pn">69</span></div>
+    <div class="hai-toc-row hai-toc-sub"><span>60. 트랜잭션</span><span class="hai-toc-dots"></span><span class="hai-pn">70</span></div>
+    <div class="hai-toc-row hai-toc-sub"><span>61. Workflow 컴포넌트</span><span class="hai-toc-dots"></span><span class="hai-pn">71</span></div>
+    <div class="hai-toc-row hai-toc-sub"><span>62. 주문 메일 (Mailer)</span><span class="hai-toc-dots"></span><span class="hai-pn">72</span></div>
+    <div class="hai-toc-row hai-toc-sub"><span>63. Messenger — 비동기</span><span class="hai-toc-dots"></span><span class="hai-pn">73</span></div>
+    <div class="hai-toc-row hai-toc-sub"><span>64. Scheduler — 자동화</span><span class="hai-toc-dots"></span><span class="hai-pn">74</span></div>
+    <div class="hai-toc-row hai-toc-sub"><span>65. 주문 내역 보기</span><span class="hai-toc-dots"></span><span class="hai-pn">75</span></div>
+    <div class="hai-toc-part">7~10부</div>
+    <div class="hai-toc-row hai-toc-sub"><span>관리자, 화면, 운영, 닫는 글</span><span class="hai-toc-dots"></span><span class="hai-pn">76~</span></div>
+  </div>
 </section>
 
-<!-- 4 / part 1 divider -->
+<!-- 4 / preface -->
+<section class="hai-page">
+  <h1>머리말</h1>
+  <p>이 책은 라라벨을 충분히 만져본 PHP 개발자를 위해 쓰였다. 우리는 이미 컨트롤러를 짓고, 마이그레이션을 만들고, 큐로 메일을 보낸다. 그 손이 심포니라는 다른 도시에 닿았을 때 우왕좌왕하지 않도록, 길의 폭과 길의 이름을 적어 두는 일이 이 책의 일이다.</p>
+  <p>라라벨은 친절한 동네다. 길이 잘 닦여 있고, 어디에 무엇이 있는지 보이지 않는 손이 미리 정리해 둔다. 그 친절함이 우리를 빠르게 자라게 했다.</p>
+  <p>심포니는 그보다 조금 더 조용한 동네다. 길이 적게 닦여 있다는 뜻이 아니라, 우리가 길을 직접 고를 수 있다는 뜻이다. 라라벨이 거실이라면, 심포니는 가구 없이 비워 둔 큰 방에 가깝다. 어디든 책상을 둘 수 있다.</p>
+  <p>백 쪽은 한 도시의 모든 길을 안내하기에는 짧다. 그래서 이 책은 한 가지 일을 함께 한다. 작은 책방을 짓는 것이다. 이름은 '느린 책방'.</p>
+  <p>책방은 작지만 보통의 가게가 가지고 있는 모든 것을 가지고 있다. 책장이 있고, 가격표가 있고, 장바구니가 있고, 계산대가 있고, 손님이 있고, 주인이 있다. 그래서 우리가 만들 가게에는 컨트롤러가 있고, 엔티티가 있고, 폼이 있고, 보안이 있고, 큐가 있다.</p>
+  <p>일을 마치고 나면 두 가지가 남는다. 하나는 작동하는 코드 한 폴더, 다른 하나는 심포니의 골격에 대한 감각이다. 두 번째가 사실은 더 오래 남는다.</p>
+  <p>코드는 읽을 만큼만 적는다. 명령어는 따라칠 만큼만 적는다. 다이어그램은 머릿속에 남을 만한 것만 그린다. 나머지 시간은 생각하는 데 쓰자.</p>
+  <div class="hai-page-number">— 4 —</div>
+</section>
+
+<!-- 5 / part 1 divider -->
 <section class="hai-page hai-divider">
   <h1>1부</h1>
   <div class="hai-divider-subtitle">두 풍경</div>
 </section>
 
-<!-- 5 / ch1 — laravel intuition -->
+<!-- 6 / 1. laravel intuition -->
 <section class="hai-page">
   <h1>1. 라라벨이 길러준 직관</h1>
-  <p>라라벨에서 우리는 이미 많은 것을 배웠다. <code>Route::get</code>으로 길을 깔고, 컨트롤러에서 Eloquent로 데이터를 꺼내고, Blade로 화면을 그렸다. <code>php artisan make:</code> 한 줄이면 새 파일이 자리 잡았고, <code>.env</code> 한 줄을 바꾸면 모든 환경이 따라 움직였다.</p>
+  <p>라라벨에서 우리는 이미 많은 것을 배웠다. <code>Route::get</code>으로 길을 깔고, 컨트롤러에서 Eloquent로 데이터를 꺼내고, Blade로 화면을 그렸다. <code>php artisan make:</code> 한 줄이면 새 파일이 자리 잡았고, <code>.env</code> 한 줄을 바꾸면 모든 환경이 따라 움직였다. 큐로 메일을 보내고, Schedule로 매일 새벽에 일을 깨웠다.</p>
   <p>이 직관 대부분은 심포니에서도 그대로 통한다. 다만 이름이 다르고, 위치가 다르다.</p>
-  <p>라라벨에서 <code>Route::get</code>은 심포니에서 <code>#[Route]</code>라는 PHP 속성이다. Eloquent는 Doctrine이라는 ORM으로 바뀐다. Blade 자리엔 Twig이 앉는다. <code>artisan</code>은 <code>bin/console</code>이다. 서비스 컨테이너라는 말을 라라벨에서 들어본 적이 있다면, 심포니에서는 그것이 첫째 시민이다.</p>
+  <p>라라벨에서 <code>Route::get</code>은 심포니에서 <code>#[Route]</code>라는 PHP 속성이다. Eloquent는 Doctrine으로, Blade는 Twig으로, <code>artisan</code>은 <code>bin/console</code>로 옮긴다. <code>Mail::to()</code>는 <code>Mailer::send()</code>다. 큐는 Messenger, 스케줄러는 Scheduler. 이름표만 바꿔 단 셈이다.</p>
   <p>다른 것은 두 가지다.</p>
-  <p>첫째, 심포니는 마법을 덜 쓴다. Eloquent의 <code>User::find(1)</code>처럼 정적 메서드로 데이터에 접근하지 않는다. 대신 <code>BookRepository</code>라는 클래스를 받아서 <code>$repo->find(1)</code>이라고 쓴다. 명시적이라서 처음엔 답답하고, 나중에는 안전하다.</p>
+  <p>첫째, 심포니는 마법을 덜 쓴다. <code>User::find(1)</code> 대신 <code>$users-&gt;find(1)</code>이라고 쓴다. 받아쓴 객체의 출처가 코드에 적혀 있다. 처음엔 답답하고, 나중에는 안전하다.</p>
   <p>둘째, 심포니는 결정을 미룬다. 라라벨이 좋은 기본값을 정해 두는 것이라면, 심포니는 우리에게 결정을 묻는다. 그 결정이 점점 쌓여서 나만의 도시가 된다.</p>
-  <p>이 작은 책은 그 도시의 거리 하나를 함께 걸어 보는 일이다.</p>
-  <div class="hai-page-number">— 5 —</div>
+  <p>이 책은 그 도시의 작은 거리 하나를 함께 걸어 보는 일이다.</p>
+  <div class="hai-page-number">— 6 —</div>
 </section>
 
-<!-- 6 / ch2 — symfony landscape -->
+<!-- 7 / 2. symfony landscape -->
 <section class="hai-page">
   <h1>2. 심포니라는 풍경</h1>
   <p>심포니의 한가운데에는 다섯 개의 사물이 있다.</p>
   <img class="hai-figure" data-mermaid="class-kernel" alt="HttpKernel과 주변 사물의 관계">
   <div class="hai-figure-caption">그림 1. 한 요청을 둘러싼 다섯 사물</div>
   <p><code>HttpKernel</code>은 모든 요청을 받는 손이다. 우리는 컨트롤러를 짓고 라우트를 정하지만, 그 모든 것이 모이는 곳은 결국 이 클래스의 <code>handle()</code> 메서드다.</p>
-  <p><code>Router</code>는 URL을 컨트롤러로 옮기는 사전이다. <code>ControllerResolver</code>는 그 컨트롤러 객체를 실제로 꺼내 오는 일을 한다. 객체를 꺼내려면 의존성도 함께 꺼내야 하는데, 그 일은 <code>Container</code>가 한다. 처음부터 끝까지, 어떤 단계에 도달할 때마다 <code>EventDispatcher</code>가 모든 구독자에게 그 사실을 알린다.</p>
+  <p><code>Router</code>는 URL을 컨트롤러로 옮기는 사전이다. <code>ControllerResolver</code>는 그 컨트롤러 객체를 실제로 꺼내는 일을 한다. 객체를 꺼내려면 의존성도 함께 꺼내야 하는데, 그 일은 <code>Container</code>가 한다. 처음부터 끝까지, 어떤 단계에 도달할 때마다 <code>EventDispatcher</code>가 모든 구독자에게 그 사실을 알린다.</p>
   <p>이름이 많지만, 이름들이 하는 일은 단순하다. 받고, 옮기고, 꺼내고, 실행하고, 알린다. 라라벨에도 같은 일이 있었다. 이름만 달랐을 뿐이다.</p>
-  <div class="hai-page-number">— 6 —</div>
+  <div class="hai-page-number">— 7 —</div>
 </section>
 
-<!-- 7 / ch3 — PHP 8.5 -->
+<!-- 8 / 3. PHP 8.5 -->
 <section class="hai-page">
   <h1>3. PHP 8.5라는 시대</h1>
-  <p>이 책은 PHP 8.5.5를 기준으로 쓴다. 2026년 3월에 나온 안정 버전이다. 8.5는 작지만 즐거운 변화를 가져왔다. 두 가지를 짚어 두자.</p>
+  <p>이 책은 PHP 8.5.5를 기준으로 쓴다. 2026년 3월에 나온 안정 버전이다. 8.5는 작지만 즐거운 변화를 가져왔다.</p>
   <h2>파이프 연산자</h2>
 <pre><code>$slug = $title
     |&gt; strtolower(...)
     |&gt; trim(...)
     |&gt; fn ($s) =&gt; str_replace(' ', '-', $s);</code></pre>
-  <p>위에서 아래로 읽힌다. 라라벨의 <code>Str::of()-&gt;lower()-&gt;trim()-&gt;slug()</code> 체인이 코어 문법으로 들어왔다고 보면 된다.</p>
+  <p>위에서 아래로 읽힌다. 라라벨의 <code>Str::of()-&gt;lower()-&gt;trim()-&gt;slug()</code> 체인이 코어 문법으로 들어왔다고 보면 된다. 우리 책방에서는 책 제목으로 슬러그를 만들 때 자주 쓸 것이다.</p>
   <h2>clone with</h2>
-<pre><code>$updated = clone $book with {
-    status: 'finished',
-    readAt: new DateTimeImmutable(),
+<pre><code>$shipped = clone $order with {
+    status: 'shipped',
+    shippedAt: new DateTimeImmutable(),
 };</code></pre>
-  <p>원본은 그대로 두고 새 객체만 바꾼다. readonly 클래스와 함께 쓸 때 가장 빛난다. 함수형 프로그래밍의 깔끔함을 객체지향 안에 들여놓은 셈이다.</p>
-  <p>이 책에서 두 기능을 적극적으로 등장시키지는 않는다. 다만 이렇게만 알아 두자. 우리가 쓰는 도구가 점점 깔끔해지고 있다는 사실을.</p>
-  <div class="hai-page-number">— 7 —</div>
+  <p>원본은 그대로 두고 새 객체만 바꾼다. <code>readonly</code> 클래스와 함께 쓸 때 가장 빛난다. 함수형의 깔끔함을 객체지향 안에 들여놓은 셈이다.</p>
+  <h2>그 외</h2>
+  <p><code>#[NoDiscard]</code> 속성, URI 확장, Lazy Object 안정화. 우리 책방의 코드 한 곳에서는 만나게 된다.</p>
+  <div class="hai-page-number">— 8 —</div>
 </section>
 
-<!-- 8 / part 2 divider -->
-<section class="hai-page hai-divider">
-  <h1>2부</h1>
-  <div class="hai-divider-subtitle">독서 일지를 짓다</div>
-</section>
-
-<!-- 9 / ch4 — setup -->
+<!-- 9 / 4. DI two landscapes -->
 <section class="hai-page">
-  <h1>4. 시작</h1>
-  <p>심포니는 자신의 CLI를 가지고 있다. macOS, Linux 모두 동일하다.</p>
-<pre><code>curl -sS https://get.symfony.com/cli/installer | bash</code></pre>
-  <p>설치가 끝났다면 환경을 점검한다. PHP 8.4 이상이 필요하다.</p>
-<pre><code>symfony check:requirements</code></pre>
-  <p>문제가 없다면 새 프로젝트를 만든다. 우리는 웹 애플리케이션을 만들 것이므로 <code>--webapp</code> 옵션을 더한다.</p>
-<pre><code>symfony new reading-log --version="8.0.*" --webapp
-cd reading-log
-symfony serve -d</code></pre>
-  <p><code>-d</code>는 데몬으로 띄운다는 뜻이다. 브라우저로 <code>https://127.0.0.1:8000</code>을 열면 심포니의 환영 페이지가 보인다. 라라벨의 <code>php artisan serve</code>와 거의 같은 첫 인상이다.</p>
-  <p>여기서 잠깐. 화면이 비어 있다고 당황할 필요는 없다. 우리는 그 화면을 곧 우리의 손으로 그릴 것이다.</p>
+  <h1>4. 의존성 주입의 두 풍경</h1>
+  <p>라라벨에서 우리는 자주 이렇게 적었다.</p>
+<pre><code>class OrderController extends Controller
+{
+    public function __construct(
+        protected OrderService $orders,
+    ) {}
+}</code></pre>
+  <p>심포니에서도 같다. 다만 한 가지 다르다. 심포니의 컨테이너는 우리가 적은 거의 모든 클래스를 자동으로 알아본다. <code>config/services.yaml</code>의 단 한 줄 덕분이다.</p>
+<pre><code>App\:
+    resource: '../src/'
+    autowire: true
+    autoconfigure: true</code></pre>
+  <p><code>autowire</code>는 인자의 타입을 보고 의존성을 채운다. <code>autoconfigure</code>는 클래스가 이벤트 구독자나 콘솔 명령처럼 보이면 자동으로 그 역할을 등록한다. 라라벨의 서비스 컨테이너도 비슷하지만, 심포니는 그 자동 처리를 한 발 더 나아가게 한다.</p>
+  <p>그래서 심포니의 코드는 보통 <code>__construct</code>에 인자를 적기만 하면 된다. 컨테이너가 알아서 와서 자리에 앉는다. 메모해 둘 단어 하나는 <code>autowire</code>다.</p>
   <div class="hai-page-number">— 9 —</div>
 </section>
 
-<!-- 10 / ch5 — directory -->
+<!-- 10 / 5. ORM two landscapes -->
 <section class="hai-page">
-  <h1>5. 디렉터리를 읽다</h1>
-  <p>새 프로젝트를 열어 보면 폴더 구조는 이렇다.</p>
-<pre><code>reading-log/
+  <h1>5. ORM의 두 풍경</h1>
+  <p>Eloquent는 모델 자체가 모든 일을 한다. <code>User::find(1)</code>로 꺼내고, <code>$user-&gt;save()</code>로 저장한다. 활성 레코드(active record) 패턴이다.</p>
+  <p>Doctrine은 그 일을 두 클래스로 나누어 둔다.</p>
+<pre><code>// 데이터의 모양
+#[ORM\Entity(repositoryClass: ProductRepository::class)]
+class Product { /* 필드만 */ }
+
+// 데이터의 행위
+class ProductRepository extends ServiceEntityRepository
+{
+    public function findFeatured(): array { /* ... */ }
+}</code></pre>
+  <p>모델은 데이터, 리포지토리는 행위. 데이터 매퍼(data mapper) 패턴이라고 부른다. 처음에는 번거롭지만, 도메인이 자라날수록 고마워진다.</p>
+  <p>저장도 다르다. Eloquent의 <code>save()</code> 대신 심포니에서는 두 줄을 쓴다.</p>
+<pre><code>$em-&gt;persist($product);
+$em-&gt;flush();</code></pre>
+  <p><code>persist</code>는 "이걸 기억해 둬", <code>flush</code>는 "지금 데이터베이스에 써". 트랜잭션 안에서 묶을 수 있다는 뜻이다.</p>
+  <div class="hai-page-number">— 10 —</div>
+</section>
+
+<!-- 11 / 6. forms two landscapes -->
+<section class="hai-page">
+  <h1>6. 폼의 두 풍경</h1>
+  <p>라라벨에서 폼은 보통 <code>FormRequest</code>로 검증하고 컨트롤러에서 직접 객체를 만든다.</p>
+<pre><code>class StoreProduct extends FormRequest
+{
+    public function rules(): array
+    {
+        return ['name' =&gt; 'required|max:200'];
+    }
+}</code></pre>
+  <p>심포니는 그 자리에 <code>FormType</code>이라는 클래스를 둔다.</p>
+<pre><code>class ProductType extends AbstractType
+{
+    public function buildForm($b, $opts): void
+    {
+        $b-&gt;add('name', TextType::class);
+    }
+
+    public function configureOptions($r): void
+    {
+        $r-&gt;setDefaults(['data_class' =&gt; Product::class]);
+    }
+}</code></pre>
+  <p>차이는 두 가지다. 첫째, 검증 규칙은 폼이 아니라 엔티티의 <code>#[Assert]</code> 속성에 둔다. 둘째, 폼이 직접 객체를 만든다. 컨트롤러는 그저 <code>handleRequest()</code> 한 줄만 부르면 된다. 폼이 두 일을 함께 하니까 컨트롤러가 짧아진다.</p>
+  <p>이 차이가 처음엔 어색하지만, 같은 폼을 두 곳에서 쓰는 순간 고마워진다.</p>
+  <div class="hai-page-number">— 11 —</div>
+</section>
+
+<!-- 12 / 7. config two landscapes -->
+<section class="hai-page">
+  <h1>7. 환경설정의 두 풍경</h1>
+  <p>라라벨의 <code>.env</code>와 <code>config/*.php</code>는 우리에게 익숙하다. 심포니도 같은 자리에 같은 약속을 둔다. <code>.env</code>로 비밀과 환경을, <code>config/*.php</code>로 구조를.</p>
+  <p>심포니 8부터는 YAML이 기본 자리에서 물러났다. <code>config/packages/twig.php</code>는 이렇게 생겼다.</p>
+<pre><code>use Symfony\Config\TwigConfig;
+
+return static function (TwigConfig $twig) {
+    $twig-&gt;defaultPath('%kernel.project_dir%/templates');
+    $twig-&gt;strictVariables(true);
+};</code></pre>
+  <p>타입이 있는 PHP다. IDE가 자동완성을 한다. 오타가 컴파일 시점에 잡힌다. 라라벨의 <code>config/app.php</code>가 단순한 배열이었다면, 심포니는 같은 일을 객체와 메서드로 한다.</p>
+  <p>환경별 분리는 거의 같다. <code>.env</code>는 모두에게 공통, <code>.env.dev</code>·<code>.env.prod</code>가 환경별. <code>.env.local</code>은 자기 컴퓨터만의 비밀. 라라벨에서 익혔던 그 약속 그대로다.</p>
+  <div class="hai-page-number">— 12 —</div>
+</section>
+
+<!-- 13 / part 2 divider -->
+<section class="hai-page hai-divider">
+  <h1>2부</h1>
+  <div class="hai-divider-subtitle">빈 가게</div>
+</section>
+
+<!-- 14 / 8. start -->
+<section class="hai-page">
+  <h1>8. 시작</h1>
+  <p>심포니는 자신의 CLI를 가지고 있다. 한 번 깔아 두면 두 번 다시 신경 쓸 일이 없다.</p>
+<pre><code>curl -sS https://get.symfony.com/cli/installer | bash</code></pre>
+  <p>설치가 끝났다면 환경을 점검한다. PHP 8.4 이상이 필요하다. 우리는 8.5.5를 쓴다.</p>
+<pre><code>symfony check:requirements</code></pre>
+  <p>문제가 없다면 새 프로젝트를 만든다. <code>--webapp</code>은 웹 애플리케이션에 필요한 패키지를 함께 받는다는 뜻이다.</p>
+<pre><code>symfony new slow-bookstore \
+    --version="8.0.*" --webapp
+cd slow-bookstore
+symfony serve -d</code></pre>
+  <p><code>-d</code>는 데몬으로 띄운다는 뜻. 브라우저로 <code>https://127.0.0.1:8000</code>을 열면 환영 페이지가 보인다. 라라벨의 <code>php artisan serve</code>와 같은 첫 인상이다.</p>
+  <p>이제 우리에게 빈 가게 한 채가 생겼다. 다음 일은 그 가게에 책장을 들이는 일이다.</p>
+  <div class="hai-page-number">— 14 —</div>
+</section>
+
+<!-- 15 / 9. directory -->
+<section class="hai-page">
+  <h1>9. 디렉터리 읽기</h1>
+  <p>새 프로젝트의 폴더는 이렇게 생겼다.</p>
+<pre><code>slow-bookstore/
 ├── bin/console        # artisan에 해당
 ├── config/            # 라우트, 서비스 등의 설정
 ├── public/            # 웹 루트, index.php
 ├── src/               # 우리가 쓸 PHP 코드
 ├── templates/         # Twig 템플릿
 ├── migrations/        # Doctrine 마이그레이션
+├── translations/      # 번역 파일
 ├── var/               # 캐시, 로그
 ├── vendor/            # composer 의존성
+├── compose.yaml       # 도커 컴포즈
 └── .env               # 환경 변수</code></pre>
-  <p>라라벨과 비슷하지만 미묘하게 다르다. <code>app/</code> 대신 <code>src/</code>이고, <code>routes/</code> 폴더는 없다. 라우트는 컨트롤러의 PHP 속성으로 직접 박아 두기 때문이다.</p>
-  <p><code>config/</code> 안의 파일들을 한 번 열어 보길 권한다. PHP 배열로 작성된 설정이 보일 것이다. 심포니 8부터는 YAML이 기본 자리에서 물러났다. 우리가 쓰는 PHP가 설정도 같이 한다.</p>
-  <div class="hai-page-number">— 10 —</div>
+  <p>라라벨과 거의 같다. 다른 점은 두 가지. <code>app/</code> 대신 <code>src/</code>이고, <code>routes/</code> 폴더가 없다. 라우트는 컨트롤러의 PHP 속성으로 직접 박는다.</p>
+  <p><code>config/</code> 안의 파일들을 한 번 열어 보길 권한다. 심포니 8부터는 YAML이 기본 자리에서 물러났고, PHP 배열로 작성된 설정이 보일 것이다. 우리가 쓰는 PHP가 설정도 같이 한다.</p>
+  <div class="hai-page-number">— 15 —</div>
 </section>
 
-<!-- 11 / ch6 — first route -->
+<!-- 16 / 10. docker for db -->
 <section class="hai-page">
-  <h1>6. 첫 라우트, 첫 응답</h1>
-  <p>가장 작은 컨트롤러를 만들어 보자.</p>
-<pre><code>// src/Controller/HelloController.php
+  <h1>10. 도커로 데이터베이스 띄우기</h1>
+  <p><code>--webapp</code> 옵션을 주면 <code>compose.yaml</code>이 함께 만들어진다. 우리는 PostgreSQL을 쓸 것이다.</p>
+<pre><code># compose.yaml
+services:
+  database:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: app
+      POSTGRES_PASSWORD: !ChangeMe!
+      POSTGRES_USER: app
+    ports: ["5432:5432"]
+    volumes:
+      - db_data:/var/lib/postgresql/data
+volumes:
+  db_data:</code></pre>
+  <p>한 줄이면 띄운다.</p>
+<pre><code>docker compose up -d</code></pre>
+  <p>심포니 CLI는 도커가 도는 것을 보면 <code>.env</code>의 <code>DATABASE_URL</code>을 자동으로 만들어 준다. <code>symfony var:export --multiline</code>으로 확인할 수 있다.</p>
+  <p>라라벨의 Sail과 비슷하지만, 한 발 가볍다. 도커는 데이터베이스만 띄우고, PHP는 우리 컴퓨터에서 직접 돈다. 그래서 빠르다.</p>
+  <div class="hai-page-number">— 16 —</div>
+</section>
+
+<!-- 17 / 11. .env -->
+<section class="hai-page">
+  <h1>11. .env과 환경 분리</h1>
+  <p>심포니의 <code>.env</code> 분할은 라라벨보다 한 발 더 정교하다. 네 개의 파일이 있다.</p>
+  <ul>
+    <li><code>.env</code> — 모두에게 공통. 커밋한다.</li>
+    <li><code>.env.dev</code> / <code>.env.prod</code> / <code>.env.test</code> — 환경별. 커밋한다.</li>
+    <li><code>.env.local</code> — 자기 컴퓨터만의 비밀. <code>.gitignore</code>로 막는다.</li>
+    <li><code>.env.{env}.local</code> — 환경별 + 자기만의 비밀.</li>
+  </ul>
+  <p>읽는 순서가 정해져 있다. 더 구체적인 파일이 위에 덮인다. 그래서 우리는 비밀 키 같은 것을 <code>.env.local</code>에만 두고 나머지에는 가짜 기본값을 둔다.</p>
+  <p>코드에서는 한 줄이면 꺼낸다.</p>
+<pre><code>$dsn = $_ENV['DATABASE_URL'];</code></pre>
+  <p>또는 자동 주입으로.</p>
+<pre><code>public function __construct(
+    #[Autowire('%env(DATABASE_URL)%')]
+    private string $dsn,
+) {}</code></pre>
+  <p>같은 일을 두 가지 방법으로 한다. 두 번째가 테스트하기에 더 친절하다.</p>
+  <div class="hai-page-number">— 17 —</div>
+</section>
+
+<!-- 18 / 12. first route -->
+<section class="hai-page">
+  <h1>12. 첫 라우트</h1>
+  <p>가장 작은 컨트롤러를 만들어 보자. 우리 책방의 환영 페이지다.</p>
+<pre><code>// src/Controller/HomeController.php
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
-class HelloController extends AbstractController
+class HomeController extends AbstractController
 {
-    #[Route('/hello')]
+    #[Route('/', name: 'home')]
     public function __invoke(): Response
     {
-        return new Response('안녕, 심포니.');
+        return new Response('느린 책방에 오신 걸 환영합니다.');
     }
 }</code></pre>
-  <p>브라우저에서 <code>/hello</code>를 열면 그 한 줄이 보인다. 라라벨로 치면 다음과 같은 코드다.</p>
-<pre><code>Route::get('/hello', fn () =&gt; '안녕, 라라벨.');</code></pre>
-  <p>다른 점이 한눈에 들어온다. 라라벨은 길과 응답을 한 곳에 묶었고, 심포니는 그 둘을 클래스의 PHP 속성으로 묶었다. 어느 쪽이 옳다고 말하기는 어렵다. 다만 심포니의 방식은 컨트롤러가 자기 길을 직접 안다는 뜻이다.</p>
-  <div class="hai-page-number">— 11 —</div>
+  <p>브라우저에서 <code>/</code>를 열면 그 한 줄이 보인다. 라라벨로 치면 다음과 같다.</p>
+<pre><code>Route::get('/', fn () =&gt; '환영합니다.')-&gt;name('home');</code></pre>
+  <p>다른 점이 한눈에 들어온다. 라라벨은 길과 응답을 한 곳에 묶고, 심포니는 그 둘을 클래스의 PHP 속성으로 묶는다. 어느 쪽이 옳다고 말하기 어렵다. 다만 심포니의 방식은 컨트롤러가 자기 길을 직접 안다는 뜻이다.</p>
+  <div class="hai-page-number">— 18 —</div>
 </section>
 
-<!-- 12 / ch7 — invokable controllers -->
+<!-- 19 / 13. invokable controller -->
 <section class="hai-page">
-  <h1>7. 컨트롤러는 함수다</h1>
-  <p>심포니 8에서 가장 권장하는 컨트롤러 모양은 메서드 하나짜리 클래스다.</p>
-<pre><code>class ShowBookController extends AbstractController
+  <h1>13. 첫 컨트롤러</h1>
+  <p>심포니 8에서 가장 권장하는 컨트롤러 모양은 메서드 하나짜리 클래스다. <code>__invoke</code>라는 마법 메서드를 쓴다.</p>
+<pre><code>class ShowProductController extends AbstractController
 {
-    #[Route('/books/{id}', name: 'book_show')]
+    #[Route('/books/{slug}', name: 'product_show')]
     public function __invoke(
-        int $id,
-        BookRepository $books,
+        string $slug,
+        ProductRepository $products,
     ): Response {
-        $book = $books-&gt;find($id);
-        if (!$book) {
+        $product = $products-&gt;findBySlug($slug);
+        if (!$product) {
             throw $this-&gt;createNotFoundException();
         }
-        return $this-&gt;render('book/show.html.twig', [
-            'book' =&gt; $book,
+        return $this-&gt;render('product/show.html.twig', [
+            'product' =&gt; $product,
         ]);
     }
 }</code></pre>
-  <p><code>__invoke</code>라는 이름이 낯설 수 있다. 객체를 함수처럼 호출할 수 있게 만드는 마법 메서드다. 즉, 이 컨트롤러 클래스 자체가 곧 하나의 함수다. 컨트롤러 하나는 보통 한 가지 일만 한다. 책을 보여주는 일, 책을 만드는 일, 책을 지우는 일은 서로 다른 클래스다. 한 클래스가 한 가지 일을 한다는 약속은, 그 클래스를 다시 읽을 때의 친절함으로 돌아온다.</p>
-  <div class="hai-page-number">— 12 —</div>
+  <p>이 컨트롤러는 곧 하나의 함수다. 책 한 권을 보여주는 일, 그 한 가지만 한다. 책을 만드는 일, 책을 지우는 일은 다른 클래스다. 한 클래스가 한 가지 일을 한다는 약속은, 그 클래스를 다시 읽었을 때의 친절함으로 돌아온다.</p>
+  <p>라라벨 8부터의 invokable controller와 같은 발상이다. 심포니에서는 그것이 기본이다.</p>
+  <div class="hai-page-number">— 19 —</div>
 </section>
 
-<!-- 13 / ch8 — request lifecycle -->
+<!-- 20 / 14. request lifecycle -->
 <section class="hai-page">
-  <h1>8. 요청의 일생</h1>
+  <h1>14. 요청의 일생</h1>
   <p>한 요청이 들어와 응답이 되어 나가는 길은 짧지 않다.</p>
   <img class="hai-figure" data-mermaid="seq-request" alt="HTTP 요청부터 응답까지의 흐름">
   <div class="hai-figure-caption">그림 2. 요청 하나가 거치는 다섯 손</div>
   <p><code>HttpKernel</code>이 받고, <code>Router</code>에게 길을 묻고, 그 길을 따라 컨트롤러를 깨운다. 컨트롤러는 자기 일을 마치고 <code>Twig</code>에게 화면을 부탁한 뒤, <code>Response</code>를 손에 쥐고 다시 <code>HttpKernel</code>에게 돌아온다. 그제서야 응답이 브라우저로 떠난다.</p>
-  <p>읽고 나면 단순하다. 다만 이 길의 어느 지점에서든 <code>EventDispatcher</code>가 사람들을 깨운다는 점만 기억하자. 우리는 그 사람들 중 하나가 되어, 우리만의 일을 슬쩍 끼워 넣을 수 있다. 그것이 심포니다움이다.</p>
-  <div class="hai-page-number">— 13 —</div>
+  <p>읽고 나면 단순하다. 다만 이 길의 어느 지점에서든 <code>EventDispatcher</code>가 사람들을 깨운다는 점만 기억하자. 우리는 그 사람들 중 하나가 되어, 우리만의 일을 슬쩍 끼워 넣을 수 있다.</p>
+  <div class="hai-page-number">— 20 —</div>
 </section>
 
-<!-- 14 / ch9 — twig -->
+<!-- 21 / 15. AbstractController tools -->
 <section class="hai-page">
-  <h1>9. Twig — 보여주는 일은 따로</h1>
-  <p>심포니에서는 <code>templates/</code> 폴더에 Twig 파일을 둔다.</p>
-<pre><code>{# templates/base.html.twig #}
-&lt;!DOCTYPE html&gt;
+  <h1>15. AbstractController의 도구들</h1>
+  <p><code>AbstractController</code>를 상속하면 자주 쓰는 도구가 손에 들어온다. 외워 둘 만한 다섯 가지를 적는다.</p>
+<pre><code>// HTML 응답
+return $this-&gt;render('p/show.html.twig', ['p' =&gt; $p]);
+
+// JSON 응답
+return $this-&gt;json(['ok' =&gt; true]);
+
+// 다른 라우트로
+return $this-&gt;redirectToRoute('home');
+
+// 404
+throw $this-&gt;createNotFoundException();
+
+// 한 번만 보여줄 메시지
+$this-&gt;addFlash('success', '담았습니다.');</code></pre>
+  <p>라라벨의 <code>view()</code>, <code>response()-&gt;json()</code>, <code>redirect()</code>, <code>abort(404)</code>, <code>session()-&gt;flash()</code>와 거의 일대일이다. 같은 손이 같은 일을 한다.</p>
+  <p>이 다섯 가지면 컨트롤러의 90%가 끝난다. 나머지 10%가 이 책의 다른 페이지에서 등장한다.</p>
+  <div class="hai-page-number">— 21 —</div>
+</section>
+
+<!-- 22 / 16. base.html.twig -->
+<section class="hai-page">
+  <h1>16. base.html.twig</h1>
+  <p>한 사이트의 모든 페이지가 공유할 뼈대를 적어 두자. <code>templates/base.html.twig</code>이다.</p>
+<pre><code>&lt;!DOCTYPE html&gt;
 &lt;html lang="ko"&gt;
 &lt;head&gt;
-  &lt;title&gt;{% block title %}독서 일지{% endblock %}&lt;/title&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;{% block title %}느린 책방{% endblock %}&lt;/title&gt;
+  {% block stylesheets %}{{ importmap('app') }}{% endblock %}
 &lt;/head&gt;
-&lt;body&gt;{% block body %}{% endblock %}&lt;/body&gt;
-&lt;/html&gt;</code></pre>
-  <p>자식 템플릿은 <code>extends</code>로 이 뼈대를 받는다.</p>
-<pre><code>{# templates/book/list.html.twig #}
-{% extends 'base.html.twig' %}
-{% block body %}
-  &lt;h1&gt;나의 독서 일지&lt;/h1&gt;
-  &lt;ul&gt;
-    {% for book in books %}
-      &lt;li&gt;{{ book.title }} — {{ book.author }}&lt;/li&gt;
+&lt;body&gt;
+  &lt;header&gt;
+    &lt;a href="{{ path('home') }}"&gt;느린 책방&lt;/a&gt;
+    &lt;a href="{{ path('cart_show') }}"&gt;
+      장바구니 ({{ cart_count() }})&lt;/a&gt;
+  &lt;/header&gt;
+  {% for label, msgs in app.flashes %}
+    {% for m in msgs %}
+      &lt;div class="flash flash-{{ label }}"&gt;{{ m }}&lt;/div&gt;
     {% endfor %}
-  &lt;/ul&gt;
-{% endblock %}</code></pre>
-  <p>Blade와 비교하면 <code>@</code>가 <code>{% %}</code>로, <code>{{ }}</code>는 그대로다. 자동 이스케이프도 같다. 다만 Twig은 PHP를 직접 쓰지 못한다. 메서드 호출은 <code>book.title</code>처럼 점 하나로 충분하다.</p>
-  <div class="hai-page-number">— 14 —</div>
+  {% endfor %}
+  &lt;main&gt;{% block body %}{% endblock %}&lt;/main&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+  <p>자식 템플릿은 <code>extends</code>로 이 뼈대를 받는다. 라라벨의 <code>@extends</code>와 같다. 다만 Twig은 PHP를 직접 쓰지 못한다. 메서드 호출은 <code>app.flashes</code>처럼 점 하나로 충분하다.</p>
+  <div class="hai-page-number">— 22 —</div>
 </section>
 
-<!-- 15 / ch10 — Book entity (class diagram) -->
-<section class="hai-page">
-  <h1>10. Book이라는 사물</h1>
-  <p>우리가 다루려는 가장 작은 사물은 '책'이다.</p>
-  <img class="hai-figure" data-mermaid="class-book" alt="Book 엔티티와 BookRepository의 관계">
-  <div class="hai-figure-caption">그림 3. 사물과 그 사물을 다루는 손</div>
-  <p><code>Book</code> 클래스는 데이터의 모양만 담는다. 제목, 저자, 상태, 그리고 다 읽은 날짜. 그 외의 일은 클래스가 하지 않는다.</p>
-  <p>데이터를 꺼내고 저장하는 일은 <code>BookRepository</code>가 맡는다. 라라벨의 Eloquent에서 <code>Book::where(...)-&gt;get()</code>이 한 클래스 안에서 이루어졌다면, Doctrine은 그 일을 두 클래스로 나누어 둔다. 모델은 데이터, 리포지토리는 행위. 이 분리가 처음에는 번거롭지만, 도메인이 자라날수록 고마워진다. <code>Book</code> 클래스는 ORM을 모르는 채로 살아갈 수 있고, 우리는 그 사실을 즐길 수 있다.</p>
-  <div class="hai-page-number">— 15 —</div>
+<!-- 23 / part 3 divider -->
+<section class="hai-page hai-divider">
+  <h1>3부</h1>
+  <div class="hai-divider-subtitle">진열</div>
 </section>
 
-<!-- 16 / ch11 — doctrine + migration -->
+<!-- 24 / 17. domain product/category -->
 <section class="hai-page">
-  <h1>11. Doctrine과 마이그레이션</h1>
-  <p>엔티티를 PHP로 적는 모양은 다음과 같다.</p>
-<pre><code>// src/Entity/Book.php
+  <h1>17. 도메인 — Product와 Category</h1>
+  <p>책방의 가장 작은 사물은 책 한 권이다. 그것을 우리는 Product라고 부른다.</p>
+  <img class="hai-figure" data-mermaid="class-product" alt="Product, Category, ProductImage 관계">
+  <div class="hai-figure-caption">그림 3. 진열장의 클래스 지도</div>
+  <p>Product는 책 자체. Category는 분류 (소설, 시, 에세이…). ProductImage는 표지와 본문 사진을 담는 작은 사물이다.</p>
+  <p>관계를 보자. Category 하나는 여러 Product를 가질 수 있고, Product 하나는 여러 ProductImage를 가질 수 있다. 그림에서 <code>1</code>과 <code>*</code> 표기로 보이는 것이다.</p>
+  <p>이 세 클래스가 진열장을 지탱한다. 그 외의 모든 일—검색, 페이지네이션, 정렬—은 ProductRepository가 한다. 데이터는 명사, 행위는 동사. 명사를 한 클래스에 두고, 동사를 다른 클래스에 두는 일이 Doctrine의 약속이다.</p>
+  <div class="hai-page-number">— 24 —</div>
+</section>
+
+<!-- 25 / 18. ER diagram -->
+<section class="hai-page">
+  <h1>18. ER 다이어그램</h1>
+  <p>같은 그림을 데이터베이스의 시점에서 보면 다음과 같다.</p>
+  <img class="hai-figure" data-mermaid="er-catalog" alt="카탈로그 테이블의 ER 다이어그램">
+  <div class="hai-figure-caption">그림 4. 진열장 데이터의 모양</div>
+  <p>세 테이블, 두 외래 키. 외래 키 하나가 부모 자식을 묶는다. <code>category_id</code>는 책이 어느 분류에 속하는지를 가리키고, <code>product_id</code>는 이미지가 어느 책의 것인지를 가리킨다.</p>
+  <p>이 그림은 우리가 두 번째 학기에 이미 그려본 것이다. 데이터베이스 강의의 첫 그림. 심포니에서도 같다. 사물은 변하지 않았고, 사용하는 도구만 바뀌었다.</p>
+  <p>실제 마이그레이션은 다음 페이지부터 우리가 직접 만들 것이다. 손으로 SQL을 적지는 않는다. Doctrine이 우리가 적은 엔티티를 보고 알아서 그려준다.</p>
+  <div class="hai-page-number">— 25 —</div>
+</section>
+
+<!-- 26 / 19. Product entity -->
+<section class="hai-page">
+  <h1>19. Product 엔티티</h1>
+  <p>엔티티는 데이터의 모양만 담는다. 행위는 리포지토리가 한다.</p>
+<pre><code>// src/Entity/Product.php
 namespace App\Entity;
 
-use App\Repository\BookRepository;
+use App\Repository\ProductRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
-#[ORM\Entity(repositoryClass: BookRepository::class)]
-class Book
+#[ORM\Entity(repositoryClass: ProductRepository::class)]
+class Product
 {
-    #[ORM\Id]
-    #[ORM\GeneratedValue]
-    #[ORM\Column]
+    #[ORM\Id, ORM\GeneratedValue, ORM\Column]
     private ?int $id = null;
 
     #[ORM\Column(length: 200)]
-    private string $title = '';
+    #[Assert\NotBlank, Assert\Length(max: 200)]
+    private string $name = '';
 
-    #[ORM\Column(length: 120)]
-    private string $author = '';
+    #[ORM\Column(length: 220, unique: true)]
+    private string $slug = '';
 
-    #[ORM\Column(length: 20)]
-    private string $status = 'want_to_read';
+    #[ORM\Column(type: 'text')]
+    private string $description = '';
+
+    #[ORM\Column]
+    #[Assert\PositiveOrZero]
+    private int $priceKrw = 0;
+
+    #[ORM\Column]
+    private int $stock = 0;
+
+    #[ORM\Column]
+    private DateTimeImmutable $createdAt;
+
+    public function __construct() {
+        $this-&gt;createdAt = new DateTimeImmutable();
+    }
 }</code></pre>
-  <p>이 파일을 적었다면, 다음 두 줄을 차례로 부른다.</p>
-<pre><code>php bin/console make:migration
-php bin/console doctrine:migrations:migrate</code></pre>
-  <p>심포니는 우리가 적은 엔티티와 현재 스키마를 비교하여, 차이만큼만 자동으로 마이그레이션을 그려 준다. 우리가 직접 컬럼을 적지 않아도 된다.</p>
-  <div class="hai-page-number">— 16 —</div>
+  <p>게터·세터는 IDE가 만들어 준다. 검증 규칙이 데이터의 자리에 있는 점에 주목하자.</p>
+  <div class="hai-page-number">— 26 —</div>
 </section>
 
-<!-- 17 / ch12 — ER diagram -->
+<!-- 27 / 20. Category ManyToMany -->
 <section class="hai-page">
-  <h1>12. 데이터의 모양</h1>
-  <p>독서 일지의 데이터는 두 테이블이다. 사용자 한 명이 여러 권의 책을 가진다.</p>
-  <img class="hai-figure" data-mermaid="er-schema" alt="USER와 BOOK의 ER 다이어그램">
-  <div class="hai-figure-caption">그림 4. 한 사람의 책장을 두 테이블로</div>
-  <p>이 그림은 우리가 두 번째 학기에 이미 그려본 것이다. 데이터베이스 강의의 첫 그림. 심포니에서도 같다. 사물은 변하지 않았고, 사용하는 도구만 바뀌었다.</p>
-  <p><code>USER</code> 테이블은 심포니가 보안 모듈을 위해 자동으로 만들 수도 있고, 우리가 직접 적을 수도 있다. 30쪽이라는 약속이 있으므로, 이 책에서는 한 사용자만 있다고 가정한다. 그 한 사람이 자기의 책장을 채운다.</p>
-  <div class="hai-page-number">— 17 —</div>
+  <h1>20. Category와 ManyToMany</h1>
+  <p>책 한 권은 보통 여러 분류에 동시에 속한다. '시'이면서 '한국 문학'일 수 있다. 그래서 ManyToMany를 쓴다.</p>
+<pre><code>#[ORM\Entity]
+class Category
+{
+    #[ORM\Id, ORM\GeneratedValue, ORM\Column]
+    private ?int $id = null;
+
+    #[ORM\Column(length: 80)]
+    private string $name = '';
+
+    #[ORM\Column(length: 80, unique: true)]
+    private string $slug = '';
+}
+
+// Product 안에 추가
+#[ORM\ManyToMany(targetEntity: Category::class)]
+#[ORM\JoinTable(name: 'product_category')]
+private Collection $categories;
+
+public function __construct() {
+    $this-&gt;categories = new ArrayCollection();
+    $this-&gt;createdAt = new DateTimeImmutable();
+}</code></pre>
+  <p>Doctrine은 자동으로 <code>product_category</code> 조인 테이블을 만든다. 라라벨의 <code>belongsToMany</code>와 같은 일을 한다. 조인 테이블 이름을 직접 짓고 싶다면 <code>JoinTable</code> 속성을 쓴다.</p>
+  <p>다음 페이지에서 우리는 책 한 권에 표지를 붙인다.</p>
+  <div class="hai-page-number">— 27 —</div>
 </section>
 
-<!-- 18 / ch13 — list page -->
+<!-- 28 / 21. ProductImage -->
 <section class="hai-page">
-  <h1>13. 목록을 짓다</h1>
-  <p>책을 모두 보여주는 페이지를 만들자.</p>
-<pre><code>// src/Controller/ListBooksController.php
+  <h1>21. ProductImage</h1>
+  <p>책의 표지·내지 사진은 별개의 사물로 둔다. 한 책이 여러 사진을 가질 수 있고, 정렬 순서가 필요하기 때문이다.</p>
+<pre><code>#[ORM\Entity]
+class ProductImage
+{
+    #[ORM\Id, ORM\GeneratedValue, ORM\Column]
+    private ?int $id = null;
+
+    #[ORM\ManyToOne(inversedBy: 'images')]
+    #[ORM\JoinColumn(nullable: false)]
+    private Product $product;
+
+    #[ORM\Column(length: 255)]
+    private string $path = '';
+
+    #[ORM\Column]
+    private int $position = 0;
+}
+
+// Product 안에 추가
+#[ORM\OneToMany(
+    targetEntity: ProductImage::class,
+    mappedBy: 'product',
+    orphanRemoval: true,
+    cascade: ['persist'],
+)]
+#[ORM\OrderBy(['position' =&gt; 'ASC'])]
+private Collection $images;</code></pre>
+  <p><code>orphanRemoval</code>은 부모에서 떼어 놓인 이미지를 자동으로 지운다. <code>cascade: persist</code>는 부모를 저장할 때 자식도 함께 저장한다. 이 두 옵션이 우리의 손을 가볍게 해 준다.</p>
+  <div class="hai-page-number">— 28 —</div>
+</section>
+
+<!-- 29 / 22. migration -->
+<section class="hai-page">
+  <h1>22. 마이그레이션</h1>
+  <p>엔티티 세 개를 적었으니 데이터베이스에 옮길 차례다.</p>
+<pre><code>php bin/console make:migration</code></pre>
+  <p>심포니가 우리가 적은 엔티티와 현재 스키마를 비교하여, 차이만큼만 자동으로 마이그레이션 파일을 그린다. <code>migrations/</code> 폴더에 <code>Version20260503...php</code> 같은 이름으로.</p>
+  <p>그 파일을 한 번 열어 보길 권한다. <code>up()</code>과 <code>down()</code> 안에 SQL이 적혀 있다. 우리가 직접 적지 않았지만, 우리가 적은 PHP에서 그대로 나왔다는 사실을 눈으로 확인하면 안심이 된다.</p>
+  <p>적용은 한 줄.</p>
+<pre><code>php bin/console doctrine:migrations:migrate</code></pre>
+  <p>한 번 더 묻는다. <code>yes</code>를 치면 끝이다. 라라벨의 <code>php artisan migrate</code>와 같은 손이다.</p>
+  <p>나중에 엔티티를 고칠 때마다 같은 두 줄을 부르면 된다. 마이그레이션 파일은 코드와 함께 git에 커밋하자. 동료의 데이터베이스가 우리의 것과 같은 모양이 되도록.</p>
+  <div class="hai-page-number">— 29 —</div>
+</section>
+
+<!-- 30 / 23. fixtures -->
+<section class="hai-page">
+  <h1>23. 픽스처로 시드 만들기</h1>
+  <p>빈 가게는 외롭다. 시연용 데이터를 한 줌 깔자. 라라벨의 Seeder에 해당하는 도구가 심포니에는 DoctrineFixturesBundle이라는 이름으로 있다.</p>
+<pre><code>composer require --dev doctrine/doctrine-fixtures-bundle</code></pre>
+<pre><code>// src/DataFixtures/AppFixtures.php
+namespace App\DataFixtures;
+
+use App\Entity\Category;
+use App\Entity\Product;
+use Doctrine\Bundle\FixturesBundle\Fixture;
+use Doctrine\Persistence\ObjectManager;
+
+class AppFixtures extends Fixture
+{
+    public function load(ObjectManager $em): void
+    {
+        $poetry = (new Category())
+            -&gt;setName('시')-&gt;setSlug('poetry');
+        $em-&gt;persist($poetry);
+
+        for ($i = 1; $i &lt;= 12; $i++) {
+            $p = (new Product())
+                -&gt;setName("느린 시 $i")
+                -&gt;setSlug("slow-poem-$i")
+                -&gt;setPriceKrw(12000)
+                -&gt;setStock(20);
+            $p-&gt;getCategories()-&gt;add($poetry);
+            $em-&gt;persist($p);
+        }
+        $em-&gt;flush();
+    }
+}</code></pre>
+<pre><code>php bin/console doctrine:fixtures:load</code></pre>
+  <div class="hai-page-number">— 30 —</div>
+</section>
+
+<!-- 31 / 24. ProductRepository QueryBuilder -->
+<section class="hai-page">
+  <h1>24. ProductRepository — QueryBuilder</h1>
+  <p>리포지토리는 데이터에 묻는 곳이다. 자주 쓰는 질의는 메서드로 적어 둔다.</p>
+<pre><code>// src/Repository/ProductRepository.php
+namespace App\Repository;
+
+use App\Entity\Product;
+use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\Persistence\ManagerRegistry;
+
+class ProductRepository extends ServiceEntityRepository
+{
+    public function __construct(ManagerRegistry $r)
+    {
+        parent::__construct($r, Product::class);
+    }
+
+    public function findBySlug(string $slug): ?Product
+    {
+        return $this-&gt;findOneBy(['slug' =&gt; $slug]);
+    }
+
+    public function searchByKeyword(string $q): array
+    {
+        return $this-&gt;createQueryBuilder('p')
+            -&gt;andWhere('p.name LIKE :q')
+            -&gt;setParameter('q', '%'.$q.'%')
+            -&gt;orderBy('p.createdAt', 'DESC')
+            -&gt;setMaxResults(50)
+            -&gt;getQuery()-&gt;getResult();
+    }
+}</code></pre>
+  <p>Eloquent의 chain과 비슷하지만, 변수가 자리표(<code>:q</code>)로 분리되어 있는 점에 주목하자. SQL 인젝션은 그 자리에서 막힌다.</p>
+  <div class="hai-page-number">— 31 —</div>
+</section>
+
+<!-- 32 / 25. catalog controller -->
+<section class="hai-page">
+  <h1>25. 카탈로그 컨트롤러</h1>
+  <p>이제 진열대를 만든다. 첫 컨트롤러는 모든 책을 보여주는 일이다.</p>
+<pre><code>// src/Controller/CatalogController.php
 namespace App\Controller;
 
-use App\Repository\BookRepository;
+use App\Repository\ProductRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
-class ListBooksController extends AbstractController
+class CatalogController extends AbstractController
 {
-    #[Route('/', name: 'book_list')]
-    public function __invoke(BookRepository $books): Response
-    {
-        return $this-&gt;render('book/list.html.twig', [
-            'books' =&gt; $books-&gt;findBy([], ['id' =&gt; 'DESC']),
+    #[Route('/books', name: 'catalog')]
+    public function __invoke(
+        Request $request,
+        ProductRepository $products,
+    ): Response {
+        $page = max(1, (int) $request-&gt;query-&gt;get('page', 1));
+        $perPage = 12;
+
+        $items = $products-&gt;paginate($page, $perPage);
+        $total = $products-&gt;count([]);
+
+        return $this-&gt;render('catalog/index.html.twig', [
+            'products' =&gt; $items,
+            'page' =&gt; $page,
+            'total' =&gt; $total,
+            'perPage' =&gt; $perPage,
         ]);
     }
 }</code></pre>
-  <p>세 줄짜리 클래스다. <code>BookRepository</code>는 인자에 타입을 적는 것만으로 자동으로 들어온다. 라라벨의 자동 주입과 같다. 다른 점은, 우리가 그 객체를 어디서 가져왔는지 코드만 봐도 알 수 있다는 것이다.</p>
-  <p>브라우저로 <code>/</code>를 열면 빈 목록이 보인다. 다음 일은, 그 목록에 책 한 권을 더하는 일이다.</p>
-  <div class="hai-page-number">— 18 —</div>
+  <p><code>Request</code>를 인자에 적으면 자동으로 들어온다. <code>?page=3</code> 같은 쿼리 스트링은 <code>$request-&gt;query-&gt;get('page')</code>로 꺼낸다.</p>
+  <div class="hai-page-number">— 32 —</div>
 </section>
 
-<!-- 19 / ch14 — form -->
+<!-- 33 / 26. catalog template -->
 <section class="hai-page">
-  <h1>14. 폼 — 입력의 고요함</h1>
-  <p>폼은 두 단계로 만든다. 폼의 모양을 정의하는 클래스, 그리고 그것을 사용하는 컨트롤러.</p>
-<pre><code>// src/Form/BookType.php
+  <h1>26. 카탈로그 템플릿</h1>
+<pre><code>{# templates/catalog/index.html.twig #}
+{% extends 'base.html.twig' %}
+{% block title %}책 목록 — 느린 책방{% endblock %}
+{% block body %}
+  &lt;h1&gt;진열대&lt;/h1&gt;
+  &lt;ul class="product-grid"&gt;
+    {% for p in products %}
+      &lt;li&gt;
+        &lt;a href="{{ path('product_show', {slug: p.slug}) }}"&gt;
+          {% if p.images|length &gt; 0 %}
+            &lt;img src="{{ asset('uploads/' ~ p.images[0].path) }}"
+                 alt="{{ p.name }}"&gt;
+          {% endif %}
+          &lt;h2&gt;{{ p.name }}&lt;/h2&gt;
+          &lt;p&gt;{{ p.priceKrw|number_format }}원&lt;/p&gt;
+        &lt;/a&gt;
+      &lt;/li&gt;
+    {% else %}
+      &lt;li&gt;진열된 책이 없습니다.&lt;/li&gt;
+    {% endfor %}
+  &lt;/ul&gt;
+  {{ include('_pagination.html.twig', {
+    page: page, total: total, perPage: perPage,
+  }) }}
+{% endblock %}</code></pre>
+  <p>Twig의 <code>{% else %}</code>는 비어 있을 때를 우아하게 처리한다. 우리는 그 친절을 늘 잊지 않을 것이다.</p>
+  <div class="hai-page-number">— 33 —</div>
+</section>
+
+<!-- 34 / 27. pagination -->
+<section class="hai-page">
+  <h1>27. 페이지네이션</h1>
+  <p>외부 패키지 없이 손으로 짜 보자. 라라벨의 <code>paginate()</code>가 하던 일을 우리가 직접 한다.</p>
+<pre><code>// ProductRepository에 추가
+public function paginate(int $page, int $perPage): array
+{
+    $offset = ($page - 1) * $perPage;
+    return $this-&gt;createQueryBuilder('p')
+        -&gt;orderBy('p.createdAt', 'DESC')
+        -&gt;setFirstResult($offset)
+        -&gt;setMaxResults($perPage)
+        -&gt;getQuery()-&gt;getResult();
+}</code></pre>
+<pre><code>{# templates/_pagination.html.twig #}
+{% set last = (total / perPage)|round(0, 'ceil') %}
+&lt;nav class="pagination"&gt;
+  {% for n in 1..last %}
+    {% if n == page %}
+      &lt;span class="current"&gt;{{ n }}&lt;/span&gt;
+    {% else %}
+      &lt;a href="?page={{ n }}"&gt;{{ n }}&lt;/a&gt;
+    {% endif %}
+  {% endfor %}
+&lt;/nav&gt;</code></pre>
+  <p>외부 패키지를 쓰지 않은 이유는, 페이지네이션은 보통 우리가 원하는 모양이 따로 있기 때문이다. 손이 따끔하지만, 결과가 자기 모양에 가깝다.</p>
+  <div class="hai-page-number">— 34 —</div>
+</section>
+
+<!-- 35 / 28. product detail -->
+<section class="hai-page">
+  <h1>28. 상품 상세 페이지</h1>
+  <p>책 한 권의 자기 페이지를 만든다. URL은 슬러그로 잡는다.</p>
+<pre><code>class ShowProductController extends AbstractController
+{
+    #[Route('/books/{slug}', name: 'product_show')]
+    public function __invoke(
+        string $slug,
+        ProductRepository $products,
+    ): Response {
+        $product = $products-&gt;findBySlug($slug);
+        if (!$product) {
+            throw $this-&gt;createNotFoundException();
+        }
+
+        $related = $products-&gt;findRelatedTo($product, 4);
+
+        return $this-&gt;render('product/show.html.twig', [
+            'product' =&gt; $product,
+            'related' =&gt; $related,
+        ]);
+    }
+}</code></pre>
+  <p>슬러그를 우리가 직접 받아서 리포지토리에 묻는다. 심포니에는 더 짧은 길도 있다. <code>#[MapEntity(mapping: ['slug' =&gt; 'slug'])]</code>를 쓰면 컨트롤러 인자에 바로 <code>Product $product</code>를 받을 수 있다. 라라벨의 라우트 모델 바인딩과 같다.</p>
+  <p>다만 첫 코드는 직접 묻는 길이 분명해서 좋다. 마법은 익숙해진 다음에 부르자.</p>
+  <div class="hai-page-number">— 35 —</div>
+</section>
+
+<!-- 36 / 29. search -->
+<section class="hai-page">
+  <h1>29. 검색</h1>
+  <p>가게에 책이 늘면 검색이 필요해진다. 가장 단순한 모양부터.</p>
+<pre><code>class SearchController extends AbstractController
+{
+    #[Route('/search', name: 'search')]
+    public function __invoke(
+        Request $request,
+        ProductRepository $products,
+    ): Response {
+        $q = trim($request-&gt;query-&gt;get('q', ''));
+        $hits = $q !== ''
+            ? $products-&gt;searchByKeyword($q)
+            : [];
+
+        return $this-&gt;render('search.html.twig', [
+            'q' =&gt; $q,
+            'hits' =&gt; $hits,
+        ]);
+    }
+}</code></pre>
+  <p><code>LIKE</code>는 책장이 작을 때만 쓸 수 있는 도구다. 책방이 커지면 PostgreSQL의 <code>tsvector</code>나 Meilisearch 같은 외부 검색 엔진으로 옮긴다. 심포니에는 <code>symfony/messenger</code>로 그것에 데이터를 흘려보내는 <code>SearchIndexer</code>를 만들 수 있다.</p>
+  <p>우리는 지금 작은 책방이다. <code>LIKE</code>로 충분하다. 도구는 필요할 때 부르는 편이 좋다.</p>
+  <div class="hai-page-number">— 36 —</div>
+</section>
+
+<!-- 37 / 30. twig macros -->
+<section class="hai-page">
+  <h1>30. 트위그 매크로</h1>
+  <p>같은 마크업이 여러 페이지에서 반복되면 매크로로 만들자. 라라벨의 컴포넌트와 비슷한 자리다.</p>
+<pre><code>{# templates/_macros.html.twig #}
+{% macro price(krw) %}
+  &lt;span class="price"&gt;
+    {{ krw|number_format }}
+    &lt;small&gt;원&lt;/small&gt;
+  &lt;/span&gt;
+{% endmacro %}
+
+{% macro card(p) %}
+  &lt;article class="card"&gt;
+    &lt;h3&gt;
+      &lt;a href="{{ path('product_show', {slug: p.slug}) }}"&gt;
+        {{ p.name }}
+      &lt;/a&gt;
+    &lt;/h3&gt;
+    {{ _self.price(p.priceKrw) }}
+  &lt;/article&gt;
+{% endmacro %}</code></pre>
+  <p>다른 템플릿에서는 import해서 부른다.</p>
+<pre><code>{% import '_macros.html.twig' as ui %}
+{{ ui.price(p.priceKrw) }}
+{{ ui.card(p) }}</code></pre>
+  <p>매크로는 어디서든 같은 모양으로 가격을 그리도록 만든다. 그 일관성이 가게의 품격이다.</p>
+  <div class="hai-page-number">— 37 —</div>
+</section>
+
+<!-- 38 / part 4 divider -->
+<section class="hai-page hai-divider">
+  <h1>4부</h1>
+  <div class="hai-divider-subtitle">장바구니</div>
+</section>
+
+<!-- 39 / 31. two carts -->
+<section class="hai-page">
+  <h1>31. 두 가지 장바구니</h1>
+  <p>장바구니에는 두 가지 길이 있다. 세션에 둘 것인가, 데이터베이스에 둘 것인가.</p>
+  <p>세션은 가볍다. 손님이 주민등록증을 내밀지 않아도 책을 담을 수 있다. 다만 브라우저를 바꾸면 사라지고, 며칠 뒤 다시 와도 사라진다.</p>
+  <p>데이터베이스는 무겁지만 끈질기다. 같은 사람이 다른 기기에서 와도 자기 장바구니를 본다. 추천 시스템의 자료가 되기도 한다.</p>
+  <p>이 책은 두 가지를 함께 쓴다. 손님일 때는 세션, 로그인하는 순간 그 세션의 장바구니를 데이터베이스로 옮긴다. 두 길의 좋은 점만 가져오는 셈이다.</p>
+  <div class="hai-callout">기억해 둘 단어: 손님 장바구니(guest cart)와 회원 장바구니(user cart). 머지(merge)는 둘을 합치는 일이다.</div>
+  <p>다음 페이지에서 우리는 그 두 장바구니가 어떤 사물로 이루어져 있는지를 그린다.</p>
+  <div class="hai-page-number">— 39 —</div>
+</section>
+
+<!-- 40 / 32. cart domain -->
+<section class="hai-page">
+  <h1>32. Cart 도메인</h1>
+  <p>도메인은 세 클래스다. Cart, CartItem, CartFactory.</p>
+  <img class="hai-figure" data-mermaid="class-cart" alt="Cart, CartItem, CartFactory의 관계">
+  <div class="hai-figure-caption">그림 5. 장바구니의 클래스 지도</div>
+  <p>Cart는 한 사람의 장바구니 한 개. CartItem은 그 장바구니 안에 든 한 줄(어떤 책 몇 권). CartFactory는 손님인지 회원인지를 보고 알맞은 Cart를 가져오는 작은 일꾼이다.</p>
+  <p>우리는 두 가지 결정에 마음을 쓴다. 첫째, 합계 계산은 어디서 하는가. 둘째, 장바구니가 비었다는 사실은 어떻게 다루는가.</p>
+  <p>합계는 Cart 안에서 한다. 컨트롤러도, 템플릿도 가격을 더하지 않는다. 가격을 더하는 일은 도메인의 책임이다. 그래야 같은 답을 어디서나 얻는다. 비었다는 사실은 다음 장에서 상태로 다룬다.</p>
+  <div class="hai-page-number">— 40 —</div>
+</section>
+
+<!-- 41 / 33. cart state -->
+<section class="hai-page">
+  <h1>33. 장바구니의 상태</h1>
+  <p>장바구니 한 개는 시간을 따라 이런 자리들을 옮겨 다닌다.</p>
+  <img class="hai-figure" data-mermaid="state-cart" alt="장바구니 상태 다이어그램">
+  <div class="hai-figure-caption">그림 6. 한 장바구니가 거치는 자리들</div>
+  <p>비어 있다가, 한 권을 담으면 채워진다. 결제로 들어가면 잠깐 잠금되고, 결제가 끝나면 주문이 된다. 결제를 취소하면 다시 채워진 상태로 돌아온다.</p>
+  <p>이 그림은 단순해 보이지만, 코드에서 두 가지 일을 막는다. 결제 중인 장바구니에 새 책을 담는 일과, 이미 주문이 된 장바구니를 다시 결제하는 일이다. 우리는 코드로 이 그림을 지킬 것이다.</p>
+  <p>심포니에는 Workflow 컴포넌트라는 더 정교한 도구가 있다. 6부에서 주문 상태를 다룰 때 부른다. 장바구니에는 단순한 status 컬럼으로 시작한다.</p>
+  <div class="hai-page-number">— 41 —</div>
+</section>
+
+<!-- 42 / 34. CartFactory -->
+<section class="hai-page">
+  <h1>34. CartFactory — 손님과 회원</h1>
+  <p>장바구니를 가져오는 길은 한 곳으로 모아 둔다.</p>
+<pre><code>// src/Cart/CartFactory.php
+namespace App\Cart;
+
+use App\Entity\Cart;
+use App\Entity\User;
+use App\Repository\CartRepository;
+use Symfony\Component\HttpFoundation\RequestStack;
+
+class CartFactory
+{
+    public function __construct(
+        private CartRepository $carts,
+        private RequestStack $requests,
+    ) {}
+
+    public function current(?User $user): Cart
+    {
+        if ($user) {
+            return $this-&gt;carts-&gt;findActiveFor($user)
+                ?? $this-&gt;carts-&gt;openFor($user);
+        }
+        $session = $this-&gt;requests-&gt;getSession();
+        $id = $session-&gt;get('cart_id');
+        return $id
+            ? $this-&gt;carts-&gt;find($id) ?? $this-&gt;newGuest($session)
+            : $this-&gt;newGuest($session);
+    }
+}</code></pre>
+  <p>이 한 클래스가 “지금 이 사람의 장바구니”를 한 줄로 답한다. 컨트롤러는 더 이상 손님인지 회원인지를 묻지 않는다.</p>
+  <div class="hai-page-number">— 42 —</div>
+</section>
+
+<!-- 43 / 35. add -->
+<section class="hai-page">
+  <h1>35. 담기</h1>
+<pre><code>class AddToCartController extends AbstractController
+{
+    #[Route('/cart/add/{slug}',
+        name: 'cart_add', methods: ['POST'])]
+    public function __invoke(
+        string $slug,
+        Request $request,
+        ProductRepository $products,
+        CartFactory $factory,
+        EntityManagerInterface $em,
+    ): Response {
+        $product = $products-&gt;findBySlug($slug);
+        if (!$product) {
+            throw $this-&gt;createNotFoundException();
+        }
+        $qty = max(1, (int) $request-&gt;request-&gt;get('qty', 1));
+
+        $cart = $factory-&gt;current($this-&gt;getUser());
+        $cart-&gt;addItem($product, $qty);
+
+        $em-&gt;persist($cart);
+        $em-&gt;flush();
+
+        $this-&gt;addFlash('success', '장바구니에 담았습니다.');
+        return $this-&gt;redirectToRoute('cart_show');
+    }
+}</code></pre>
+  <p>담는 일의 핵심은 한 줄, <code>$cart-&gt;addItem($product, $qty)</code>이다. 같은 책을 두 번 담으면 수량만 늘린다. 그 결정은 Cart 안에서 한다. 컨트롤러는 모르는 일이다.</p>
+  <div class="hai-page-number">— 43 —</div>
+</section>
+
+<!-- 44 / 36. remove and update -->
+<section class="hai-page">
+  <h1>36. 빼기와 수량 변경</h1>
+<pre><code>class UpdateCartController extends AbstractController
+{
+    #[Route('/cart/update', name: 'cart_update',
+        methods: ['POST'])]
+    public function __invoke(
+        Request $request,
+        CartFactory $factory,
+        EntityManagerInterface $em,
+    ): Response {
+        $cart = $factory-&gt;current($this-&gt;getUser());
+        $changes = $request-&gt;request-&gt;all('qty');
+
+        foreach ($changes as $itemId =&gt; $qty) {
+            $cart-&gt;setQuantity((int) $itemId, (int) $qty);
+        }
+
+        $em-&gt;flush();
+        $this-&gt;addFlash('success', '장바구니를 갱신했습니다.');
+        return $this-&gt;redirectToRoute('cart_show');
+    }
+}</code></pre>
+  <p>수량을 0으로 바꾸면 자동으로 빠진다. 그 결정도 Cart 안에서 한다. 컨트롤러는 폼이 적은 그대로를 도메인에 넘기기만 한다.</p>
+  <p>이 패턴이 익숙해지면, 컨트롤러는 점점 짧아지고 도메인이 점점 두꺼워진다. 그 두꺼움이 우리가 이 가게에서 가진 “논리”다.</p>
+  <div class="hai-page-number">— 44 —</div>
+</section>
+
+<!-- 45 / 37. money -->
+<section class="hai-page">
+  <h1>37. 합계 계산 — Money 객체</h1>
+  <p>가격을 <code>int</code>로 다루는 일은 처음에는 편하다. 곧 미세한 오류가 보이기 시작한다. 0.1+0.2가 0.3이 아니라는 사실. 그래서 우리는 작은 Money 클래스를 둔다.</p>
+<pre><code>// src/Money/Krw.php
+namespace App\Money;
+
+final readonly class Krw
+{
+    public function __construct(public int $amount) {}
+
+    public static function zero(): self { return new self(0); }
+
+    public function add(Krw $other): self
+    {
+        return new self($this-&gt;amount + $other-&gt;amount);
+    }
+
+    public function multiply(int $n): self
+    {
+        return new self($this-&gt;amount * $n);
+    }
+
+    public function format(): string
+    {
+        return number_format($this-&gt;amount).'원';
+    }
+}</code></pre>
+  <p>Cart의 <code>totalKrw()</code>는 이제 정수 대신 Krw를 반환할 수 있다. 화폐를 정수로 가지면서도 의미를 잃지 않는 방법이다.</p>
+  <p>한국 원화에서는 소수점이 거의 등장하지 않으므로 <code>int</code>로 충분하다. 다국어 통화로 가게가 자라면 그때 BCMath를 부른다.</p>
+  <div class="hai-page-number">— 45 —</div>
+</section>
+
+<!-- 46 / 38. cart merge -->
+<section class="hai-page">
+  <h1>38. 장바구니 머지</h1>
+  <p>로그인하는 순간, 손님 장바구니가 회원 장바구니로 옮겨가야 한다. 이벤트로 부드럽게 처리한다.</p>
+<pre><code>// src/EventListener/MergeCartOnLogin.php
+namespace App\EventListener;
+
+use App\Cart\CartFactory;
+use App\Entity\User;
+use Symfony\Component\EventDispatcher\Attribute\AsEventListener;
+use Symfony\Component\HttpFoundation\RequestStack;
+use Symfony\Component\Security\Http\Event\InteractiveLoginEvent;
+
+#[AsEventListener]
+final class MergeCartOnLogin
+{
+    public function __construct(
+        private CartFactory $factory,
+        private RequestStack $requests,
+    ) {}
+
+    public function __invoke(InteractiveLoginEvent $event): void
+    {
+        $user = $event-&gt;getAuthenticationToken()-&gt;getUser();
+        if (!$user instanceof User) return;
+
+        $session = $this-&gt;requests-&gt;getSession();
+        $guestId = $session-&gt;get('cart_id');
+        if ($guestId) {
+            $this-&gt;factory-&gt;mergeGuestIntoUser($guestId, $user);
+            $session-&gt;remove('cart_id');
+        }
+    }
+}</code></pre>
+  <p>로그인 이벤트가 한 번 일어날 때마다, 이 작은 클래스가 깨어나서 머지를 한다. 컨트롤러는 모르는 일이다.</p>
+  <div class="hai-page-number">— 46 —</div>
+</section>
+
+<!-- 47 / 39. mini cart -->
+<section class="hai-page">
+  <h1>39. 미니 카트 위젯</h1>
+  <p>헤더에 항상 작은 장바구니 표시가 떠 있어야 한다. 매 컨트롤러에서 직접 셈을 하면 일이 두 배가 된다. Twig 함수를 만든다.</p>
+<pre><code>// src/Twig/CartExtension.php
+namespace App\Twig;
+
+use App\Cart\CartFactory;
+use Symfony\Bundle\SecurityBundle\Security;
+use Twig\Extension\AbstractExtension;
+use Twig\TwigFunction;
+
+class CartExtension extends AbstractExtension
+{
+    public function __construct(
+        private CartFactory $factory,
+        private Security $security,
+    ) {}
+
+    public function getFunctions(): array
+    {
+        return [
+            new TwigFunction('cart_count', $this-&gt;count(...)),
+        ];
+    }
+
+    public function count(): int
+    {
+        $cart = $this-&gt;factory-&gt;current(
+            $this-&gt;security-&gt;getUser(),
+        );
+        return $cart-&gt;itemCount();
+    }
+}</code></pre>
+  <p>이제 어디서든 <code>{{ cart_count() }}</code>을 부르기만 하면 된다. 라라벨의 <code>@inject</code> + Blade와 비슷한 감각이다.</p>
+  <div class="hai-page-number">— 47 —</div>
+</section>
+
+<!-- 48 / 40. empty cart kindness -->
+<section class="hai-page">
+  <h1>40. 빈 장바구니의 친절</h1>
+  <p>장바구니가 빈 페이지를 본 손님은 다음 한 걸음을 알고 싶어 한다. 빈 화면이 단호한 거절처럼 보이지 않게 적자.</p>
+<pre><code>{# templates/cart/show.html.twig #}
+{% extends 'base.html.twig' %}
+{% block body %}
+  &lt;h1&gt;장바구니&lt;/h1&gt;
+  {% if cart.itemCount == 0 %}
+    &lt;div class="empty"&gt;
+      &lt;p&gt;아직 담은 책이 없어요.&lt;/p&gt;
+      &lt;p&gt;
+        &lt;a href="{{ path('catalog') }}"&gt;진열대로 가기&lt;/a&gt;
+      &lt;/p&gt;
+    &lt;/div&gt;
+  {% else %}
+    &lt;form method="post" action="{{ path('cart_update') }}"&gt;
+      {% for item in cart.items %}
+        {{ include('cart/_row.html.twig', {item: item}) }}
+      {% endfor %}
+      &lt;p class="total"&gt;
+        합계 {{ cart.totalKrw|number_format }}원
+      &lt;/p&gt;
+      &lt;button&gt;주문으로&lt;/button&gt;
+    &lt;/form&gt;
+  {% endif %}
+{% endblock %}</code></pre>
+  <p>빈 장바구니는 막다른 길이 아니라, 다른 길로 향하는 표지판이어야 한다. 그 작은 친절이 가게의 인격이다.</p>
+  <div class="hai-page-number">— 48 —</div>
+</section>
+
+<!-- 49 / 41. stock guard -->
+<section class="hai-page">
+  <h1>41. 재고를 흘리지 않게</h1>
+  <p>장바구니에 담긴 수량이 재고보다 많으면 어떻게 할까. 두 가지 결정이 있다. 담는 순간 막거나, 결제 직전에 막거나.</p>
+  <p>이 책방은 결제 직전에 막는다. 담는 일은 가벼워야 하고, 결제는 신중해야 하기 때문이다. 도메인 안에서.</p>
+<pre><code>class Cart
+{
+    /**
+     * @return CartItem[] 재고가 부족한 항목들
+     */
+    public function itemsExceedingStock(): array
+    {
+        $bad = [];
+        foreach ($this-&gt;items as $item) {
+            if ($item-&gt;quantity &gt; $item-&gt;product-&gt;getStock()) {
+                $bad[] = $item;
+            }
+        }
+        return $bad;
+    }
+}</code></pre>
+  <p>결제 컨트롤러는 첫 줄에서 이 메서드를 부르고, 비어 있지 않으면 친절한 메시지와 함께 장바구니로 돌려보낸다. 도메인이 답하고, 컨트롤러는 그 답을 따른다.</p>
+  <div class="hai-page-number">— 49 —</div>
+</section>
+
+<!-- 50 / part 5 divider -->
+<section class="hai-page hai-divider">
+  <h1>5부</h1>
+  <div class="hai-divider-subtitle">사람과 자물쇠</div>
+</section>
+
+<!-- 51 / 42. security landscape -->
+<section class="hai-page">
+  <h1>42. Symfony Security 풍경</h1>
+  <p>심포니의 보안은 네 사물로 이루어져 있다.</p>
+  <img class="hai-figure" data-mermaid="class-security" alt="User, Authenticator, Voter의 관계">
+  <div class="hai-figure-caption">그림 7. 자물쇠를 만드는 네 사물</div>
+  <p><code>User</code>는 누구인지를 담는 모델. <code>PasswordHasher</code>는 비밀번호를 단방향으로 굳히는 도구. <code>Authenticator</code>는 들어오는 요청을 보고 “이 사람은 누구다”를 결정한다. <code>Voter</code>는 “이 사람이 이 일을 해도 되는가”를 결정한다.</p>
+  <p>라라벨의 Auth와 Gate가 한 가족이라면, 심포니에서는 그 둘이 두 클래스로 나뉘어 자란다. 인증과 인가의 분리. 처음에는 번거롭지만, 큰 가게가 되면 이 분리가 코드를 가볍게 만든다.</p>
+  <p><code>Firewall</code>은 그 모든 일이 일어나는 무대다. 어느 URL이 어느 인증을 쓸지를 적은 무대 설계도다.</p>
+  <div class="hai-page-number">— 51 —</div>
+</section>
+
+<!-- 52 / 43. user entity -->
+<section class="hai-page">
+  <h1>43. User 엔티티</h1>
+  <p><code>make:user</code>로 골격을 만든다. 라라벨의 <code>php artisan make:user</code>와 같은 손이다.</p>
+<pre><code>php bin/console make:user</code></pre>
+<pre><code>#[ORM\Entity]
+class User implements UserInterface, PasswordAuthenticatedUserInterface
+{
+    #[ORM\Id, ORM\GeneratedValue, ORM\Column]
+    private ?int $id = null;
+
+    #[ORM\Column(length: 180, unique: true)]
+    private string $email = '';
+
+    #[ORM\Column]
+    private array $roles = [];
+
+    #[ORM\Column]
+    private string $password = '';
+
+    public function getRoles(): array
+    {
+        $roles = $this-&gt;roles;
+        $roles[] = 'ROLE_USER';
+        return array_unique($roles);
+    }
+
+    public function getUserIdentifier(): string
+    {
+        return $this-&gt;email;
+    }
+}</code></pre>
+  <p>두 인터페이스가 약속을 정의한다. <code>UserInterface</code>는 “이 객체는 사용자다”, <code>PasswordAuthenticatedUserInterface</code>는 “이 사용자는 비밀번호로 들어온다”.</p>
+  <div class="hai-page-number">— 52 —</div>
+</section>
+
+<!-- 53 / 44. password hashing -->
+<section class="hai-page">
+  <h1>44. 비밀번호 해싱</h1>
+  <p>비밀번호를 평문으로 저장하는 것은 가게 문을 열어 두는 일이다. 심포니에는 <code>PasswordHasher</code>가 있다.</p>
+<pre><code>use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
+
+class RegisterController extends AbstractController
+{
+    public function __invoke(
+        Request $request,
+        UserPasswordHasherInterface $hasher,
+        EntityManagerInterface $em,
+    ): Response {
+        $user = new User();
+        $form = $this-&gt;createForm(RegisterType::class, $user);
+        $form-&gt;handleRequest($request);
+
+        if ($form-&gt;isSubmitted() &amp;&amp; $form-&gt;isValid()) {
+            $plain = $form-&gt;get('plainPassword')-&gt;getData();
+            $user-&gt;setPassword($hasher-&gt;hashPassword($user, $plain));
+            $em-&gt;persist($user);
+            $em-&gt;flush();
+            return $this-&gt;redirectToRoute('login');
+        }
+        // ...
+    }
+}</code></pre>
+  <p>해싱 알고리즘은 <code>config/packages/security.php</code>에서 한 줄로 정한다. 기본은 자동(<code>auto</code>)이며, PHP가 권하는 해시를 그때그때 고른다. 라라벨의 <code>Hash::make()</code>와 같은 일이다.</p>
+  <div class="hai-page-number">— 53 —</div>
+</section>
+
+<!-- 54 / 45. register form -->
+<section class="hai-page">
+  <h1>45. 회원가입 폼</h1>
+<pre><code>// src/Form/RegisterType.php
 namespace App\Form;
 
-use App\Entity\Book;
+use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints as Assert;
 
-class BookType extends AbstractType
+class RegisterType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $b, array $opts): void
     {
-        $b-&gt;add('title', TextType::class, ['label' =&gt; '제목'])
-          -&gt;add('author', TextType::class, ['label' =&gt; '저자'])
-          -&gt;add('status', ChoiceType::class, [
-              'label' =&gt; '상태',
-              'choices' =&gt; [
-                  '읽고 싶다' =&gt; 'want_to_read',
-                  '읽는 중'   =&gt; 'reading',
-                  '다 읽음'   =&gt; 'finished',
+        $b-&gt;add('email', EmailType::class, ['label' =&gt; '이메일'])
+          -&gt;add('plainPassword', RepeatedType::class, [
+              'type' =&gt; PasswordType::class,
+              'mapped' =&gt; false,
+              'first_options' =&gt; ['label' =&gt; '비밀번호'],
+              'second_options' =&gt; ['label' =&gt; '비밀번호 확인'],
+              'constraints' =&gt; [
+                  new Assert\NotBlank(),
+                  new Assert\Length(min: 8),
               ],
           ]);
     }
 
     public function configureOptions(OptionsResolver $r): void
     {
-        $r-&gt;setDefaults(['data_class' =&gt; Book::class]);
+        $r-&gt;setDefaults(['data_class' =&gt; User::class]);
     }
 }</code></pre>
-  <div class="hai-page-number">— 19 —</div>
+  <p><code>mapped: false</code>는 “이 필드는 엔티티에 저장하지 마라”는 뜻. 평문 비밀번호가 그대로 데이터베이스에 들어가지 않게 막는 작은 약속이다.</p>
+  <div class="hai-page-number">— 54 —</div>
 </section>
 
-<!-- 20 / ch15 — form lifecycle (sequence diagram) -->
+<!-- 55 / 46. login form -->
 <section class="hai-page">
-  <h1>15. 폼의 일생</h1>
-  <p>폼이 어떻게 흘러가는지 한 장으로 보자.</p>
-  <img class="hai-figure" data-mermaid="seq-form" alt="폼 제출에서 저장까지의 시퀀스">
-  <div class="hai-figure-caption">그림 5. 폼이 도는 한 바퀴</div>
-  <p>사용자가 <code>POST</code>로 폼을 보내면, 컨트롤러는 그 요청을 폼 객체에 넘긴다. 폼은 데이터를 채우고, <code>Validator</code>에게 검증을 맡긴다. 검증이 통과하면 컨트롤러는 <code>Doctrine</code>에게 저장을 부탁하고, 사용자를 목록 페이지로 보낸다. 통과하지 못했다면, 같은 화면에 오류와 함께 폼을 다시 보여준다.</p>
-  <p>이 모든 일을 라라벨에서는 <code>FormRequest</code>와 <code>validator</code>가 나누어 했다. 심포니에서는 폼 자체가 두 일을 함께 한다. 그래서 <code>handleRequest($request)</code> 한 줄이면, 그 안의 모든 일이 일어난다.</p>
-  <div class="hai-page-number">— 20 —</div>
-</section>
-
-<!-- 21 / ch16 — validation + flash -->
-<section class="hai-page">
-  <h1>16. 검증과 작은 친절</h1>
-  <p>검증 규칙은 엔티티 자체에 둔다.</p>
-<pre><code>use Symfony\Component\Validator\Constraints as Assert;
-
-class Book
+  <h1>46. 로그인 폼</h1>
+  <p>심포니 8에서는 폼 로그인을 한 명령어로 만든다.</p>
+<pre><code>php bin/console make:security:form-login</code></pre>
+  <p>이 명령어가 <code>SecurityController</code>, <code>login.html.twig</code>, 그리고 <code>config/packages/security.php</code>의 firewall을 자동으로 갱신한다. 컨트롤러는 이렇게 생겼다.</p>
+<pre><code>class SecurityController extends AbstractController
 {
-    #[ORM\Column(length: 200)]
-    #[Assert\NotBlank(message: '제목이 필요합니다')]
-    #[Assert\Length(max: 200)]
-    private string $title = '';
+    #[Route(path: '/login', name: 'login')]
+    public function login(AuthenticationUtils $utils): Response
+    {
+        return $this-&gt;render('security/login.html.twig', [
+            'last_username' =&gt; $utils-&gt;getLastUsername(),
+            'error' =&gt; $utils-&gt;getLastAuthenticationError(),
+        ]);
+    }
+
+    #[Route(path: '/logout', name: 'logout')]
+    public function logout(): never
+    {
+        throw new \LogicException('intercepted by firewall');
+    }
 }</code></pre>
-  <p>규칙이 데이터의 자리에 있으니, 어느 폼에서 쓰이든 같은 규칙이 따라간다. 한 곳에 적었지만 모든 곳에서 통한다.</p>
-  <p>검증이 끝난 뒤 사용자에게 작은 친절을 더하자. 한 줄짜리 알림이다.</p>
-<pre><code>$this-&gt;addFlash('success', '책 한 권을 더했습니다.');
-return $this-&gt;redirectToRoute('book_list');</code></pre>
-  <p>다음 페이지에서 Twig은 그 알림을 꺼내어 보여줄 수 있다.</p>
-<pre><code>{% for label, msgs in app.flashes %}
-  {% for m in msgs %}&lt;div class="alert"&gt;{{ m }}&lt;/div&gt;{% endfor %}
-{% endfor %}</code></pre>
-  <div class="hai-page-number">— 21 —</div>
+  <p>로그인 폼이 실제로 일을 처리하지 않는다는 점에 주목하자. 폼은 그저 input을 보여주고, 실제 인증은 firewall이 가로챈다. 로그아웃도 마찬가지다.</p>
+  <div class="hai-page-number">— 55 —</div>
 </section>
 
-<!-- 22 / ch17 — edit & delete -->
+<!-- 56 / 47. firewall -->
 <section class="hai-page">
-  <h1>17. 수정과 삭제</h1>
-  <p>수정과 삭제는 새 책을 더하는 일과 닮았다. 다른 한 가지는 어떤 책을 다루는지 분명히 짚어야 한다는 점이다.</p>
-<pre><code>class EditBookController extends AbstractController
+  <h1>47. firewall.yaml 핵심</h1>
+  <p>firewall은 어느 URL이 어떻게 인증되는지를 적는 무대 설계도다. 심포니 8은 PHP로 적는다.</p>
+<pre><code>// config/packages/security.php
+use Symfony\Config\SecurityConfig;
+
+return static function (SecurityConfig $sec) {
+    $sec-&gt;passwordHasher(PasswordAuthenticatedUserInterface::class)
+        -&gt;algorithm('auto');
+
+    $sec-&gt;provider('app_user_provider')
+        -&gt;entity()
+        -&gt;class(User::class)
+        -&gt;property('email');
+
+    $main = $sec-&gt;firewall('main');
+    $main-&gt;lazy(true)
+         -&gt;provider('app_user_provider')
+         -&gt;formLogin()
+            -&gt;loginPath('login')
+            -&gt;checkPath('login')
+            -&gt;defaultTargetPath('home');
+    $main-&gt;logout()-&gt;path('logout');
+
+    $sec-&gt;accessControl()
+        -&gt;path('^/admin')-&gt;roles(['ROLE_ADMIN']);
+};</code></pre>
+  <p><code>lazy: true</code>는 “진짜로 사용자가 필요할 때만 세션을 깨워라”는 뜻. 익명 페이지의 속도가 빨라진다.</p>
+  <div class="hai-page-number">— 56 —</div>
+</section>
+
+<!-- 57 / 48. roles -->
+<section class="hai-page">
+  <h1>48. ROLE 관리</h1>
+  <p>ROLE은 한 사용자에게 붙는 작은 깃발이다. <code>ROLE_USER</code>는 가입한 사람 모두, <code>ROLE_ADMIN</code>은 가게 주인. 우리 책방은 두 가지면 충분하다.</p>
+  <p>ROLE은 계층을 가질 수 있다. <code>config/packages/security.php</code>에서.</p>
+<pre><code>$sec-&gt;roleHierarchy('ROLE_ADMIN', ['ROLE_USER']);
+$sec-&gt;roleHierarchy('ROLE_OWNER', ['ROLE_ADMIN']);</code></pre>
+  <p>이 한 줄이면 <code>ROLE_ADMIN</code>을 가진 사람은 자동으로 <code>ROLE_USER</code>이기도 하다. 권한이 늘어날수록 위로 올라가는 모양이다.</p>
+  <p>새 사용자가 가입할 때는 <code>ROLE_USER</code>가 자동으로 붙는다(우리 User의 <code>getRoles()</code>를 떠올리자). 첫 번째 관리자는 콘솔로 만든다.</p>
+<pre><code>php bin/console app:promote-admin admin@slow.book</code></pre>
+  <p>그 명령어는 우리가 직접 만들 것이다. 7부에서 보자.</p>
+  <div class="hai-page-number">— 57 —</div>
+</section>
+
+<!-- 58 / 49. IsGranted -->
+<section class="hai-page">
+  <h1>49. #[IsGranted]</h1>
+  <p>컨트롤러 메서드 위에 한 줄 속성을 더하면 권한이 강제된다.</p>
+<pre><code>use Symfony\Component\Security\Http\Attribute\IsGranted;
+
+class AdminProductController extends AbstractController
 {
-    #[Route('/books/{id}/edit', name: 'book_edit')]
+    #[Route('/admin/products/new', name: 'admin_product_new')]
+    #[IsGranted('ROLE_ADMIN')]
+    public function __invoke(/* ... */): Response
+    {
+        // ROLE_ADMIN이 아니면 이 코드는 절대 실행되지 않는다
+    }
+}</code></pre>
+  <p><code>#[IsGranted]</code>는 클래스 위에도, 메서드 위에도 둘 수 있다. 클래스 전체를 잠그고 싶다면 클래스 위에 둔다. 라라벨의 <code>middleware('auth')</code>와 같은 손이다.</p>
+  <p>인자도 함께 줄 수 있다. <code>#[IsGranted('ROLE_ADMIN', 'product')]</code>처럼 두 번째 인자를 주면 그 인자가 Voter에게 전달된다. Voter는 다음 페이지에서 만난다.</p>
+  <div class="hai-page-number">— 58 —</div>
+</section>
+
+<!-- 59 / 50. Voter -->
+<section class="hai-page">
+  <h1>50. Voter — 도메인 권한</h1>
+  <p>“이 사람이 이 주문을 볼 수 있는가” 같은 질문은 ROLE 하나로는 답할 수 없다. 그 주문이 그 사람의 것인지 알아야 하기 때문이다. 그 답을 적는 곳이 Voter다.</p>
+<pre><code>// src/Security/OrderVoter.php
+namespace App\Security;
+
+use App\Entity\Order;
+use App\Entity\User;
+use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
+use Symfony\Component\Security\Core\Authorization\Voter\Voter;
+
+class OrderVoter extends Voter
+{
+    public const VIEW = 'view';
+
+    protected function supports(string $att, mixed $subject): bool
+    {
+        return $att === self::VIEW &amp;&amp; $subject instanceof Order;
+    }
+
+    protected function voteOnAttribute(
+        string $att, mixed $subject, TokenInterface $token,
+    ): bool {
+        $user = $token-&gt;getUser();
+        if (!$user instanceof User) return false;
+        return $subject-&gt;getCustomer()-&gt;getId() === $user-&gt;getId();
+    }
+}</code></pre>
+  <p>컨트롤러에서는 한 줄로 묻는다.</p>
+<pre><code>$this-&gt;denyAccessUnlessGranted('view', $order);</code></pre>
+  <div class="hai-page-number">— 59 —</div>
+</section>
+
+<!-- 60 / 51. password reset -->
+<section class="hai-page">
+  <h1>51. 비밀번호 재설정</h1>
+  <p>비밀번호 재설정의 흐름은 다음과 같다.</p>
+  <img class="hai-figure" data-mermaid="seq-password-reset" alt="비밀번호 재설정 시퀀스">
+  <div class="hai-figure-caption">그림 8. 잊은 비밀번호를 다시 만나는 길</div>
+  <p>두 가지 결정에 마음을 쓰자.</p>
+  <p>첫째, 이메일이 데이터베이스에 없을 때도 “이메일로 보냈다”고 답한다. 그래야 공격자가 회원의 이메일을 추측해 알아낼 수 없다. 작은 거짓말이지만 친절한 거짓말이다.</p>
+  <p>둘째, 토큰의 수명은 1시간 정도가 좋다. 너무 길면 위험하고, 너무 짧으면 메일이 도착하기 전에 만료된다. 토큰은 한 번 쓰면 즉시 무효가 되어야 한다.</p>
+  <p>심포니는 <code>symfonycasts/reset-password-bundle</code>을 권한다. 위의 두 결정을 자동으로 처리한다. 우리가 직접 적어도 좋다. 그 코드는 단지 위의 시퀀스를 그대로 적는 일이다.</p>
+  <div class="hai-page-number">— 60 —</div>
+</section>
+
+<!-- 61 / 52. logout & session -->
+<section class="hai-page">
+  <h1>52. 로그아웃과 세션</h1>
+  <p>로그아웃은 firewall이 잡는다. 우리는 라우트만 걸어 두면 된다.</p>
+<pre><code>$main-&gt;logout()
+     -&gt;path('logout')
+     -&gt;target('home')
+     -&gt;invalidateSession(true);</code></pre>
+  <p><code>invalidateSession</code>은 로그아웃하면서 세션 전체를 비운다. 손님 장바구니가 남으면 곤란하다. 비워야 한다.</p>
+  <p>세션의 수명은 <code>config/packages/framework.php</code>에서 정한다.</p>
+<pre><code>$framework-&gt;session()
+    -&gt;cookieLifetime(0)        // 브라우저 닫으면 사라짐
+    -&gt;cookieSameSite('lax')
+    -&gt;cookieSecure(true);       // https에서만</code></pre>
+  <p>'기억하기' 기능을 더하고 싶다면 <code>rememberMe</code>를 firewall에 적는다. 이 책에서는 다루지 않는다. 짧은 책의 미덕은 빠진 부분에 있다.</p>
+  <div class="hai-page-number">— 61 —</div>
+</section>
+
+<!-- 62 / part 6 divider -->
+<section class="hai-page hai-divider">
+  <h1>6부</h1>
+  <div class="hai-divider-subtitle">주문</div>
+</section>
+
+<!-- 63 / 53. order domain -->
+<section class="hai-page">
+  <h1>53. Order 도메인</h1>
+  <p>주문은 장바구니의 다음 자리다. 시간이 멈춘 장바구니라고 생각해도 좋다.</p>
+  <img class="hai-figure" data-mermaid="class-order" alt="Order, OrderItem, Address, Payment 관계">
+  <div class="hai-figure-caption">그림 9. 한 주문을 이루는 사물들</div>
+  <p>네 사물이 있다. Order는 주문 자체. OrderItem은 그 주문의 한 줄. Address는 배송지. Payment는 결제 기록. 이 네 가지가 함께 움직인다.</p>
+  <p>한 가지 약속에 마음을 쓰자. <strong>OrderItem은 그 시점의 가격을 자기 안에 담는다.</strong> 책의 가격이 나중에 바뀌어도, 그 주문의 줄에는 옛 가격이 남아 있다. 이 작은 결정이 회계의 순결함을 지킨다.</p>
+  <p>장바구니에서는 가격을 Product에서 매번 꺼냈다. 주문에서는 OrderItem이 자기 안에 가격을 가진다. 시간이 멈췄기 때문이다.</p>
+  <div class="hai-page-number">— 63 —</div>
+</section>
+
+<!-- 64 / 54. ER order -->
+<section class="hai-page">
+  <h1>54. ER — 주문 데이터</h1>
+  <img class="hai-figure" data-mermaid="er-order" alt="주문 테이블의 ER 다이어그램">
+  <div class="hai-figure-caption">그림 10. 주문 데이터의 모양</div>
+  <p>네 테이블, 세 외래 키. 한 사용자가 여러 주문을 하고, 한 주문은 여러 줄을 가지고, 한 주문은 한 배송지로 향한다. 결제는 0개 혹은 1개. 결제를 하지 못한 채 취소된 주문도 우리는 데이터로 남긴다.</p>
+  <p><code>unit_price_krw</code>가 <code>order_item</code>에 있는 점에 주목하자. 이 컬럼이 우리가 53쪽에서 했던 약속을 데이터베이스의 자리로 옮긴다. 회계가 열흘 뒤에도 같은 답을 낸다.</p>
+  <p>마이그레이션은 우리가 적은 엔티티에서 자동으로 만들어진다. 손으로 SQL을 적지 않는다. 다만 인덱스 한두 개는 직접 더하는 편이 좋다. <code>ix_order_user_id</code>, <code>ix_order_status</code>가 그것이다. 8부에서 본다.</p>
+  <div class="hai-page-number">— 64 —</div>
+</section>
+
+<!-- 65 / 55. order state -->
+<section class="hai-page">
+  <h1>55. 주문의 상태</h1>
+  <img class="hai-figure" data-mermaid="state-order" alt="주문 상태 다이어그램">
+  <div class="hai-figure-caption">그림 11. 한 주문이 거치는 자리들</div>
+  <p>주문 한 건은 보통 다섯 자리를 거친다. <code>pending</code>(만들어졌지만 결제 전), <code>paid</code>(결제 완료), <code>shipped</code>(배송 시작), <code>delivered</code>(도착), <code>cancelled</code>(취소). 환불은 <code>refunding</code>을 거쳐 <code>refunded</code>로 간다.</p>
+  <p>이 그림에서 중요한 두 가지를 짚는다.</p>
+  <p>첫째, <code>pending</code>에서 <code>shipped</code>로 직접 갈 수 없다. 결제 없이 배송하지 않는다. 코드가 이 약속을 깨는 일을 막아야 한다.</p>
+  <p>둘째, <code>delivered</code>에서 <code>cancelled</code>로 갈 수 없다. 도착한 주문은 환불의 길로만 되돌릴 수 있다.</p>
+  <p>이 두 가지를 코드로 지킬 도구가 심포니의 <code>Workflow</code> 컴포넌트다. 61쪽에서 만난다.</p>
+  <div class="hai-page-number">— 65 —</div>
+</section>
+
+<!-- 66 / 56. multi-step form -->
+<section class="hai-page">
+  <h1>56. 다단계 폼</h1>
+  <p>주문은 보통 세 단계로 받는다. 주소, 결제 수단, 확인. 한 화면에 다 적으면 손님이 멀미를 한다.</p>
+  <img class="hai-figure" data-mermaid="seq-checkout" alt="체크아웃의 시퀀스">
+  <div class="hai-figure-caption">그림 12. 주문이 이루어지는 길</div>
+  <p>각 단계마다 폼이 나오고, 그 폼의 값이 세션 또는 임시 데이터베이스에 저장된다. 마지막 “확인” 버튼이 눌렸을 때 비로소 Order 객체가 만들어진다.</p>
+  <p>심포니 8에는 다단계 폼을 위한 <code>Form Wizard</code>라는 새 도구가 있다. 작은 책방인 우리는 손으로 짠다. 단계가 셋이고, 각 단계마다 컨트롤러 하나면 된다. 단계의 진행 상태는 세션에 둔다.</p>
+  <div class="hai-callout">기억해 둘 단어: idempotency. 손님이 “확인”을 두 번 누르면 주문이 두 번 들어가지 않도록, 마지막 단계에는 토큰을 둔다. 트랜잭션과 함께 해결한다.</div>
+  <div class="hai-page-number">— 66 —</div>
+</section>
+
+<!-- 67 / 57. address form -->
+<section class="hai-page">
+  <h1>57. 배송 주소 폼</h1>
+<pre><code>// src/Form/AddressType.php
+class AddressType extends AbstractType
+{
+    public function buildForm(FormBuilderInterface $b, array $opts): void
+    {
+        $b-&gt;add('recipient', TextType::class, [
+            'label' =&gt; '받는 분', 'constraints' =&gt; [new NotBlank()],
+          ])
+          -&gt;add('phone', TextType::class, [
+            'label' =&gt; '연락처', 'constraints' =&gt; [
+              new NotBlank(),
+              new Regex('/^[0-9-]{9,15}$/'),
+            ],
+          ])
+          -&gt;add('zip', TextType::class, [
+            'label' =&gt; '우편번호',
+            'constraints' =&gt; [new Regex('/^\d{5}$/')],
+          ])
+          -&gt;add('line1', TextType::class, ['label' =&gt; '주소'])
+          -&gt;add('line2', TextType::class, [
+            'label' =&gt; '상세 주소', 'required' =&gt; false,
+          ]);
+    }
+
+    public function configureOptions(OptionsResolver $r): void
+    {
+        $r-&gt;setDefaults(['data_class' =&gt; Address::class]);
+    }
+}</code></pre>
+  <p>제출이 끝나면 <code>$session-&gt;set('checkout_address', $form-&gt;getData())</code>로 잠시 보관한다. Address는 직렬화 가능한 단순한 객체여야 한다.</p>
+  <div class="hai-page-number">— 67 —</div>
+</section>
+
+<!-- 68 / 58. payment form -->
+<section class="hai-page">
+  <h1>58. 결제 폼</h1>
+  <p>실제 결제 게이트웨이 연동은 책의 영역을 넘는다. 여기서는 가짜 결제 게이트웨이로 흐름만 짠다.</p>
+<pre><code>// src/Payment/FakeGateway.php
+namespace App\Payment;
+
+final class FakeGateway implements GatewayInterface
+{
+    public function charge(int $amountKrw, string $method): Charge
+    {
+        // 진짜라면 Stripe, Toss, IamPort 같은 곳을 부른다
+        usleep(200_000); // 잠깐 기다리는 척
+        return new Charge(
+            id: bin2hex(random_bytes(8)),
+            status: 'success',
+            amountKrw: $amountKrw,
+            method: $method,
+        );
+    }
+}</code></pre>
+  <p>인터페이스를 두는 이유는, 진짜 게이트웨이로 바꿀 때 이 클래스만 갈아 끼우면 되기 때문이다. 컨트롤러는 <code>GatewayInterface</code>만 받는다. 의존성 역전이라는 옛 약속이 여기서도 통한다.</p>
+  <p>현실의 결제는 비동기 콜백을 받는다. 그 콜백 처리는 9부의 운영 장에서 짧게 짚는다.</p>
+  <div class="hai-page-number">— 68 —</div>
+</section>
+
+<!-- 69 / 59. cart to order -->
+<section class="hai-page">
+  <h1>59. Cart에서 Order로</h1>
+  <p>주문을 만드는 일은 한 메서드에 모은다.</p>
+<pre><code>// src/Order/PlaceOrder.php
+namespace App\Order;
+
+final readonly class PlaceOrder
+{
+    public function __construct(
+        private EntityManagerInterface $em,
+        private GatewayInterface $gateway,
+    ) {}
+
     public function __invoke(
-        Book $book,
-        Request $request,
-        EntityManagerInterface $em,
+        Cart $cart, Address $address, string $method,
+    ): Order {
+        $order = new Order($cart-&gt;getOwner(), $address);
+        foreach ($cart-&gt;getItems() as $item) {
+            $order-&gt;addItem(
+                $item-&gt;getProduct(),
+                $item-&gt;getQuantity(),
+                $item-&gt;getProduct()-&gt;getPriceKrw(),
+            );
+        }
+        $charge = $this-&gt;gateway-&gt;charge($order-&gt;totalKrw(), $method);
+        $order-&gt;markPaid($charge);
+
+        $this-&gt;em-&gt;persist($order);
+        $cart-&gt;markOrdered();
+        $this-&gt;em-&gt;flush();
+        return $order;
+    }
+}</code></pre>
+  <p>이 클래스는 한 번 호출에 한 번의 일만 한다. 컨트롤러는 이 클래스를 받기만 하면 된다.</p>
+  <div class="hai-page-number">— 69 —</div>
+</section>
+
+<!-- 70 / 60. transaction -->
+<section class="hai-page">
+  <h1>60. 트랜잭션</h1>
+  <p>59쪽의 <code>PlaceOrder</code>는 미세하게 위험하다. 결제는 성공했는데 데이터베이스 저장이 실패하면, 손님은 돈을 냈는데 주문이 없다. 트랜잭션으로 묶자.</p>
+<pre><code>public function __invoke(Cart $cart, Address $a, string $m): Order
+{
+    return $this-&gt;em-&gt;wrapInTransaction(
+        function () use ($cart, $a, $m) {
+            $order = new Order($cart-&gt;getOwner(), $a);
+            // ... 위와 동일 ...
+            return $order;
+        },
+    );
+}</code></pre>
+  <p><code>wrapInTransaction</code>은 콜백 안의 모든 일을 한 트랜잭션으로 묶는다. 예외가 나면 자동으로 롤백한다. 라라벨의 <code>DB::transaction()</code>과 같은 일이다.</p>
+  <p>다만 결제 호출은 트랜잭션 밖이 더 옳다. 결제는 외부 시스템에 영향을 주는데, 트랜잭션 안에 두면 우리 데이터베이스가 잠긴 동안 외부 호출을 기다리게 된다. 결제는 트랜잭션 직전에, 저장만 트랜잭션 안에. 작은 차이지만 자주 본다.</p>
+  <div class="hai-page-number">— 70 —</div>
+</section>
+
+<!-- 71 / 61. workflow -->
+<section class="hai-page">
+  <h1>61. Workflow 컴포넌트</h1>
+  <p>주문의 상태 전이는 우리가 그림으로 그렸다. 그 그림을 코드로 적는 도구가 Workflow다.</p>
+<pre><code>// config/packages/workflow.php
+$framework-&gt;workflows()-&gt;workflows('order')
+    -&gt;type('state_machine')
+    -&gt;markingStore()-&gt;property('status')
+    -&gt;supports([Order::class])
+    -&gt;places(['pending','paid','shipped','delivered','cancelled'])
+    -&gt;transitions([
+        'pay' =&gt; ['from' =&gt; 'pending', 'to' =&gt; 'paid'],
+        'cancel' =&gt; ['from' =&gt; 'pending', 'to' =&gt; 'cancelled'],
+        'ship' =&gt; ['from' =&gt; 'paid', 'to' =&gt; 'shipped'],
+        'deliver' =&gt; ['from' =&gt; 'shipped', 'to' =&gt; 'delivered'],
+    ]);</code></pre>
+<pre><code>use Symfony\Component\Workflow\WorkflowInterface;
+
+class ShipOrder
+{
+    public function __construct(
+        private WorkflowInterface $orderWorkflow,
+    ) {}
+
+    public function __invoke(Order $order): void
+    {
+        $this-&gt;orderWorkflow-&gt;apply($order, 'ship');
+    }
+}</code></pre>
+  <p><code>apply</code>는 잘못된 전이를 자동으로 막는다. <code>delivered</code>인 주문에 <code>cancel</code>을 시도하면 예외가 난다.</p>
+  <div class="hai-page-number">— 71 —</div>
+</section>
+
+<!-- 72 / 62. mailer -->
+<section class="hai-page">
+  <h1>62. 주문 메일 (Mailer)</h1>
+  <p>주문이 들어오면 손님에게 확인 메일을 보낸다.</p>
+<pre><code>use Symfony\Bridge\Twig\Mime\TemplatedEmail;
+use Symfony\Component\Mailer\MailerInterface;
+
+class SendOrderConfirmation
+{
+    public function __construct(private MailerInterface $mailer) {}
+
+    public function __invoke(Order $order): void
+    {
+        $email = (new TemplatedEmail())
+            -&gt;from('hello@slow.book')
+            -&gt;to($order-&gt;getCustomer()-&gt;getEmail())
+            -&gt;subject('주문이 접수되었습니다.')
+            -&gt;htmlTemplate('email/order_confirmation.html.twig')
+            -&gt;context(['order' =&gt; $order]);
+        $this-&gt;mailer-&gt;send($email);
+    }
+}</code></pre>
+  <p>개발 환경에서는 <code>MAILER_DSN=null://null</code>으로 두면 콘솔에 로그만 남고 실제로는 발송되지 않는다. 운영에서는 SMTP, SendGrid, Mailgun 등을 한 줄로 바꾼다. 라라벨의 <code>Mail::to()</code>와 거의 같은 손이다.</p>
+  <div class="hai-page-number">— 72 —</div>
+</section>
+
+<!-- 73 / 63. messenger async -->
+<section class="hai-page">
+  <h1>63. Messenger — 비동기</h1>
+  <p>메일 발송을 컨트롤러 안에서 하면, 손님이 “확인” 버튼을 누른 뒤 1초쯤 멈춰 보인다. 메일은 큐로 흘리는 편이 옳다.</p>
+<pre><code>// src/Message/SendOrderConfirmation.php
+namespace App\Message;
+
+final readonly class SendOrderConfirmation
+{
+    public function __construct(public int $orderId) {}
+}</code></pre>
+<pre><code>// src/MessageHandler/SendOrderConfirmationHandler.php
+use Symfony\Component\Messenger\Attribute\AsMessageHandler;
+
+#[AsMessageHandler]
+final class SendOrderConfirmationHandler
+{
+    public function __construct(
+        private OrderRepository $orders,
+        private MailerInterface $mailer,
+    ) {}
+
+    public function __invoke(SendOrderConfirmation $msg): void
+    {
+        $order = $this-&gt;orders-&gt;find($msg-&gt;orderId);
+        // ... TemplatedEmail 만들어서 보내기 ...
+    }
+}</code></pre>
+<pre><code>$bus-&gt;dispatch(new SendOrderConfirmation($order-&gt;getId()));</code></pre>
+  <p>메시지를 던지면 즉시 반환되고, 백그라운드 워커가 그걸 처리한다. 라라벨의 <code>Job::dispatch()</code>와 같은 일이다.</p>
+  <div class="hai-page-number">— 73 —</div>
+</section>
+
+<!-- 74 / 64. scheduler -->
+<section class="hai-page">
+  <h1>64. Scheduler — 자동화</h1>
+  <p>매일 새벽에 “3일 이상 미배송 주문이 있는지” 살펴서 우리에게 메일을 보내자. Scheduler가 그 일을 한다.</p>
+<pre><code>use Symfony\Component\Scheduler\Attribute\AsSchedule;
+use Symfony\Component\Scheduler\RecurringMessage;
+use Symfony\Component\Scheduler\Schedule;
+use Symfony\Component\Scheduler\ScheduleProviderInterface;
+
+#[AsSchedule('default')]
+final class DailySchedule implements ScheduleProviderInterface
+{
+    public function getSchedule(): Schedule
+    {
+        return (new Schedule())-&gt;add(
+            RecurringMessage::cron(
+                '0 6 * * *',
+                new CheckUnshippedOrders(),
+            ),
+        );
+    }
+}</code></pre>
+  <p><code>CheckUnshippedOrders</code>는 우리가 만든 메시지다. 매일 아침 6시에 큐로 들어가고, 핸들러가 그것을 받아서 늦은 주문 목록을 만들어 우리에게 보낸다. 라라벨의 <code>Schedule::call()-&gt;daily()</code>와 같은 일이다.</p>
+  <p>워커는 <code>php bin/console messenger:consume scheduler_default</code>로 띄운다. 운영에서는 systemd 또는 supervisor로 살린다.</p>
+  <div class="hai-page-number">— 74 —</div>
+</section>
+
+<!-- 75 / 65. order history -->
+<section class="hai-page">
+  <h1>65. 주문 내역 보기</h1>
+  <p>손님은 자기의 주문을 다시 보고 싶어 한다. 우리는 50쪽의 OrderVoter를 다시 부른다.</p>
+<pre><code>class ListMyOrdersController extends AbstractController
+{
+    #[Route('/orders', name: 'orders')]
+    #[IsGranted('ROLE_USER')]
+    public function __invoke(OrderRepository $orders): Response
+    {
+        return $this-&gt;render('order/index.html.twig', [
+            'orders' =&gt; $orders-&gt;findBy(
+                ['customer' =&gt; $this-&gt;getUser()],
+                ['placedAt' =&gt; 'DESC'],
+            ),
+        ]);
+    }
+}
+
+class ShowOrderController extends AbstractController
+{
+    #[Route('/orders/{id}', name: 'order_show')]
+    public function __invoke(Order $order): Response
+    {
+        $this-&gt;denyAccessUnlessGranted('view', $order);
+        return $this-&gt;render('order/show.html.twig', [
+            'order' =&gt; $order,
+        ]);
+    }
+}</code></pre>
+  <p>두 컨트롤러가 깔끔히 권한을 분리한다. “내 주문 목록”은 ROLE_USER 전체가 볼 수 있고, “이 주문 하나”는 그 주문의 주인만 볼 수 있다.</p>
+  <div class="hai-page-number">— 75 —</div>
+</section>
+
+<!-- 76 / part 7 divider -->
+<section class="hai-page hai-divider">
+  <h1>7부</h1>
+  <div class="hai-divider-subtitle">관리자</div>
+</section>
+
+<!-- 77 / 66. two admins -->
+<section class="hai-page">
+  <h1>66. 관리자의 두 길</h1>
+  <p>관리자 화면에는 두 가지 길이 있다. 직접 만들 것인가, EasyAdmin을 부를 것인가.</p>
+  <p>EasyAdmin은 짧은 시간에 잘 작동하는 어드민을 만들어 준다. 엔티티마다 자동으로 목록·생성·수정·삭제 페이지가 생긴다. 라라벨에서 Filament나 Backpack을 썼던 경험을 떠올리면 된다.</p>
+  <p>이 책은 직접 만드는 길을 간다. 이유는 두 가지다. 첫째, 일이 적은 가게에서 외부 패키지 한 개는 무겁다. 둘째, 직접 만들면 어드민이 어떻게 생겼는지를 알게 된다. EasyAdmin은 그 다음에 부르자.</p>
+  <p>다만 이런 결정은 가게마다 다르다. 직원이 늘면 EasyAdmin이 더 빠르게 답을 준다. 둘을 비교한 표 하나를 적어 두자.</p>
+  <table>
+    <tr><th>—</th><th>직접 만들기</th><th>EasyAdmin</th></tr>
+    <tr><td>초기 시간</td><td>오래</td><td>짧게</td></tr>
+    <tr><td>커스터마이즈</td><td>자유</td><td>제약</td></tr>
+    <tr><td>코드량</td><td>많음</td><td>적음</td></tr>
+    <tr><td>학습</td><td>심포니</td><td>EasyAdmin</td></tr>
+  </table>
+  <div class="hai-page-number">— 76 —</div>
+</section>
+
+<!-- 78 / 67. admin routes -->
+<section class="hai-page">
+  <h1>67. 어드민 라우트와 firewall</h1>
+  <p>어드민의 모든 URL은 <code>/admin</code>으로 시작하게 한다. firewall에서 한 줄로 잠근다.</p>
+<pre><code>$sec-&gt;accessControl()
+    -&gt;path('^/admin')
+    -&gt;roles(['ROLE_ADMIN']);</code></pre>
+  <p>이제 <code>/admin/...</code>은 <code>ROLE_ADMIN</code> 없이는 접근할 수 없다. 한 줄이 한 우주를 잠근다.</p>
+  <p>컨트롤러는 단순한 invokable 클래스로 적는다. 클래스 위에 한 번만 권한을 적어 두면 메서드별로 적을 일이 없다.</p>
+<pre><code>#[Route('/admin/products', name: 'admin_product_index')]
+#[IsGranted('ROLE_ADMIN')]
+class AdminProductIndexController extends AbstractController
+{
+    public function __invoke(ProductRepository $products): Response
+    {
+        return $this-&gt;render('admin/product/index.html.twig', [
+            'products' =&gt; $products-&gt;findBy([],
+                ['createdAt' =&gt; 'DESC']),
+        ]);
+    }
+}</code></pre>
+  <p>이 패턴이 모든 어드민 컨트롤러의 뼈대다. 다음 페이지부터는 그 뼈대 위에 살을 붙인다.</p>
+  <div class="hai-page-number">— 77 —</div>
+</section>
+
+<!-- 79 / 68. product CRUD -->
+<section class="hai-page">
+  <h1>68. 상품 CRUD</h1>
+<pre><code>#[Route('/admin/products/new', name: 'admin_product_new')]
+#[IsGranted('ROLE_ADMIN')]
+class AdminProductNewController extends AbstractController
+{
+    public function __invoke(
+        Request $request, EntityManagerInterface $em,
     ): Response {
-        $form = $this-&gt;createForm(BookType::class, $book);
+        $product = new Product();
+        $form = $this-&gt;createForm(ProductType::class, $product);
         $form-&gt;handleRequest($request);
         if ($form-&gt;isSubmitted() &amp;&amp; $form-&gt;isValid()) {
+            $product-&gt;setSlug(slugify($product-&gt;getName()));
+            $em-&gt;persist($product);
             $em-&gt;flush();
-            $this-&gt;addFlash('success', '저장했습니다.');
-            return $this-&gt;redirectToRoute('book_list');
+            $this-&gt;addFlash('success', '책을 추가했습니다.');
+            return $this-&gt;redirectToRoute('admin_product_index');
         }
-        return $this-&gt;render('book/edit.html.twig', [
+        return $this-&gt;render('admin/product/new.html.twig', [
             'form' =&gt; $form,
         ]);
     }
 }</code></pre>
-  <p><code>Book $book</code>이라고만 적어 두면 심포니가 알아서 <code>id</code>를 보고 데이터베이스에서 꺼낸다. 라라벨의 라우트 모델 바인딩과 같다. 삭제는 더 단순하다. <code>$em-&gt;remove($book); $em-&gt;flush();</code> 두 줄이면 끝이다.</p>
-  <div class="hai-page-number">— 22 —</div>
+  <p>수정과 삭제는 같은 모양에서 인자만 바뀐다. 수정은 <code>Product $product</code>를 받고, 삭제는 두 줄. <code>$em-&gt;remove($product); $em-&gt;flush();</code> CRUD 네 글자가 네 컨트롤러로 옮겨 간 셈이다.</p>
+  <div class="hai-page-number">— 78 —</div>
 </section>
 
-<!-- 23 / ch18 — state diagram -->
+<!-- 80 / 69. image upload -->
 <section class="hai-page">
-  <h1>18. 책의 일생</h1>
-  <p>책 한 권의 상태는 시간에 따라 옮겨 다닌다. 그 옮김을 한 장에 그리면 다음과 같다.</p>
-  <img class="hai-figure" data-mermaid="state-book" alt="Book 상태 다이어그램">
-  <div class="hai-figure-caption">그림 6. 한 권의 책이 거치는 자리들</div>
-  <p>이 다이어그램은 곧 우리가 위에서 만든 <code>ChoiceType</code>의 선택지였다. 그저 데이터의 한 칸이라기보다, 한 권의 책이 우리 곁에서 보내는 시간의 모양이다.</p>
-  <p>심포니에는 <code>Workflow</code>라는 더 정교한 도구가 있다. 상태 전이를 코드로 명시하고, 잘못된 전이를 막는 일을 자동으로 한다. 하지만 우리는 30쪽 안에 있다. 지금은 한 컬럼으로 충분하다. 도구는 필요할 때 부르는 편이 좋다.</p>
-  <div class="hai-page-number">— 23 —</div>
+  <h1>69. 이미지 업로드</h1>
+  <p>책 표지를 업로드하는 일은 작은 일이지만 마음을 써야 한다. 보안과 저장소 문제가 함께 있기 때문이다.</p>
+<pre><code>$b-&gt;add('cover', FileType::class, [
+    'mapped' =&gt; false,
+    'required' =&gt; false,
+    'constraints' =&gt; [
+        new File([
+            'maxSize' =&gt; '4M',
+            'mimeTypes' =&gt; ['image/jpeg', 'image/png', 'image/webp'],
+            'mimeTypesMessage' =&gt; '이미지 파일만 올릴 수 있습니다.',
+        ]),
+    ],
+]);</code></pre>
+<pre><code>$file = $form-&gt;get('cover')-&gt;getData();
+if ($file) {
+    $name = bin2hex(random_bytes(8)).'.'.$file-&gt;guessExtension();
+    $file-&gt;move(
+        $this-&gt;getParameter('kernel.project_dir').'/public/uploads',
+        $name,
+    );
+    $product-&gt;addImage(new ProductImage($name, 0));
+}</code></pre>
+  <p>파일 이름은 절대 손님이 준 이름을 그대로 쓰지 않는다. 임의의 16글자로 새로 지어 준다. 디렉터리 트래버설을 막는 작은 약속이다.</p>
+  <p>가게가 자라면 VichUploaderBundle을 부르거나, S3로 옮긴다. 처음에는 <code>public/uploads</code>로 충분하다.</p>
+  <div class="hai-page-number">— 79 —</div>
 </section>
 
-<!-- 24 / ch19 — AssetMapper -->
+<!-- 81 / 70. stock management -->
 <section class="hai-page">
-  <h1>19. AssetMapper</h1>
+  <h1>70. 재고 관리</h1>
+  <p>재고는 한 컬럼이지만 다루는 데 마음을 써야 한다. 두 사람이 동시에 마지막 한 권을 사면 어떻게 될까.</p>
+<pre><code>// src/Stock/StockKeeper.php
+namespace App\Stock;
+
+use App\Entity\Product;
+use Doctrine\ORM\EntityManagerInterface;
+
+final readonly class StockKeeper
+{
+    public function __construct(private EntityManagerInterface $em) {}
+
+    public function decrement(Product $p, int $qty): void
+    {
+        $this-&gt;em-&gt;wrapInTransaction(function () use ($p, $qty) {
+            $this-&gt;em-&gt;lock($p, LockMode::PESSIMISTIC_WRITE);
+            $this-&gt;em-&gt;refresh($p);
+            if ($p-&gt;getStock() &lt; $qty) {
+                throw new InsufficientStock($p);
+            }
+            $p-&gt;setStock($p-&gt;getStock() - $qty);
+        });
+    }
+}</code></pre>
+  <p><code>PESSIMISTIC_WRITE</code> 락은 “내가 다 쓸 때까지 다른 사람은 이 행을 건드릴 수 없다”는 약속이다. 동시에 들어온 두 주문 중 하나는 락을 기다린다. 마지막 한 권은 둘 중 한 사람만 산다.</p>
+  <p>재고는 그래서 가벼운 컬럼이 아니다. 책방의 정직성이 이 한 클래스에 모인다.</p>
+  <div class="hai-page-number">— 80 —</div>
+</section>
+
+<!-- 82 / 71. order status change -->
+<section class="hai-page">
+  <h1>71. 주문 상태 변경</h1>
+  <p>관리자는 주문을 “배송 중”으로 옮기고, 도착하면 “배송 완료”로 옮긴다. Workflow가 잘못된 전이를 막는다.</p>
+<pre><code>#[Route('/admin/orders/{id}/ship',
+    name: 'admin_order_ship', methods: ['POST'])]
+#[IsGranted('ROLE_ADMIN')]
+class AdminShipOrderController extends AbstractController
+{
+    public function __invoke(
+        Order $order,
+        WorkflowInterface $orderWorkflow,
+        EntityManagerInterface $em,
+        MessageBusInterface $bus,
+    ): Response {
+        if (!$orderWorkflow-&gt;can($order, 'ship')) {
+            $this-&gt;addFlash('error', '배송으로 보낼 수 없는 주문입니다.');
+            return $this-&gt;redirectToRoute('admin_order_show',
+                ['id' =&gt; $order-&gt;getId()]);
+        }
+        $orderWorkflow-&gt;apply($order, 'ship');
+        $em-&gt;flush();
+        $bus-&gt;dispatch(new SendShipNotification($order-&gt;getId()));
+        return $this-&gt;redirectToRoute('admin_order_show',
+            ['id' =&gt; $order-&gt;getId()]);
+    }
+}</code></pre>
+  <p>상태가 바뀐 직후에 메시지를 던지는 모양에 주목하자. 배송 알림 메일이 큐에 쌓이고, 화면은 즉시 다음 페이지로 간다.</p>
+  <div class="hai-page-number">— 81 —</div>
+</section>
+
+<!-- 83 / 72. role split -->
+<section class="hai-page">
+  <h1>72. 권한 분리 — ROLE_ADMIN과 그 너머</h1>
+  <p>가게가 자라면 “관리자”라는 한 깃발로는 부족해진다. 책을 등록하는 사람, 주문을 관리하는 사람, 정산을 보는 사람이 다른 사람이다. ROLE을 더 잘게 나누자.</p>
+<pre><code>$sec-&gt;roleHierarchy(
+    'ROLE_OWNER',
+    ['ROLE_ADMIN_ORDER', 'ROLE_ADMIN_PRODUCT', 'ROLE_ADMIN_BILLING'],
+);</code></pre>
+  <p>그러면 컨트롤러 위의 IsGranted도 더 정교해진다.</p>
+<pre><code>#[IsGranted('ROLE_ADMIN_PRODUCT')]
+class AdminProductNewController { /* ... */ }
+
+#[IsGranted('ROLE_ADMIN_ORDER')]
+class AdminShipOrderController { /* ... */ }</code></pre>
+  <p>“오너”는 모든 권한을 자동으로 가진다. “상품 담당자”는 주문을 만질 수 없다. 권한이 잘게 나뉘어도 한 사람에게 여러 역할을 줄 수 있다는 점에서 유연하다.</p>
+  <p>처음부터 이렇게 나눌 필요는 없다. 한 사람이 다 보는 작은 책방에서는 ROLE_ADMIN 하나면 된다. 조직이 커질 때 위의 한 줄을 더하면 된다.</p>
+  <div class="hai-page-number">— 82 —</div>
+</section>
+
+<!-- 84 / part 8 divider -->
+<section class="hai-page hai-divider">
+  <h1>8부</h1>
+  <div class="hai-divider-subtitle">화면</div>
+</section>
+
+<!-- 85 / 73. AssetMapper -->
+<section class="hai-page">
+  <h1>73. AssetMapper</h1>
   <p>라라벨에서 우리는 Vite를 만났다. 자바스크립트와 CSS를 한 데 묶어 빠르게 보내는 도구다. 심포니 8은 비슷한 자리에 <code>AssetMapper</code>를 둔다. 다른 점이 있다면, 빌드 단계가 없다는 것이다.</p>
 <pre><code>php bin/console importmap:require simple-stylesheets</code></pre>
   <p>이 명령어 한 번이면 <code>assets/</code> 폴더와 <code>importmap.php</code> 파일이 그 라이브러리를 알게 된다. 우리가 적는 자바스크립트는 그대로 브라우저에 가고, 브라우저는 ESM과 importmap을 이해한다.</p>
 <pre><code>// assets/app.js
 import './styles/app.css';
-
-document.addEventListener('DOMContentLoaded', () =&gt; {
-    console.log('독서 일지 시작.');
-});</code></pre>
-  <p>Twig에는 한 줄을 더한다.</p>
-<pre><code>{% block stylesheets %}
+import './controllers';
+console.log('느린 책방 시작.');</code></pre>
+<pre><code>{# templates/base.html.twig #}
+{% block stylesheets %}
   {{ importmap('app') }}
 {% endblock %}</code></pre>
-  <p>번들링이 없으니 빌드가 빠르다. 빠른 만큼 변화를 즉시 본다.</p>
-  <div class="hai-page-number">— 24 —</div>
+  <p>번들링이 없으니 빌드가 빠르다. 빠른 만큼 변화를 즉시 본다. 단, 라이브러리가 ESM을 지원해야 한다. 다행히 2026년의 자바스크립트 생태계 대부분이 그렇다.</p>
+  <div class="hai-page-number">— 85 —</div>
 </section>
 
-<!-- 25 / ch20 — console command -->
+<!-- 86 / 74. stimulus -->
 <section class="hai-page">
-  <h1>20. 콘솔 — 작은 자동화</h1>
-  <p>심포니 8부터는 콘솔 명령어도 invokable 클래스로 적을 수 있다. 보일러플레이트가 한층 줄었다.</p>
-<pre><code>// src/Command/ImportBooksCommand.php
-namespace App\Command;
+  <h1>74. Stimulus 컨트롤러</h1>
+  <p>Stimulus는 작은 자바스크립트 동작을 HTML에 묶는 도구다. “버튼을 누르면 …” 같은 일이 손에 잡힌다.</p>
+<pre><code>// assets/controllers/quantity_controller.js
+import { Controller } from '@hotwired/stimulus';
 
-use Symfony\Component\Console\Attribute\AsCommand;
-use Symfony\Component\Console\Style\SymfonyStyle;
+export default class extends Controller {
+  static targets = ['input'];
+  static values = { min: Number, max: Number };
 
-#[AsCommand(
-    name: 'books:import',
-    description: '책 목록을 CSV로 가져온다',
-)]
-class ImportBooksCommand
+  increment() {
+    const next = +this.inputTarget.value + 1;
+    if (next &lt;= this.maxValue) this.inputTarget.value = next;
+  }
+
+  decrement() {
+    const next = +this.inputTarget.value - 1;
+    if (next &gt;= this.minValue) this.inputTarget.value = next;
+  }
+}</code></pre>
+<pre><code>&lt;div data-controller="quantity"
+     data-quantity-min-value="1"
+     data-quantity-max-value="{{ p.stock }}"&gt;
+  &lt;button data-action="quantity#decrement"&gt;−&lt;/button&gt;
+  &lt;input data-quantity-target="input" value="1"&gt;
+  &lt;button data-action="quantity#increment"&gt;+&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+  <p>HTML이 동작을 알게 된다. JavaScript는 별도 파일에 그치고, 마크업은 그 동작을 가리킨다. 라라벨의 Alpine.js와 비슷한 자리에 있다.</p>
+  <div class="hai-page-number">— 86 —</div>
+</section>
+
+<!-- 87 / 75. live component -->
+<section class="hai-page">
+  <h1>75. Live Component — 검색 자동완성</h1>
+  <p>심포니 UX의 LiveComponent는 라이브와이어와 같은 발상을 PHP로 가져온 것이다. 자바스크립트를 거의 적지 않고도 살아 있는 컴포넌트를 만든다.</p>
+<pre><code>composer require symfony/ux-live-component</code></pre>
+<pre><code>// src/Twig/Components/SearchBar.php
+namespace App\Twig\Components;
+
+use App\Repository\ProductRepository;
+use Symfony\UX\LiveComponent\Attribute\AsLiveComponent;
+use Symfony\UX\LiveComponent\Attribute\LiveProp;
+use Symfony\UX\LiveComponent\DefaultActionTrait;
+
+#[AsLiveComponent]
+final class SearchBar
 {
-    public function __invoke(SymfonyStyle $io, string $file): int
+    use DefaultActionTrait;
+
+    #[LiveProp(writable: true)]
+    public string $query = '';
+
+    public function __construct(private ProductRepository $products) {}
+
+    public function getResults(): array
     {
-        if (!is_readable($file)) {
-            $io-&gt;error("파일을 열 수 없습니다: $file");
-            return 1;
-        }
-        $io-&gt;success("불러왔습니다.");
-        return 0;
+        return $this-&gt;query
+            ? $this-&gt;products-&gt;searchByKeyword($this-&gt;query)
+            : [];
     }
 }</code></pre>
-  <p>실행은 <code>php bin/console books:import data/books.csv</code>. 한 줄짜리 import 명령어가 생기면, 다음에는 그것을 매일 새벽에 한 번 부르는 일이 손에 잡힌다. 심포니의 <code>Scheduler</code>가 그 일을 돌봐 준다.</p>
-  <div class="hai-page-number">— 25 —</div>
+  <p>템플릿에서는 <code>&lt;twig:SearchBar /&gt;</code>로 부른다. 사용자가 입력할 때마다 서버가 새 결과를 그려서 그 자리만 갱신한다. 자바스크립트는 거의 없다.</p>
+  <div class="hai-page-number">— 87 —</div>
 </section>
 
-<!-- 26 / ch21 — run -->
+<!-- 88 / 76. turbo -->
 <section class="hai-page">
-  <h1>21. 띄워 보다</h1>
-  <p>이제 띄울 시간이다.</p>
-<pre><code>symfony serve</code></pre>
-  <p>콘솔에 보이는 <code>https://127.0.0.1:8000</code>을 따라가면 우리가 만든 첫 페이지가 있다. 빈 목록이 보일 것이다. <code>/books/new</code>로 가서 책 한 권을 입력하면 목록에 그 책이 자리 잡는다.</p>
-  <p>데이터베이스는 기본적으로 <code>var/data.db</code>라는 파일에 SQLite로 들어간다. 우리가 적은 모든 것이 그 파일 하나에 모인다. PostgreSQL이나 MySQL이 필요하다면 <code>.env</code>의 <code>DATABASE_URL</code>을 한 줄 바꾸면 된다.</p>
-<pre><code>DATABASE_URL="postgresql://app:secret@db:5432/app"</code></pre>
-  <p>라라벨의 <code>.env</code>와 거의 같은 자리에 거의 같은 일을 한다. 심포니의 좋은 점 중 하나는, 우리가 새로 외울 것이 그렇게 많지 않다는 사실이다.</p>
-  <div class="hai-callout">이쯤이면 우리의 독서 일지는 한 사람의 작은 친구가 될 만한 모양을 갖추었다.</div>
-  <div class="hai-page-number">— 26 —</div>
+  <h1>76. Turbo로 부드럽게</h1>
+  <p>Turbo는 페이지 이동을 부드럽게 한다. 클릭하면 전체 새로고침 대신, 변경된 부분만 바뀐다. 사용자에게는 SPA처럼 느껴지지만, 우리는 평범한 컨트롤러를 적는다.</p>
+<pre><code>composer require symfony/ux-turbo</code></pre>
+<pre><code>// assets/app.js
+import * as Turbo from '@hotwired/turbo';
+Turbo.start();</code></pre>
+  <p>이 두 줄이면 거의 모든 클릭이 부드러워진다. 폼 제출도 마찬가지다. 새로고침 없이 결과가 바뀐다.</p>
+  <p>다만 두 가지에 주의한다. 첫째, 자바스크립트로 직접 DOM을 만진 부분은 페이지 이동 후에도 살아 있어야 한다. <code>turbo:load</code> 이벤트를 듣자. 둘째, 외부 사이트로 가는 링크에는 <code>data-turbo="false"</code>를 둔다. Turbo가 가로채지 않게.</p>
+  <p>라라벨에서 Hotwire나 Inertia를 썼던 경험이 있다면, Turbo의 결은 익숙할 것이다. 다만 Turbo는 더 가볍다. 우리가 적는 코드는 평범한 트위그뿐이다.</p>
+  <div class="hai-page-number">— 88 —</div>
 </section>
 
-<!-- 27 / part 3 divider -->
+<!-- 89 / 77. image optimization -->
+<section class="hai-page">
+  <h1>77. 이미지 최적화</h1>
+  <p>책방의 표지는 가게의 얼굴이다. 그러나 표지가 무거우면 가게가 느려진다. 이미지를 한 번만 변환해 두자.</p>
+<pre><code>composer require liip/imagine-bundle</code></pre>
+<pre><code>// config/packages/liip_imagine.php
+$imagine-&gt;filterSets('thumb_360', [
+    'jpeg_quality' =&gt; 85,
+    'filters' =&gt; [
+        'thumbnail' =&gt; ['size' =&gt; [360, 480], 'mode' =&gt; 'outbound'],
+    ],
+]);
+$imagine-&gt;filterSets('cover_900', [
+    'jpeg_quality' =&gt; 85,
+    'filters' =&gt; [
+        'thumbnail' =&gt; ['size' =&gt; [900, 1200], 'mode' =&gt; 'outbound'],
+    ],
+]);</code></pre>
+<pre><code>{# 템플릿에서 #}
+&lt;img src="{{ asset('uploads/' ~ p.images[0].path)
+        |imagine_filter('thumb_360') }}"
+     alt="{{ p.name }}"&gt;</code></pre>
+  <p>처음 호출에서 변환된 파일이 만들어지고, 두 번째부터는 그 파일이 직접 서비스된다. 캐시는 <code>var/cache/imagine</code>에 쌓인다.</p>
+  <p>WebP 포맷을 더하면 화질을 거의 잃지 않으면서 30%쯤 작아진다. <code>format: webp</code>를 한 줄 더하면 된다.</p>
+  <div class="hai-page-number">— 89 —</div>
+</section>
+
+<!-- 90 / 78. translation -->
+<section class="hai-page">
+  <h1>78. 다국어</h1>
+  <p>가게가 자라서 영어를 함께 쓴다고 하자. 심포니의 Translation 컴포넌트가 도와준다.</p>
+<pre><code>// translations/messages.ko.yaml (또는 .php)
+return [
+    'cart.empty' =&gt; '아직 담은 책이 없어요.',
+    'cart.go_browse' =&gt; '진열대로 가기',
+];
+
+// translations/messages.en.yaml
+return [
+    'cart.empty' =&gt; 'No books in your cart yet.',
+    'cart.go_browse' =&gt; 'Browse the shelves',
+];</code></pre>
+<pre><code>{# 트위그에서 #}
+&lt;p&gt;{{ 'cart.empty'|trans }}&lt;/p&gt;
+&lt;a href="{{ path('catalog') }}"&gt;{{ 'cart.go_browse'|trans }}&lt;/a&gt;</code></pre>
+  <p>현재 로케일은 URL의 첫 부분(<code>/en/...</code>)이나 헤더로 결정한다. 라라벨의 Lang 파일과 거의 같은 모양이다.</p>
+  <p>다국어를 처음부터 도입할 필요는 없다. 가게가 한 나라에 머물 때는 하드코딩이 더 빠르다. 다만 그 가능성을 열어 두는 일은 어렵지 않다. 키를 미리 정해 두는 작은 습관이 그 길이다.</p>
+  <div class="hai-page-number">— 90 —</div>
+</section>
+
+<!-- 91 / part 9 divider -->
 <section class="hai-page hai-divider">
-  <h1>3부</h1>
-  <div class="hai-divider-subtitle">다음 한 걸음</div>
+  <h1>9부</h1>
+  <div class="hai-divider-subtitle">운영</div>
 </section>
 
-<!-- 28 / ch22 — laravel takeaways -->
+<!-- 92 / 79. cache -->
 <section class="hai-page">
-  <h1>22. 가져갈 직관, 두고 갈 습관</h1>
-  <p>라라벨에서 가져갈 만한 직관과, 한 번쯤 의심해 볼 습관을 정리한다.</p>
+  <h1>79. 캐시</h1>
+  <p>가게가 빨라지는 가장 짧은 길은 같은 답을 두 번 만들지 않는 일이다. 심포니의 Cache 컴포넌트가 그 일을 한다.</p>
+<pre><code>use Symfony\Contracts\Cache\CacheInterface;
+use Symfony\Contracts\Cache\ItemInterface;
+
+class FeaturedProducts
+{
+    public function __construct(
+        private CacheInterface $cache,
+        private ProductRepository $products,
+    ) {}
+
+    public function __invoke(): array
+    {
+        return $this-&gt;cache-&gt;get(
+            'featured.products',
+            function (ItemInterface $item) {
+                $item-&gt;expiresAfter(600); // 10분
+                return $this-&gt;products-&gt;findFeatured(8);
+            },
+        );
+    }
+}</code></pre>
+  <p>캐시 어댑터는 <code>config/packages/cache.php</code>에서 정한다. 개발에서는 파일, 운영에서는 Redis가 보통이다.</p>
+  <p>HTTP 캐시도 잊지 말자. <code>$response-&gt;setSharedMaxAge(60)</code> 한 줄이면 정적인 페이지가 1분 동안 CDN에 머무른다. 라라벨의 <code>Cache::remember()</code>와 같은 손이다.</p>
+  <div class="hai-page-number">— 92 —</div>
+</section>
+
+<!-- 93 / 80. logs -->
+<section class="hai-page">
+  <h1>80. 로그</h1>
+  <p>가게의 일을 기록하는 일은 가게의 정직성과 같다. 심포니는 Monolog를 쓴다. 라라벨과 같은 라이브러리다.</p>
+<pre><code>use Psr\Log\LoggerInterface;
+
+class PlaceOrder
+{
+    public function __construct(
+        private LoggerInterface $logger,
+        // ...
+    ) {}
+
+    public function __invoke(Cart $cart, /* ... */): Order
+    {
+        $this-&gt;logger-&gt;info('order.placing', [
+            'cart_id' =&gt; $cart-&gt;getId(),
+            'user_id' =&gt; $cart-&gt;getOwner()?-&gt;getId(),
+        ]);
+        // ...
+    }
+}</code></pre>
+  <p>채널을 나누면 로그가 정돈된다. <code>config/packages/monolog.php</code>에서.</p>
+<pre><code>$monolog-&gt;channel('order');
+$monolog-&gt;handler('order_file')
+    -&gt;type('rotating_file')
+    -&gt;path('%kernel.logs_dir%/order.log')
+    -&gt;maxFiles(14)
+    -&gt;channels()-&gt;elements(['order']);</code></pre>
+  <p>운영에서는 stdout으로 보내고 그 위에서 외부 도구가 모은다. 컨테이너의 시대에는 그쪽이 더 일반적이다.</p>
+  <div class="hai-page-number">— 93 —</div>
+</section>
+
+<!-- 94 / 81. tests -->
+<section class="hai-page">
+  <h1>81. 테스트</h1>
+  <p>테스트는 두 종류로 짠다. 단위와 기능. 단위는 도메인 클래스 하나의 약속을 검사한다. 기능은 컨트롤러를 통해 한 흐름 전체를 검사한다.</p>
+<pre><code>// tests/Cart/CartTest.php
+class CartTest extends TestCase
+{
+    public function test_adding_same_product_increments_quantity(): void
+    {
+        $cart = new Cart(new User('a@b.c'));
+        $book = new Product('느린 시', 12000);
+        $cart-&gt;addItem($book, 1);
+        $cart-&gt;addItem($book, 2);
+        $this-&gt;assertSame(3, $cart-&gt;quantityOf($book));
+        $this-&gt;assertSame(36000, $cart-&gt;totalKrw());
+    }
+}</code></pre>
+<pre><code>// tests/Catalog/CatalogControllerTest.php
+class CatalogControllerTest extends WebTestCase
+{
+    public function test_catalog_lists_products(): void
+    {
+        $client = static::createClient();
+        $client-&gt;request('GET', '/books');
+        $this-&gt;assertResponseIsSuccessful();
+        $this-&gt;assertSelectorTextContains('h1', '진열대');
+    }
+}</code></pre>
+  <p>실행은 <code>php bin/phpunit</code>. 라라벨의 <code>php artisan test</code>와 같은 손이다.</p>
+  <div class="hai-page-number">— 94 —</div>
+</section>
+
+<!-- 95 / 82. query perf -->
+<section class="hai-page">
+  <h1>82. 쿼리 성능</h1>
+  <p>가게가 자라면 쿼리가 느려지기 시작한다. 첫 의심은 항상 N+1이다.</p>
+  <p>예: 책 목록을 그릴 때 각 책의 첫 표지를 보여준다. 만약 표지가 lazy loading이라면, 책 12권에 13개의 쿼리가 나간다(목록 1 + 표지 12). 우리는 이걸 <code>JOIN FETCH</code>로 줄인다.</p>
+<pre><code>// ProductRepository
+public function paginate(int $page, int $perPage): array
+{
+    return $this-&gt;createQueryBuilder('p')
+        -&gt;leftJoin('p.images', 'i')-&gt;addSelect('i')
+        -&gt;orderBy('p.createdAt', 'DESC')
+        -&gt;setFirstResult(($page - 1) * $perPage)
+        -&gt;setMaxResults($perPage)
+        -&gt;getQuery()-&gt;getResult();
+}</code></pre>
+  <p><code>addSelect</code>가 핵심이다. 이미지를 함께 SELECT하지 않으면, JOIN만 걸렸을 뿐 N+1은 그대로 남는다.</p>
+  <p>심포니의 프로파일러는 한 페이지마다 몇 개의 쿼리가 나갔는지를 보여준다. 개발 환경에서 자주 들여다보자. 빨간 숫자가 보이면 거기가 우리의 다음 일이다.</p>
+  <p>인덱스는 자주 검색하는 컬럼에 둔다. <code>slug</code>, <code>email</code>처럼 unique한 컬럼은 자동으로 인덱스를 가진다. 그 외는 우리가 적는다.</p>
+  <div class="hai-page-number">— 95 —</div>
+</section>
+
+<!-- 96 / 83. security review -->
+<section class="hai-page">
+  <h1>83. 보안 검토</h1>
+  <p>가게의 문을 잠그기 전에, 다섯 가지를 점검한다.</p>
+  <h2>CSRF</h2>
+  <p>심포니의 폼은 자동으로 CSRF 토큰을 둔다. 폼 밖에서 POST를 받는 길(예: 자바스크립트로 만든 폼)에는 직접 토큰을 검사한다. <code>$this-&gt;isCsrfTokenValid('action', $token)</code>.</p>
+  <h2>XSS</h2>
+  <p>Twig은 기본으로 모든 출력을 이스케이프한다. <code>{{ ... }}</code>는 안전하다. <code>{{ ...|raw }}</code>는 위험하다.</p>
+  <h2>SQL 인젝션</h2>
+  <p>QueryBuilder의 자리표(<code>:q</code>)를 항상 쓴다. 변수를 SQL 문자열에 직접 끼워 넣지 않는다.</p>
+  <h2>비밀</h2>
+  <p>비밀은 <code>.env.local</code> 또는 환경변수. <code>git log</code>를 한 번 검색해 비밀이 새어 나가지 않았는지 확인한다.</p>
+  <h2>의존성</h2>
+  <p><code>symfony security:check</code> 또는 <code>composer audit</code>가 알려진 취약점을 알려준다. CI에서 매주 돌리자.</p>
+  <div class="hai-page-number">— 96 —</div>
+</section>
+
+<!-- 97 / 84. deploy -->
+<section class="hai-page">
+  <h1>84. 배포</h1>
+  <p>배포의 길은 여러 가지다. 짧은 가게에는 두 가지를 권한다.</p>
+  <h2>Symfony Cloud</h2>
+  <p><code>symfony cloud:deploy</code> 한 줄이면 끝. 빠르게 띄울 수 있고, 워커와 cron까지 한 번에 챙겨 준다. 작은 가게에 알맞다.</p>
+  <h2>Docker</h2>
+  <p>Dockerfile 한 장을 짜고, Caddy나 Nginx 뒤에 PHP-FPM을 둔다.</p>
+<pre><code># Dockerfile (요약)
+FROM php:8.5-fpm-alpine
+RUN install-php-extensions intl pdo_pgsql opcache
+COPY composer.json composer.lock ./
+RUN composer install --no-dev --optimize-autoloader
+COPY . .
+RUN php bin/console cache:warmup --env=prod
+CMD ["php-fpm"]</code></pre>
+  <p>Messenger 워커는 별개의 컨테이너로 띄운다. <code>php bin/console messenger:consume async --time-limit=3600</code>를 supervisor 또는 systemd로 살린다.</p>
+  <p>둘 다 어렵다면 첫 번째를 선택하자. 가게의 일은 책을 파는 일이지, 서버를 다스리는 일이 아니다.</p>
+  <div class="hai-page-number">— 97 —</div>
+</section>
+
+<!-- 98 / 85. monitoring -->
+<section class="hai-page">
+  <h1>85. 모니터링</h1>
+  <p>운영의 마지막 한 발은 모니터링이다. 가게가 도는 동안 무엇이 잘못되고 있는지를 보는 일이다.</p>
+  <p>세 가지를 본다.</p>
+  <p><strong>에러</strong>. Sentry 같은 서비스가 표준이다. 심포니는 한 줄이면 연결된다.</p>
+<pre><code>composer require sentry/sentry-symfony</code></pre>
+  <p><strong>응답 시간</strong>. New Relic, Datadog, 또는 단순히 액세스 로그를 본다. 95퍼센트 응답 시간이 1초를 넘으면 어딘가가 느린 것이다.</p>
+  <p><strong>큐 깊이</strong>. Messenger의 큐가 쌓이고 있다면 워커가 부족하다. <code>php bin/console messenger:stats</code>가 알려준다.</p>
+  <p>한 가지에 마음을 더하자. <strong>알림 피로</strong>. 모든 에러에 페이지를 받으면 우리는 곧 알림을 무시하게 된다. 정말 자다 일어날 만한 일에만 페이지를 받고, 나머지는 매일 아침 한 번 모아서 보자.</p>
+  <p>가장 좋은 모니터링은, 우리가 매일 한 번 가게를 사용해 보는 일이다.</p>
+  <div class="hai-page-number">— 98 —</div>
+</section>
+
+<!-- 99 / takeaways -->
+<section class="hai-page">
+  <h1>가져갈 직관 · 두고 갈 습관 · 더 깊은 방들</h1>
   <h2>가져갈 것</h2>
   <ul>
-    <li>컨트롤러는 얇아야 한다는 감각. 심포니에서도 같다.</li>
-    <li>라우트 모델 바인딩의 편안함. 심포니가 더 적극적으로 챙긴다.</li>
-    <li><code>.env</code>에 비밀을 두는 일. 같은 자리에 같은 약속이 있다.</li>
+    <li>컨트롤러는 얇아야 한다는 감각.</li>
+    <li>라우트 모델 바인딩의 편안함.</li>
+    <li><code>.env</code>에 비밀을 두는 일.</li>
     <li>마이그레이션을 코드와 함께 커밋하는 습관.</li>
+    <li>큐로 느린 일을 떼어 놓는 습관.</li>
   </ul>
   <h2>두고 갈 것</h2>
   <ul>
-    <li>정적 메서드로 모든 일을 끝내려는 버릇. 심포니는 정적이지 않다.</li>
-    <li><code>make:</code> 명령어를 외워서 쓰는 습관. 심포니에서는 무엇을 만들지가 더 중요하고, 어떻게 만들지는 도구가 답한다.</li>
-    <li>헬퍼가 자동으로 글로벌에 떠 있을 것이라는 기대. 심포니의 도구는 모두 import 한 번을 부른다.</li>
+    <li>정적 메서드로 모든 일을 끝내려는 버릇.</li>
+    <li><code>make:</code> 명령어를 외워서 쓰는 습관.</li>
+    <li>헬퍼가 자동으로 글로벌에 떠 있을 것이라는 기대.</li>
+    <li>모델이 모든 도메인 일을 맡는 활성 레코드의 직관.</li>
   </ul>
-  <p>가장 큰 변화는 마음의 자세다. 라라벨이 우리를 위해 결정해 주었다면, 심포니는 우리에게 결정을 묻는다. 첫 며칠은 답답할 수 있다. 그 답답함이 지나면, 우리는 우리만의 작은 도시를 가진 것이 된다.</p>
-  <div class="hai-page-number">— 28 —</div>
-</section>
-
-<!-- 29 / ch23 — further rooms -->
-<section class="hai-page">
-  <h1>23. 더 깊은 방들</h1>
-  <p>이 책 너머로 갈 만한 방들을 짚어 둔다.</p>
-  <p><strong>Security</strong>. 로그인과 권한을 다룬다. 라라벨의 <code>Auth</code> 자리에 해당하지만 더 유연하다. <code>make:user</code>와 <code>make:auth</code>로 시작하면 된다.</p>
-  <p><strong>Messenger</strong>. 큐와 비동기 작업이다. <code>App\Message\SendEmail</code> 같은 메시지를 만들고, 그것을 백그라운드에서 처리하게 한다. 라라벨의 <code>Job</code>과 같은 개념이다.</p>
-  <p><strong>Scheduler</strong>. 라라벨의 <code>Kernel::schedule()</code> 자리. 심포니에서는 <code>RecurringMessage</code>로 표현한다.</p>
-  <p><strong>Mailer와 Notifier</strong>. 메일은 <code>Mailer</code>, 슬랙이나 SMS는 <code>Notifier</code>. 라라벨의 <code>Mail</code>과 <code>Notification</code>이 한 패밀리로 나뉘어 자란 모습이다.</p>
-  <p><strong>Workflow</strong>. 23쪽에서 잠깐 언급한 그 컴포넌트다. 책의 상태가 더 복잡해진다면, 그때 부르자.</p>
+  <h2>더 깊은 방들</h2>
+  <p>Symfony Notifier(슬랙·SMS·푸시), API Platform(REST/GraphQL), Doctrine Migrations Diff와 customizing, EasyAdmin, Symfony UX의 컴포넌트(Map, Chartjs, Cropperjs), Profiler 분석, Blackfire 프로파일링, OpenSwoole 같은 비동기 런타임. 가게가 자라면 들어갈 방들이다.</p>
   <p>각 방에 들어갈 때마다 한 권의 책이 더 필요할 수 있다. 그러나 그 모든 방의 골격은 우리가 이미 본 것이다. 받고, 옮기고, 꺼내고, 실행하고, 알린다.</p>
-  <div class="hai-page-number">— 29 —</div>
+  <div class="hai-page-number">— 99 —</div>
 </section>
 
-<!-- 30 / closing + colophon -->
+<!-- 100 / closing + colophon -->
 <section class="hai-page">
   <h1>닫는 글 · 콜로폰</h1>
-  <p>서른 쪽이 짧다고 느꼈다면 그건 잘된 일이다. 책은 짧을수록 다시 펴게 되고, 다시 펴는 책일수록 친구가 된다.</p>
+  <p>백 쪽이 짧다고 느꼈다면 그건 잘된 일이다. 책은 짧을수록 다시 펴게 되고, 다시 펴는 책일수록 친구가 된다.</p>
   <p>심포니는 우리에게 묻는 도시다. 처음에는 묻는 일이 피곤하다. 점점 자기만의 답이 생기고, 그 답들이 모여서 우리가 만들고 싶은 모양이 된다. 라라벨이 길러 준 직관은, 그 답을 짧게 만든다.</p>
-  <p>이 책으로 만든 독서 일지가 누군가의 책장을 정리하는 데 한 줌이라도 도움이 되었다면, 그것으로 충분하다. 다음 책은 더 짧을 수도 있다.</p>
+  <p>이 책으로 만든 느린 책방이 누군가의 가게를 시작하는 데 한 줌이라도 도움이 되었다면, 그것으로 충분하다. 다음 책은 더 짧을 수도 있다.</p>
   <blockquote>— jaywoo, 2026년 5월</blockquote>
   <h2>콜로폰</h2>
   <table>
@@ -609,10 +2396,10 @@ class ImportBooksCommand
     <tr><th>코드</th><td>Roboto Mono</td></tr>
     <tr><th>조판</th><td>htmlasitis 0.1.0</td></tr>
     <tr><th>다이어그램</th><td>mermaid.js (PNG로 사전 렌더)</td></tr>
-    <tr><th>인쇄</th><td>A4 · 30면</td></tr>
+    <tr><th>인쇄</th><td>A4 · 100면</td></tr>
     <tr><th>저자</th><td>jaywoo · 2026</td></tr>
   </table>
-  <div class="hai-page-number">— 30 —</div>
+  <div class="hai-page-number">— 100 —</div>
 </section>
 
 </body>

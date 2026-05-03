@@ -87,8 +87,8 @@ console.log(`   single-file size:   ${sizeKb} kB`);
 
 rmSync(TMP, { recursive: true, force: true });
 
-if (pageCount !== 30) {
-  console.warn(`   warning: expected 30 pages, got ${pageCount}`);
+if (pageCount !== 100) {
+  console.warn(`   warning: expected 100 pages, got ${pageCount}`);
 }
 
 console.log('\n  build done. next: npm run pdf');

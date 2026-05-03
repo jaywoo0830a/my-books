@@ -1,0 +1,9 @@
+stateDiagram-v2
+  [*] --> Empty
+  Empty --> Filling: add first item
+  Filling --> Filling: add or change
+  Filling --> Empty: remove last item
+  Filling --> Checkingout: begin checkout
+  Checkingout --> Filling: cancel
+  Checkingout --> Ordered: payment ok
+  Ordered --> [*]
