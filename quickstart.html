@@ -131,7 +131,7 @@
   <h1>머리말</h1>
   <p>본서는 라라벨로 한 개 이상의 실 서비스를 출시한 PHP 개발자를 대상으로, 심포니 8.0 환경에서 작은 쇼핑몰을 1주일 내에 출시할 수 있는 최소 지식을 제공한다.</p>
   <h2>다루는 주제</h2>
-  <p>심포니 공식 문서가 \"핵심 컴포넌트\"로 분류하는 11개 주제를 한 프로젝트(작은 쇼핑몰) 안에서 일관된 코드로 보여준다.</p>
+  <p>심포니 공식 문서가 “핵심 컴포넌트”로 분류하는 11개 주제를 한 프로젝트(작은 쇼핑몰) 안에서 일관된 코드로 보여준다.</p>
   <ol>
     <li><strong>Doctrine</strong> — ORM, 마이그레이션, 픽스처, QueryBuilder</li>
     <li><strong>Forms</strong> — FormType, handleRequest, 다단계 폼 패턴</li>
@@ -152,9 +152,9 @@
     <li>PostgreSQL 16, Docker Compose v2</li>
   </ul>
   <h2>본서의 위치</h2>
-  <p>본서는 동일 시리즈의 100면 본권 <em>느린 책방을 짓다</em>의 압축판이다. 결제 게이트웨이 통합·다중 어드민·다국어·Workflow·Messenger 같은 심화 주제는 본권에서 다룬다. 본서는 \"한 권으로 끝내는 핵심\"을 목표로 한다.</p>
+  <p>본서는 동일 시리즈의 100면 본권 <em>느린 책방을 짓다</em>의 압축판이다. 결제 게이트웨이 통합·다중 어드민·다국어·Workflow·Messenger 같은 심화 주제는 본권에서 다룬다. 본서는 “한 권으로 끝내는 핵심”을 목표로 한다.</p>
   <h2>코드 표기</h2>
-  <p>모든 파일 경로는 프로젝트 루트 기준이다. 셸 명령은 <code>$</code> 프롬프트로 시작한다. 라라벨과 1:1 매핑이 가능한 지점은 \"라라벨 대응\" 표시로 함께 노출한다.</p>
+  <p>모든 파일 경로는 프로젝트 루트 기준이다. 셸 명령은 <code>$</code> 프롬프트로 시작한다. 라라벨과 1:1 매핑이 가능한 지점은 “라라벨 대응” 표시로 함께 노출한다.</p>
   <div class="hai-page-number">— 3 —</div>
 </section>
 
@@ -420,7 +420,7 @@ class Order {
 <!-- 12 / 2.3 migration -->
 <section class="hai-page">
   <h1>2.3 마이그레이션</h1>
-  <p>DoctrineMigrationsBundle은 \"엔티티 ↔ 스키마\" 차분을 자동으로 추출한다. 사용자가 SQL을 직접 작성하는 일은 거의 없다.</p>
+  <p>DoctrineMigrationsBundle은 “엔티티 ↔ 스키마” 차분을 자동으로 추출한다. 사용자가 SQL을 직접 작성하는 일은 거의 없다.</p>
   <h2>차분 생성과 적용</h2>
 <pre><code>$ php bin/console make:migration
 > Generated migrations/Version20260503120000.php
@@ -447,10 +447,10 @@ $ php bin/console doctrine:migrations:status</code></pre>
   <ul>
     <li>마이그레이션 파일은 <strong>커밋 필수</strong>. 동료·CI·운영의 스키마 일관성.</li>
     <li>운영 배포: <code>doctrine:migrations:migrate --no-interaction --allow-no-migration</code>.</li>
-    <li>자동 생성 SQL을 <strong>반드시 검토</strong>한다. 컬럼 이름 변경은 \"DROP+CREATE\"로 해석되어 데이터 손실로 이어질 수 있다. 이 경우 <code>up/down</code>을 수동으로 <code>ALTER COLUMN ... RENAME TO</code>로 교체.</li>
+    <li>자동 생성 SQL을 <strong>반드시 검토</strong>한다. 컬럼 이름 변경은 “DROP+CREATE”로 해석되어 데이터 손실로 이어질 수 있다. 이 경우 <code>up/down</code>을 수동으로 <code>ALTER COLUMN ... RENAME TO</code>로 교체.</li>
     <li>롤백: <code>doctrine:migrations:migrate prev</code> (단계별), <code>first</code> (모두 롤백).</li>
   </ul>
-  <p>라라벨의 <code>php artisan migrate</code> · <code>migrate:rollback</code>과 동일 위상이며, \"엔티티 차분 자동 추출\"이 가장 큰 차이다.</p>
+  <p>라라벨의 <code>php artisan migrate</code> · <code>migrate:rollback</code>과 동일 위상이며, “엔티티 차분 자동 추출”이 가장 큰 차이다.</p>
   <div class="hai-page-number">— 12 —</div>
 </section>
 
@@ -554,7 +554,7 @@ class ProductRepository extends ServiceEntityRepository
 <!-- 16 / 3.1 form type -->
 <section class="hai-page">
   <h1>3.1 FormType 작성</h1>
-  <p>Form 컴포넌트는 폼의 정의·렌더링·검증·객체 매핑을 한 클래스(<code>FormType</code>)로 응집한다. 라라벨의 <code>FormRequest</code>와 \"Blade 폼\"의 책임을 합친 위치에 있다.</p>
+  <p>Form 컴포넌트는 폼의 정의·렌더링·검증·객체 매핑을 한 클래스(<code>FormType</code>)로 응집한다. 라라벨의 <code>FormRequest</code>와 “Blade 폼”의 책임을 합친 위치에 있다.</p>
 <pre><code>// src/Form/ProductType.php
 namespace App\Form;
 
@@ -589,7 +589,7 @@ class ProductType extends AbstractType
         ]);
     }
 }</code></pre>
-  <p><code>data_class</code>가 지정되면 폼 데이터가 자동으로 해당 엔티티 인스턴스에 매핑된다. \"신규 등록\"과 \"수정\"이 동일 FormType을 공유한다 (빈 인스턴스 vs 기존 인스턴스만 다름).</p>
+  <p><code>data_class</code>가 지정되면 폼 데이터가 자동으로 해당 엔티티 인스턴스에 매핑된다. “신규 등록”과 “수정”이 동일 FormType을 공유한다 (빈 인스턴스 vs 기존 인스턴스만 다름).</p>
   <p>주요 빌트인 타입: <code>TextType</code> · <code>EmailType</code> · <code>PasswordType</code> · <code>IntegerType</code> · <code>NumberType</code> · <code>ChoiceType</code> · <code>FileType</code> · <code>CollectionType</code> · <code>EntityType</code>(Doctrine 연동) · <code>RepeatedType</code> · <code>HiddenType</code> · <code>SubmitType</code>.</p>
   <div class="hai-page-number">— 16 —</div>
 </section>
@@ -687,7 +687,7 @@ class Product
   <h1>3.4 CSRF · Flash 메시지</h1>
   <h2>CSRF 토큰</h2>
   <p>Form 컴포넌트가 자동으로 CSRF 토큰을 생성·검증한다. 사용자 코드에서 별도 처리 불필요. 토큰은 <code>_token</code> 히든 필드로 추가되며, <code>handleRequest()</code>가 검증한다.</p>
-<pre><code>// 폼 외부에서 POST를 받는 경우 (예: 단순 \"삭제\" 버튼)
+<pre><code>// 폼 외부에서 POST를 받는 경우 (예: 단순 "삭제" 버튼)
 #[Route('/products/{id}/delete', methods: ['POST'])]
 public function __invoke(Product $p, Request $request): Response
 {
@@ -851,7 +851,7 @@ final class AdminProductController extends AbstractController
 <!-- 24 / 4.4 voter -->
 <section class="hai-page">
   <h1>4.4 Voter — 인스턴스 단위 인가</h1>
-  <p>ROLE만으로는 표현할 수 없는 \"이 사용자가 이 객체에 대해 X 행위가 가능한가\" 같은 질문에 답하는 컴포넌트.</p>
+  <p>ROLE만으로는 표현할 수 없는 “이 사용자가 이 객체에 대해 X 행위가 가능한가” 같은 질문에 답하는 컴포넌트.</p>
 <pre><code>// src/Security/OrderVoter.php
 namespace App\Security;
 
@@ -896,7 +896,7 @@ if ($this-&gt;isGranted('cancel', $order)) { /* ... */ }
 // 라우트 속성
 #[IsGranted('cancel', subject: 'order')]
 public function cancel(Order $order): Response { /* ... */ }</code></pre>
-  <p>Voter는 <code>autoconfigure</code>로 자동 등록된다. 다중 Voter 결과는 기본 \"affirmative\" 전략으로 결합 (한 Voter라도 grant면 허용).</p>
+  <p>Voter는 <code>autoconfigure</code>로 자동 등록된다. 다중 Voter 결과는 기본 “affirmative” 전략으로 결합 (한 Voter라도 grant면 허용).</p>
   <div class="hai-page-number">— 24 —</div>
 </section>
 
@@ -909,7 +909,7 @@ public function cancel(Order $order): Response { /* ... */ }</code></pre>
 <!-- 26 / 5.1 session basics -->
 <section class="hai-page">
   <h1>5.1 Session 기본</h1>
-  <p>심포니의 세션은 \"읽기·쓰기 발생 시점\"에 자동 시작된다 (lazy start). 응답이 자동으로 <code>private</code> 캐시로 표시되므로, 정적 캐시가 필요한 페이지에서는 세션 접근을 회피한다.</p>
+  <p>심포니의 세션은 “읽기·쓰기 발생 시점”에 자동 시작된다 (lazy start). 응답이 자동으로 <code>private</code> 캐시로 표시되므로, 정적 캐시가 필요한 페이지에서는 세션 접근을 회피한다.</p>
   <h2>접근 방법</h2>
 <pre><code>// 컨트롤러 — Request에서 직접
 public function __invoke(Request $request): Response
@@ -1344,7 +1344,7 @@ final readonly class SendOrderConfirmation
 <!-- 36 / 6.8 notifier chat sms -->
 <section class="hai-page">
   <h1>6.8 Notifier — Chat · SMS</h1>
-  <p>Notifier는 \"한 알림을 여러 채널로\"가 핵심 가치다. 이메일 + Slack + SMS를 단일 디스패치로 발송한다.</p>
+  <p>Notifier는 “한 알림을 여러 채널로”가 핵심 가치다. 이메일 + Slack + SMS를 단일 디스패치로 발송한다.</p>
 <pre><code>$ composer require symfony/notifier \
     symfony/slack-notifier symfony/twilio-notifier</code></pre>
 <pre><code># .env
