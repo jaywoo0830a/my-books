@@ -11,10 +11,13 @@
       "Bash(cat)",
       "Bash(python3 /tmp/standalone.py)",
       "Bash(rm /tmp/standalone.py)",
-      "Bash(node /home/rlawjddn/projects/my-books/scripts/preview-page.mjs 7,24,40,65,87)"
+      "Bash(node /home/rlawjddn/projects/my-books/scripts/preview-page.mjs 7,24,40,65,87)",
+      "Bash(node inspect.mjs)",
+      "Bash(node preview.mjs 8,11,22,27)"
     ],
     "additionalDirectories": [
-      "/home/rlawjddn/projects/my-books/assets"
+      "/home/rlawjddn/projects/my-books/assets",
+      "/tmp/qs-verify"
     ]
   }
 }
