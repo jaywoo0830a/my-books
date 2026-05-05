@@ -135,7 +135,7 @@
   <h1>머리말</h1>
   <p>본서는 라라벨·심포니 등 OOP 기반 PHP 프레임워크로 실무를 해 온 개발자가, 함수형 프로그래밍(FP)의 사고방식을 자신의 코드베이스에 점진적으로 통합하는 방법을 다룬다.</p>
   <h2>기존 FP 입문서와의 차이</h2>
-  <p>대부분의 FP 입문서는 Haskell이나 Scala를 사용한다. 이는 \"FP를 배우려면 별개의 언어를 익혀야 한다\"는 인상을 남긴다. 본서는 그 길을 가지 않는다. PHP 8.5의 <code>readonly</code> 클래스, <code>clone with</code>, 파이프 연산자, first-class callable 같은 도구를 활용하여, 기존 OOP 코드의 일부 영역을 함수형으로 작성하는 실용적 경로를 제시한다.</p>
+  <p>대부분의 FP 입문서는 Haskell이나 Scala를 사용한다. 이는 “FP를 배우려면 별개의 언어를 익혀야 한다”는 인상을 남긴다. 본서는 그 길을 가지 않는다. PHP 8.5의 <code>readonly</code> 클래스, <code>clone with</code>, 파이프 연산자, first-class callable 같은 도구를 활용하여, 기존 OOP 코드의 일부 영역을 함수형으로 작성하는 실용적 경로를 제시한다.</p>
   <h2>다루는 주제</h2>
   <ol>
     <li><strong>패러다임의 전환</strong> — 가변 상태가 만드는 복잡성과 FP의 약속.</li>
@@ -167,7 +167,7 @@
   <h1>1.1 상태라는 적</h1>
   <p>본 절은 가변 상태(mutable state)가 소프트웨어 복잡성의 주된 원인이라는 명제를 검토한다.</p>
   <h2>1.1.1 디버깅의 비대칭</h2>
-  <p>새벽 2시. 결제 컨트롤러의 어떤 케이스에서 <code>totalKrw</code>가 음수가 된다. 코드를 따라가면 한 함수가 <code>$cart</code>를 받아 변경하고, 다른 함수가 같은 객체를 또 변경한다. 음수가 처음 나타난 시점을 찾으려면 객체의 모든 변경을 시간순으로 재구성해야 한다. 코드를 \"공간적\"으로 읽어서는 답이 나오지 않고, \"시간적\"으로 추적해야 한다.</p>
+  <p>새벽 2시. 결제 컨트롤러의 어떤 케이스에서 <code>totalKrw</code>가 음수가 된다. 코드를 따라가면 한 함수가 <code>$cart</code>를 받아 변경하고, 다른 함수가 같은 객체를 또 변경한다. 음수가 처음 나타난 시점을 찾으려면 객체의 모든 변경을 시간순으로 재구성해야 한다. 코드를 “공간적”으로 읽어서는 답이 나오지 않고, “시간적”으로 추적해야 한다.</p>
   <p>이 비대칭은 OOP 코드베이스에 보편적으로 존재한다. 객체가 메서드 호출로 자신의 상태를 변경하고, 그 상태가 다른 객체에 전파되며, 어느 시점의 객체 상태를 알려면 그 객체가 받아온 모든 호출의 이력을 머릿속에 시뮬레이션해야 한다.</p>
   <h2>1.1.2 가변 상태의 4가지 비용</h2>
   <ol>
@@ -184,7 +184,7 @@
 <!-- 6 / 1.2 -->
 <section class="hai-page">
   <h1>1.2 세 가지 패러다임</h1>
-  <p>프로그래밍 패러다임은 크게 셋이다. 본 절은 세 패러다임이 \"상태\"를 다루는 방식을 비교한다.</p>
+  <p>프로그래밍 패러다임은 크게 셋이다. 본 절은 세 패러다임이 “상태”를 다루는 방식을 비교한다.</p>
   <div class="hai-figure mermaid">
 classDiagram
   class Imperative {
@@ -217,7 +217,7 @@ classDiagram
     <tr><td>재사용</td><td>함수 라이브러리</td><td>상속, 인터페이스</td><td>함수 합성, Functor</td></tr>
   </table>
   <h2>1.2.2 OOP의 절반은 이미 함수형</h2>
-  <p>현대 OOP 언어는 람다·스트림·<code>readonly</code>·record/value class 같은 함수형 기능을 흡수했다. PHP도 마찬가지다. 따라서 \"OOP에서 FP로 전환\"이 아니라 \"OOP 코드의 적합한 영역에 FP 기법을 적용\"이 더 정확한 표현이다. 본서는 후자의 관점을 취한다.</p>
+  <p>현대 OOP 언어는 람다·스트림·<code>readonly</code>·record/value class 같은 함수형 기능을 흡수했다. PHP도 마찬가지다. 따라서 “OOP에서 FP로 전환”이 아니라 “OOP 코드의 적합한 영역에 FP 기법을 적용”이 더 정확한 표현이다. 본서는 후자의 관점을 취한다.</p>
   <div class="hai-page-number">— 6 —</div>
 </section>
 
@@ -233,7 +233,7 @@ classDiagram
   <p>함수를 인자로 받거나 반환하는 함수. PHP의 <code>array_map</code>·<code>array_filter</code>·<code>array_reduce</code>가 대표적이다. 루프와 인덱스 변수가 사라지고, 변환의 의도가 직접 표현된다.</p>
   <h2>1.3.4 Composition — 합성</h2>
   <p>작은 함수를 결합해 큰 함수를 만든다. <code>f: A → B</code>와 <code>g: B → C</code>가 있으면 합성 <code>g ∘ f: A → C</code>를 만들 수 있다. 데이터 파이프라인은 합성의 시각적 표현이다.</p>
-  <div class="hai-callout">이 4가지가 본서의 \"공리\"다. 2부에서는 각각의 구체적 PHP 구현을, 3부에서는 이로부터 도출되는 패턴(Functor·Monoid·Monad)을 다룬다.</div>
+  <div class="hai-callout">이 4가지가 본서의 “공리”다. 2부에서는 각각의 구체적 PHP 구현을, 3부에서는 이로부터 도출되는 패턴(Functor·Monoid·Monad)을 다룬다.</div>
   <div class="hai-page-number">— 7 —</div>
 </section>
 
@@ -280,10 +280,10 @@ $results = array_map($f, $names);</code></pre>
 <!-- 9 / 1.5 -->
 <section class="hai-page">
   <h1>1.5 OOP에 함수형을 더한다</h1>
-  <p>본 절은 본서의 핵심 명제를 정의한다 — <strong>OOP를 버리지 말고, 함수형을 \"적합한 영역\"에 통합하라</strong>.</p>
+  <p>본 절은 본서의 핵심 명제를 정의한다 — <strong>OOP를 버리지 말고, 함수형을 “적합한 영역”에 통합하라</strong>.</p>
   <h2>1.5.1 함수형이 빛나는 영역</h2>
   <ul>
-    <li><strong>도메인 계산</strong> — 가격 계산, 할인 적용, 세금 산출 등 \"입력 → 출력\" 변환.</li>
+    <li><strong>도메인 계산</strong> — 가격 계산, 할인 적용, 세금 산출 등 “입력 → 출력” 변환.</li>
     <li><strong>검증 파이프라인</strong> — 여러 검증 단계의 조합과 단락 평가.</li>
     <li><strong>이벤트 처리</strong> — Event Sourcing의 상태 재구성, 이벤트 핸들러.</li>
     <li><strong>데이터 변환</strong> — DTO 매핑, 직렬화, 통계 집계.</li>
@@ -305,7 +305,7 @@ $results = array_map($f, $names);</code></pre>
     <li>결과를 OOP 영속성 계층(Repository)으로 전달.</li>
     <li>응답 직렬화는 다시 함수형 변환.</li>
   </ol>
-  <p>이 구조는 \"순수 코어 + 부수효과 경계\"라 불린다(2.3에서 상세). 라라벨·심포니의 표준 컨트롤러 시그니처와 자연스럽게 결합한다.</p>
+  <p>이 구조는 “순수 코어 + 부수효과 경계”라 불린다(2.3에서 상세). 라라벨·심포니의 표준 컨트롤러 시그니처와 자연스럽게 결합한다.</p>
   <div class="hai-page-number">— 9 —</div>
 </section>
 
@@ -328,7 +328,7 @@ class User
 }
 $user = new User('Carl', 32);
 $user-&gt;birthday();   // $user는 어디서나 33이 됨</code></pre>
-  <p>같은 변수 <code>$user</code>가 코드 위치에 따라 다른 의미를 갖는다. 디버거에서 \"여기서 user.age는 32일까 33일까\"를 매번 추적해야 한다.</p>
+  <p>같은 변수 <code>$user</code>가 코드 위치에 따라 다른 의미를 갖는다. 디버거에서 “여기서 user.age는 32일까 33일까”를 매번 추적해야 한다.</p>
   <h2>2.1.2 패턴 A — readonly + with-메서드 (PHP 8.1+)</h2>
 <pre><code>final class User
 {
@@ -382,17 +382,17 @@ function discountAmount(int $price, float $rate): int {
     return (int) round($price * $rate);
 }</code></pre>
   <h2>2.2.2 참조 투명성</h2>
-  <p>순수 함수는 \"호출 → 결과\"가 항상 같으므로, 코드의 함수 호출을 그 결과 값으로 치환해도 프로그램 의미가 바뀌지 않는다. 이를 <strong>referential transparency</strong>라 한다. <code>discountAmount(10000, 0.1)</code>은 어디서 호출되든 항상 1000을 반환하므로, 코드에서 <code>1000</code>으로 치환 가능하다.</p>
+  <p>순수 함수는 “호출 → 결과”가 항상 같으므로, 코드의 함수 호출을 그 결과 값으로 치환해도 프로그램 의미가 바뀌지 않는다. 이를 <strong>referential transparency</strong>라 한다. <code>discountAmount(10000, 0.1)</code>은 어디서 호출되든 항상 1000을 반환하므로, 코드에서 <code>1000</code>으로 치환 가능하다.</p>
   <h2>2.2.3 순수 함수의 이점</h2>
   <table>
     <tr><th>이점</th><th>설명</th></tr>
-    <tr><td>예측 가능성</td><td>코드를 \"공간적\"으로 읽을 수 있음. 시간 의존성 없음.</td></tr>
+    <tr><td>예측 가능성</td><td>코드를 “공간적”으로 읽을 수 있음. 시간 의존성 없음.</td></tr>
     <tr><td>테스트 용이</td><td>setup/teardown 불필요. 입력만 주면 됨. mock 없음.</td></tr>
     <tr><td>병렬화</td><td>입력만 같으면 결과 같음. race condition 없음.</td></tr>
     <tr><td>캐시 가능</td><td>결과를 메모이제이션 가능.</td></tr>
     <tr><td>합성 가능</td><td>다른 순수 함수와 자유롭게 합성.</td></tr>
   </table>
-  <p>현실 시스템은 어딘가에서는 부수효과(DB·HTTP·파일)를 일으켜야 한다. 함수형 프로그래밍은 부수효과를 \"제거\"하지 않고 <strong>경계로 밀어낸다</strong>. 다음 절에서 이 패턴을 다룬다.</p>
+  <p>현실 시스템은 어딘가에서는 부수효과(DB·HTTP·파일)를 일으켜야 한다. 함수형 프로그래밍은 부수효과를 “제거”하지 않고 <strong>경계로 밀어낸다</strong>. 다음 절에서 이 패턴을 다룬다.</p>
   <div class="hai-page-number">— 12 —</div>
 </section>
 
@@ -445,7 +445,7 @@ final class OrderController
 <!-- 14 / 2.4 -->
 <section class="hai-page">
   <h1>2.4 Higher-Order Function</h1>
-  <p>고차 함수(higher-order function)는 함수를 인자로 받거나 반환하는 함수다. PHP는 함수를 \"first-class citizen\"으로 다루므로, 변수에 담고 인자로 전달하고 반환할 수 있다.</p>
+  <p>고차 함수(higher-order function)는 함수를 인자로 받거나 반환하는 함수다. PHP는 함수를 “first-class citizen”으로 다루므로, 변수에 담고 인자로 전달하고 반환할 수 있다.</p>
   <h2>2.4.1 PHP 표준 고차 함수 셋</h2>
 <pre><code>$users = [
     new User('Alice', 'alice@gmail.com'),
@@ -472,7 +472,7 @@ for ($i = 0; $i &lt; count($numbers); $i++) {
 
 // FUNCTIONAL — 의도가 직접 표현됨
 $squared = array_map(fn (int $n) =&gt; $n * $n, $numbers);</code></pre>
-  <p>차이는 단순한 줄 수가 아니다. 명령형 코드는 <strong>\"어떻게\"</strong>를 기술한다(루프 변수, 인덱스, 점진적 누적). 함수형 코드는 <strong>\"무엇을\"</strong>을 기술한다(\"각 요소를 제곱\"). 의도가 직접 노출되면 코드 리뷰가 빠르고 버그 가능성이 줄어든다.</p>
+  <p>차이는 단순한 줄 수가 아니다. 명령형 코드는 <strong>“어떻게”</strong>를 기술한다(루프 변수, 인덱스, 점진적 누적). 함수형 코드는 <strong>“무엇을”</strong>을 기술한다(“각 요소를 제곱”). 의도가 직접 노출되면 코드 리뷰가 빠르고 버그 가능성이 줄어든다.</p>
   <h2>2.4.3 함수를 반환하는 함수</h2>
 <pre><code>// 부분 적용 패턴
 function multiplyBy(int $factor): callable
@@ -484,7 +484,7 @@ $double = multiplyBy(2);
 $triple = multiplyBy(3);
 array_map($double, [1, 2, 3]);  // [2, 4, 6]
 array_map($triple, [1, 2, 3]);  // [3, 6, 9]</code></pre>
-  <p>이 패턴은 \"공통 로직 + 변하는 파라미터\" 구조에서 보일러플레이트를 제거한다.</p>
+  <p>이 패턴은 “공통 로직 + 변하는 파라미터” 구조에서 보일러플레이트를 제거한다.</p>
   <div class="hai-page-number">— 14 —</div>
 </section>
 
@@ -500,7 +500,7 @@ $g = fn (int $n) =&gt; "Result: $n";  // int → string
 $gf = fn (int $n) =&gt; $g($f($n));   // int → string (합성)
 $gf(5);  // "Result: 6"</code></pre>
   <h2>2.5.2 파이프라인</h2>
-  <p>합성을 \"왼쪽에서 오른쪽\"으로 읽도록 뒤집은 형태가 파이프라인이다. PHP 8.5의 <code>|&gt;</code>가 이를 직접 지원한다.</p>
+  <p>합성을 “왼쪽에서 오른쪽”으로 읽도록 뒤집은 형태가 파이프라인이다. PHP 8.5의 <code>|&gt;</code>가 이를 직접 지원한다.</p>
 <pre><code>$slug = $title
     |&gt; strtolower(...)
     |&gt; trim(...)
@@ -648,14 +648,14 @@ classDiagram
   Functor &lt;|.. Result
   </div>
   <div class="hai-figure-caption">그림 3.1. Functor와 그 인스턴스들</div>
-  <h2>3.1.1 \"문맥\"의 의미</h2>
+  <h2>3.1.1 “문맥”의 의미</h2>
   <ul>
-    <li><strong>List</strong>의 문맥: \"여러 개일 수 있다\".</li>
-    <li><strong>Option</strong>의 문맥: \"있을 수도, 없을 수도\".</li>
-    <li><strong>Result</strong>의 문맥: \"성공 또는 실패\".</li>
-    <li><strong>Future</strong>의 문맥: \"나중에 값이 도착\".</li>
+    <li><strong>List</strong>의 문맥: “여러 개일 수 있다”.</li>
+    <li><strong>Option</strong>의 문맥: “있을 수도, 없을 수도”.</li>
+    <li><strong>Result</strong>의 문맥: “성공 또는 실패”.</li>
+    <li><strong>Future</strong>의 문맥: “나중에 값이 도착”.</li>
   </ul>
-  <p><code>map</code>은 문맥을 그대로 유지한 채, 안의 값을 변환한다. \"여러 개일 수 있다\"는 사실은 변환 후에도 유지되고, 변환은 각 값에 적용된다.</p>
+  <p><code>map</code>은 문맥을 그대로 유지한 채, 안의 값을 변환한다. “여러 개일 수 있다”는 사실은 변환 후에도 유지되고, 변환은 각 값에 적용된다.</p>
   <h2>3.1.2 Functor의 두 법칙</h2>
   <ol>
     <li><strong>항등 보존</strong>: <code>functor.map(fn ($x) =&gt; $x)</code> ≡ <code>functor</code></li>
@@ -670,7 +670,7 @@ classDiagram
 <!-- 20 / 3.2 -->
 <section class="hai-page">
   <h1>3.2 Option — null의 대체</h1>
-  <p>Tony Hoare는 null을 \"10억 달러짜리 실수\"라 불렀다. null은 타입 시스템이 강제하지 않는 \"숨은 값\"이며, 모든 함수가 잠재적으로 null을 받을 수 있다는 우려를 만든다. <strong>Option</strong>(또는 Maybe)은 \"있음\" 또는 \"없음\"을 타입 수준에서 표현한다.</p>
+  <p>Tony Hoare는 null을 “10억 달러짜리 실수”라 불렀다. null은 타입 시스템이 강제하지 않는 “숨은 값”이며, 모든 함수가 잠재적으로 null을 받을 수 있다는 우려를 만든다. <strong>Option</strong>(또는 Maybe)은 “있음” 또는 “없음”을 타입 수준에서 표현한다.</p>
   <h2>3.2.1 구현</h2>
 <pre><code>/** @template A */
 final readonly class Option
@@ -711,15 +711,15 @@ $displayName = findUserById(42)
     -&gt;getOrElse('GUEST');</code></pre>
   <p>사용자가 없어도 <code>map</code> 호출은 안전하다. <code>None</code>이 <code>map</code>을 받으면 <code>None</code>을 그대로 반환한다. <strong>null 체크가 사라진다.</strong></p>
   <h2>3.2.3 라라벨·심포니에서의 활용</h2>
-  <p>Repository 메서드의 반환 타입을 <code>?User</code>에서 <code>Option&lt;User&gt;</code>로 바꾸면, 호출 측이 명시적으로 \"없을 수 있음\"을 다뤄야 한다. PHP 자체에는 Option이 없으므로 <code>Option</code> 클래스를 직접 정의하거나 <code>azjezz/psl</code>·<code>marcj/php-functional</code> 같은 라이브러리를 사용한다.</p>
-  <p>편의상 <code>?T</code> 반환 타입과 <code>?-&gt;</code> nullsafe 연산자를 그대로 쓰는 경우도 많다. 결정 기준은 \"없음 처리가 코드 곳곳에 분산되는가\"다 — 분산되면 Option이 정리해 준다.</p>
+  <p>Repository 메서드의 반환 타입을 <code>?User</code>에서 <code>Option&lt;User&gt;</code>로 바꾸면, 호출 측이 명시적으로 “없을 수 있음”을 다뤄야 한다. PHP 자체에는 Option이 없으므로 <code>Option</code> 클래스를 직접 정의하거나 <code>azjezz/psl</code>·<code>marcj/php-functional</code> 같은 라이브러리를 사용한다.</p>
+  <p>편의상 <code>?T</code> 반환 타입과 <code>?-&gt;</code> nullsafe 연산자를 그대로 쓰는 경우도 많다. 결정 기준은 “없음 처리가 코드 곳곳에 분산되는가”다 — 분산되면 Option이 정리해 준다.</p>
   <div class="hai-page-number">— 20 —</div>
 </section>
 
 <!-- 21 / 3.3 -->
 <section class="hai-page">
   <h1>3.3 Result — 예외의 대체</h1>
-  <p><strong>Result</strong>(또는 Either)는 \"성공 값\" 또는 \"실패 정보\"를 타입으로 표현한다. 예외와 달리 시그니처에 명시되며, 호출자가 처리를 강제받는다.</p>
+  <p><strong>Result</strong>(또는 Either)는 “성공 값” 또는 “실패 정보”를 타입으로 표현한다. 예외와 달리 시그니처에 명시되며, 호출자가 처리를 강제받는다.</p>
   <h2>3.3.1 구현 (Sealed Class 패턴)</h2>
 <pre><code>abstract readonly class Result
 {
@@ -770,7 +770,7 @@ return match (true) {
 true && false                // 논리 AND
 [1, 2] + [3, 4]              // 배열 결합
 Money::add(Money, Money)     // 금액 덧셈</code></pre>
-  <p>세 가지 공통점: <strong>(1)</strong> 같은 종류 둘을 합치면 같은 종류 하나가 된다. <strong>(2)</strong> 결합법칙: <code>(a*b)*c = a*(b*c)</code>. <strong>(3)</strong> \"아무것도 안 하는\" 항등원이 존재한다(0, 빈 문자열, true, 빈 배열, <code>Money::zero()</code>).</p>
+  <p>세 가지 공통점: <strong>(1)</strong> 같은 종류 둘을 합치면 같은 종류 하나가 된다. <strong>(2)</strong> 결합법칙: <code>(a*b)*c = a*(b*c)</code>. <strong>(3)</strong> “아무것도 안 하는” 항등원이 존재한다(0, 빈 문자열, true, 빈 배열, <code>Money::zero()</code>).</p>
   <p>이 세 조건을 만족하는 구조를 <strong>Monoid</strong>라 부른다.</p>
   <div class="hai-figure mermaid">
 classDiagram
@@ -820,7 +820,7 @@ final readonly class MoneyAddMonoid implements Monoid
 <!-- 23 / 3.5 -->
 <section class="hai-page">
   <h1>3.5 fold — 보편적 reduce</h1>
-  <p><strong>fold</strong>는 \"여러 값을 하나로 합치는\" 연산이다. 정수 합계, 문자열 결합, 카트 총액 — 표면적으로 다른 이 연산들이 사실은 <strong>같은 한 함수</strong>의 다른 인스턴스다.</p>
+  <p><strong>fold</strong>는 “여러 값을 하나로 합치는” 연산이다. 정수 합계, 문자열 결합, 카트 총액 — 표면적으로 다른 이 연산들이 사실은 <strong>같은 한 함수</strong>의 다른 인스턴스다.</p>
   <h2>3.5.1 한 함수, 여러 모노이드</h2>
 <pre><code>/** @template A  @param A[] $list  @param Monoid&lt;A&gt; $m  @return A */
 function fold(array $list, Monoid $m): mixed
@@ -835,9 +835,9 @@ function fold(array $list, Monoid $m): mixed
 fold([1, 2, 3, 4, 5], new IntSumMonoid());            // 15
 fold(['a', 'b', 'c'], new StringConcatMonoid());      // "abc"
 fold($cartItems, new MoneyAddMonoid('KRW'));          // Money(...)</code></pre>
-  <p>같은 fold 함수가 모노이드만 바뀌면 완전히 다른 일을 한다. 이것이 <strong>추상화의 위력</strong>이다 — 코드 중복 없이 \"결합\" 패턴 하나로 다양한 도메인을 다룬다.</p>
+  <p>같은 fold 함수가 모노이드만 바뀌면 완전히 다른 일을 한다. 이것이 <strong>추상화의 위력</strong>이다 — 코드 중복 없이 “결합” 패턴 하나로 다양한 도메인을 다룬다.</p>
   <h2>3.5.2 array_reduce와의 관계</h2>
-  <p>PHP의 <code>array_reduce(arr, fn, init)</code>은 fold의 일반화다. 모노이드는 \"<code>fn</code>과 <code>init</code>이 함께 의미가 있는\" 특수 경우. <code>array_reduce</code>를 호출할 때 항상 모노이드를 의식하면 코드가 정돈된다.</p>
+  <p>PHP의 <code>array_reduce(arr, fn, init)</code>은 fold의 일반화다. 모노이드는 “<code>fn</code>과 <code>init</code>이 함께 의미가 있는” 특수 경우. <code>array_reduce</code>를 호출할 때 항상 모노이드를 의식하면 코드가 정돈된다.</p>
   <h2>3.5.3 도메인 예 — 카트 총액</h2>
 <pre><code>final readonly class Cart
 {
@@ -853,14 +853,14 @@ fold($cartItems, new MoneyAddMonoid('KRW'));          // Money(...)</code></pre>
     }
 }</code></pre>
   <h2>3.5.4 병렬화 가능성</h2>
-  <p>모노이드의 결합법칙은 \"어느 순서로 합쳐도 같다\"를 보장한다. 따라서 fold를 분할 정복으로 병렬화할 수 있다 — Hadoop/Spark의 reduce가 이 원리다. 단일 PHP 프로세스에서는 직접 활용할 일이 적지만, ETL 도구를 사용할 때 모노이드 사고는 그대로 이전된다.</p>
+  <p>모노이드의 결합법칙은 “어느 순서로 합쳐도 같다”를 보장한다. 따라서 fold를 분할 정복으로 병렬화할 수 있다 — Hadoop/Spark의 reduce가 이 원리다. 단일 PHP 프로세스에서는 직접 활용할 일이 적지만, ETL 도구를 사용할 때 모노이드 사고는 그대로 이전된다.</p>
   <div class="hai-page-number">— 23 —</div>
 </section>
 
 <!-- 24 / 3.6 -->
 <section class="hai-page">
   <h1>3.6 Monad — flatMap과 합성</h1>
-  <p><strong>Monad</strong>는 Functor에 <code>flatMap</code> 연산이 추가된 것이다. <code>map</code>이 \"문맥 안의 값을 변환\"한다면, <code>flatMap</code>은 \"변환 결과 자체가 다시 문맥인 경우 중첩을 평탄화\"한다.</p>
+  <p><strong>Monad</strong>는 Functor에 <code>flatMap</code> 연산이 추가된 것이다. <code>map</code>이 “문맥 안의 값을 변환”한다면, <code>flatMap</code>은 “변환 결과 자체가 다시 문맥인 경우 중첩을 평탄화”한다.</p>
   <h2>3.6.1 map의 한계</h2>
 <pre><code>// findUserById가 Option&lt;User&gt;를 반환할 때
 $userId = Option::some(42);
@@ -890,7 +890,7 @@ $ordersCount = Option::some(42)
     <li><strong>우항등</strong>: <code>m.flatMap(unit) ≡ m</code></li>
     <li><strong>결합법칙</strong>: <code>m.flatMap(f).flatMap(g) ≡ m.flatMap(fn ($x) =&gt; f($x).flatMap(g))</code></li>
   </ol>
-  <p>이 법칙을 만족하는 모든 \"flatMap을 가진 Functor\"가 Monad다. <code>Option</code>·<code>Result</code>·<code>Future</code>·<code>List</code>가 대표적이다.</p>
+  <p>이 법칙을 만족하는 모든 “flatMap을 가진 Functor”가 Monad다. <code>Option</code>·<code>Result</code>·<code>Future</code>·<code>List</code>가 대표적이다.</p>
   <h2>3.6.4 unit과 map의 관계</h2>
   <p>Monad는 <code>unit</code>(값을 컨텍스트로 감싸기)과 <code>flatMap</code> 두 연산만 있으면 정의된다. <code>map</code>은 이 둘로부터 도출된다.</p>
 <pre><code>// map = flatMap + unit
@@ -919,14 +919,10 @@ classDiagram
     +combine(x, y)
     +empty()
   }
-  class FoldableSemigroup {
-    fold operation
-  }
-  Functor &lt;|-- Monad : "추가: flatMap"
-  Monoid --&gt; FoldableSemigroup : "fold 자동 도출"
+  Functor &lt;|-- Monad
   note for Functor "map의 두 법칙"
-  note for Monad "법칙 3개"
-  note for Monoid "결합법칙 + 항등원"
+  note for Monad "Functor + flatMap, unit"
+  note for Monoid "결합법칙 + 항등원, fold 도출"
   </div>
   <div class="hai-figure-caption">그림 3.3. 패턴들의 관계</div>
   <h2>3.7.1 인스턴스 매트릭스</h2>
@@ -941,9 +937,9 @@ classDiagram
   </table>
   <h2>3.7.2 언제 무엇을 쓰는가</h2>
   <ul>
-    <li><strong>Functor (map)</strong>: 컨테이너 안의 값을 변환할 때. \"포장은 그대로, 내용만 바꾼다\".</li>
-    <li><strong>Monad (flatMap)</strong>: 변환 결과가 또 컨테이너인 경우. \"실패 가능 작업의 체이닝\", \"비동기 작업 연결\".</li>
-    <li><strong>Monoid (fold)</strong>: 같은 종류 여러 값을 하나로 합칠 때. \"누적 계산\", \"리스트 결합\".</li>
+    <li><strong>Functor (map)</strong>: 컨테이너 안의 값을 변환할 때. “포장은 그대로, 내용만 바꾼다”.</li>
+    <li><strong>Monad (flatMap)</strong>: 변환 결과가 또 컨테이너인 경우. “실패 가능 작업의 체이닝”, “비동기 작업 연결”.</li>
+    <li><strong>Monoid (fold)</strong>: 같은 종류 여러 값을 하나로 합칠 때. “누적 계산”, “리스트 결합”.</li>
   </ul>
   <p>실무에서는 셋이 함께 등장한다. 검증 파이프라인은 <code>Result</code>의 Monad성을, 카트 총액은 <code>Money</code>의 Monoid성을, 사용자 표시명은 <code>Option</code>의 Functor성을 각각 활용한다. 다음 4부에서 두 가지 실전 예제로 통합 적용을 본다.</p>
   <div class="hai-page-number">— 25 —</div>
@@ -961,7 +957,7 @@ classDiagram
   <p>본 절은 함수형 사고의 가장 강력한 적용 사례 하나를 다룬다. 다양한 할인 규칙(정율·정액·카테고리·조건부)을 가진 쿠폰 엔진을 함수형으로 설계한다.</p>
   <h2>4.1.1 통찰 — 할인은 함수다</h2>
   <p>전통적 OOP 설계는 <code>Discount</code>를 객체로 본다. 함수형 통찰은 다음과 같다.</p>
-  <div class="hai-callout"><strong>할인은 \"카트를 받아 카트를 반환하는 순수 함수\"다.</strong> 시그니처: <code>Cart → Cart</code>. 여러 할인의 적용은 이 함수들의 <strong>합성</strong>이다.</div>
+  <div class="hai-callout"><strong>할인은 “카트를 받아 카트를 반환하는 순수 함수”다.</strong> 시그니처: <code>Cart → Cart</code>. 여러 할인의 적용은 이 함수들의 <strong>합성</strong>이다.</div>
   <h2>4.1.2 할인 규칙 — Cart→Cart</h2>
 <pre><code>interface DiscountRule { public function apply(Cart $c): Cart; }
 
@@ -1033,16 +1029,16 @@ final readonly class MinimumAmount implements DiscountRule
             -&gt;map(fn (Password $p) =&gt; new UserRegistration($e, $p)))
         -&gt;flatMap(fn (UserRegistration $r) =&gt; $this-&gt;repo-&gt;persist($r));
 }</code></pre>
-  <p>한 단계라도 <code>Err</code>를 반환하면 이후 단계는 건너뛰고 그 <code>Err</code>가 흘러간다. \"단락 평가\"가 Monad 법칙으로부터 자동 도출된다. 컨트롤러는 <code>match</code>로 두 결과를 분기한다 — 예외 없음, try/catch 없음.</p>
+  <p>한 단계라도 <code>Err</code>를 반환하면 이후 단계는 건너뛰고 그 <code>Err</code>가 흘러간다. “단락 평가”가 Monad 법칙으로부터 자동 도출된다. 컨트롤러는 <code>match</code>로 두 결과를 분기한다 — 예외 없음, try/catch 없음.</p>
   <h2>4.2.3 다중 오류 수집</h2>
-  <p>위 패턴은 \"첫 오류에서 중단\"한다. 모든 오류를 수집하려면 <strong>Validation Applicative</strong>(여러 Result를 병렬로 평가하고 오류 리스트로 결합)를 사용한다. 본서의 범위를 넘으므로 라이브러리(<code>marcj/php-functional</code>의 <code>Validated</code>)를 참고할 것.</p>
+  <p>위 패턴은 “첫 오류에서 중단”한다. 모든 오류를 수집하려면 <strong>Validation Applicative</strong>(여러 Result를 병렬로 평가하고 오류 리스트로 결합)를 사용한다. 본서의 범위를 넘으므로 라이브러리(<code>marcj/php-functional</code>의 <code>Validated</code>)를 참고할 것.</p>
   <div class="hai-page-number">— 28 —</div>
 </section>
 
 <!-- 29 / 4.3 -->
 <section class="hai-page">
   <h1>4.3 Event Sourcing — fold 패턴</h1>
-  <p>Event Sourcing은 함수형 사고와 자연스럽게 일치한다. 전통적 CRUD가 \"현재 상태를 직접 변경\"한다면, Event Sourcing은 \"발생한 이벤트의 불변 목록을 유지\"하고, 현재 상태는 이벤트들을 <strong>fold</strong>해서 도출한다.</p>
+  <p>Event Sourcing은 함수형 사고와 자연스럽게 일치한다. 전통적 CRUD가 “현재 상태를 직접 변경”한다면, Event Sourcing은 “발생한 이벤트의 불변 목록을 유지”하고, 현재 상태는 이벤트들을 <strong>fold</strong>해서 도출한다.</p>
   <div class="hai-callout"><strong>현재 상태 = fold(이벤트 목록, 초기 상태, 적용 함수)</strong><br>이것은 정확히 3.5의 모노이드 fold 패턴이다.</div>
   <h2>4.3.1 이벤트는 immutable 사실</h2>
 <pre><code>interface OrderEvent { public function occurredAt(): DateTimeImmutable; }
@@ -1078,8 +1074,8 @@ final readonly class PaymentReceived implements OrderEvent
     public function occurredAt(): DateTimeImmutable { return $this-&gt;at; }
 }</code></pre>
   <h2>4.3.2 이벤트의 의미</h2>
-  <p>각 이벤트는 \"과거에 일어난 사실\"이다. 이름은 과거형 동사를 사용한다 — <code>OrderCreated</code>(만들어졌다), <code>ItemAdded</code>(추가되었다), <code>PaymentReceived</code>(받았다). \"<code>CreateOrder</code>\"(명령) 또는 \"<code>OrderCreate</code>\"(애매) 형식은 회피한다.</p>
-  <p>이벤트는 한 번 발생하면 변경되지 않는다(<code>readonly class</code>). 이벤트 스토어는 append-only 로그다 — UPDATE도 DELETE도 없다. 이 구조 자체가 함수형 약속(\"변경하지 않는다\")의 데이터베이스 표현이다.</p>
+  <p>각 이벤트는 “과거에 일어난 사실”이다. 이름은 과거형 동사를 사용한다 — <code>OrderCreated</code>(만들어졌다), <code>ItemAdded</code>(추가되었다), <code>PaymentReceived</code>(받았다). “<code>CreateOrder</code>”(명령) 또는 “<code>OrderCreate</code>”(애매) 형식은 회피한다.</p>
+  <p>이벤트는 한 번 발생하면 변경되지 않는다(<code>readonly class</code>). 이벤트 스토어는 append-only 로그다 — UPDATE도 DELETE도 없다. 이 구조 자체가 함수형 약속(“변경하지 않는다”)의 데이터베이스 표현이다.</p>
   <p>다음 절에서 이벤트들을 <strong>fold</strong>하여 현재 상태를 재구성하는 코드를 본다.</p>
   <div class="hai-page-number">— 29 —</div>
 </section>
@@ -1132,7 +1128,7 @@ sequenceDiagram
         fn (OrderState $s, OrderEvent $e) =&gt; $s-&gt;apply($e),
         OrderState::empty());
 }</code></pre>
-  <p>이 두 줄이 \"이벤트 스트림 → 현재 상태\"의 전부다.</p>
+  <p>이 두 줄이 “이벤트 스트림 → 현재 상태”의 전부다.</p>
   <p><strong>시간 여행</strong>: <code>reconstruct(array_slice($events, 0, $n))</code>으로 과거 시점의 상태 재구성.</p>
   <div class="hai-page-number">— 30 —</div>
 </section>
@@ -1140,7 +1136,7 @@ sequenceDiagram
 <!-- 31 / 4.5 -->
 <section class="hai-page">
   <h1>4.5 함수형 컨트롤러</h1>
-  <p>본 절은 4.3-4.4의 Event Sourcing을 라라벨/심포니의 컨트롤러에 통합한다. <strong>\"순수 코어 + 부수효과 셸\"</strong>(2.3) 패턴이 그대로 적용된다.</p>
+  <p>본 절은 4.3-4.4의 Event Sourcing을 라라벨/심포니의 컨트롤러에 통합한다. <strong>“순수 코어 + 부수효과 셸”</strong>(2.3) 패턴이 그대로 적용된다.</p>
   <h2>4.5.1 EventStore — 부수효과 경계</h2>
 <pre><code>interface EventStore
 {
@@ -1248,7 +1244,7 @@ final class PostgresEventStore implements EventStore
 <!-- 34 / 5.1 -->
 <section class="hai-page">
   <h1>5.1 Type-Signature Diagram</h1>
-  <p>Robert C. Martin은 <em>UML for Java Programmers</em>에서 \"클래스 다이어그램을 보면 코드가 머리에 떠올라야 한다\"고 썼다. 함수형 프로그래밍에는 이에 대응하는 모델이 필요하다. OOP의 기본 모델 단위가 \"상태와 행위를 가진 객체\"라면, FP의 기본 모델 단위는 <strong>\"불변 타입과 그 사이의 순수 함수\"</strong>다.</p>
+  <p>Robert C. Martin은 <em>UML for Java Programmers</em>에서 “클래스 다이어그램을 보면 코드가 머리에 떠올라야 한다”고 썼다. 함수형 프로그래밍에는 이에 대응하는 모델이 필요하다. OOP의 기본 모델 단위가 “상태와 행위를 가진 객체”라면, FP의 기본 모델 단위는 <strong>“불변 타입과 그 사이의 순수 함수”</strong>다.</p>
   <h2>5.1.1 가장 단순한 함수형 다이어그램</h2>
   <p>가장 단순한 함수형 다이어그램은 <strong>두 타입과 그 사이의 화살표</strong>다. 이것이 하나의 함수 시그니처에 대응한다.</p>
   <div class="hai-figure mermaid">
@@ -1287,7 +1283,7 @@ classDiagram
   <ol>
     <li><strong>모든 필드가 readonly</strong>. 가변 필드는 다이어그램에 그리지 않는다.</li>
     <li><strong>void 메서드 부재</strong>. 모든 메서드는 값을 반환한다. <code>void</code>는 부수효과의 표지.</li>
-    <li><strong>핵심 화살표는 \"타입 변환\"</strong>. <code>Cart → OrderResult</code>가 이 다이어그램의 주제. OOP에서는 \"누가 누구를 참조\"가 핵심.</li>
+    <li><strong>핵심 화살표는 “타입 변환”</strong>. <code>Cart → OrderResult</code>가 이 다이어그램의 주제. OOP에서는 “누가 누구를 참조”가 핵심.</li>
     <li><strong>변경 메서드가 자기 타입 반환</strong>. <code>withDiscount(Money) Cart</code> — 새 Cart를 반환한다는 의미.</li>
   </ol>
   <p>이 4가지를 코드 리뷰 시 점검 항목으로 삼으면, 다이어그램과 코드 사이의 1:1 대응이 깨지는 지점을 빠르게 찾는다.</p>
@@ -1297,7 +1293,7 @@ classDiagram
 <!-- 35 / 5.2 -->
 <section class="hai-page">
   <h1>5.2 Data Flow Diagram</h1>
-  <p>Martin의 sequence diagram은 \"객체 간 메시지 흐름\"을 보여준다. 함수형의 Data Flow Diagram은 <strong>\"데이터가 함수를 거쳐 어떻게 변환되는가\"</strong>를 보여준다.</p>
+  <p>Martin의 sequence diagram은 “객체 간 메시지 흐름”을 보여준다. 함수형의 Data Flow Diagram은 <strong>“데이터가 함수를 거쳐 어떻게 변환되는가”</strong>를 보여준다.</p>
   <h2>5.2.1 OOP sequence diagram과의 결정적 차이</h2>
   <p>OOP에서는 객체가 lifeline을 갖고 시간에 따라 상태가 변한다. FP에서는 데이터가 변하지 않는다 — 각 변환 단계마다 <strong>새 데이터가 생성</strong>될 뿐이다. 따라서 lifeline이 아니라 <strong>파이프라인</strong>이 핵심 구조다.</p>
   <div class="hai-figure mermaid">
@@ -1319,13 +1315,13 @@ sequenceDiagram
   </div>
   <div class="hai-figure-caption">그림 5.2. 주문 처리의 Data Flow Diagram</div>
   <h2>5.2.2 핵심 통찰 — 상태별 별도 타입</h2>
-  <p>OOP에서는 하나의 <code>Order</code> 클래스가 여러 상태(\"unpaid\", \"paid\", \"shipped\")를 가진다. FP에서는 <strong>각 상태가 별개의 타입</strong>이다 — <code>UnpaidOrder</code>, <code>PricedOrder</code>, <code>PaidOrder</code>. 타입 시스템이 잘못된 연산을 컴파일 시점에 차단한다.</p>
+  <p>OOP에서는 하나의 <code>Order</code> 클래스가 여러 상태(“unpaid”, “paid”, “shipped”)를 가진다. FP에서는 <strong>각 상태가 별개의 타입</strong>이다 — <code>UnpaidOrder</code>, <code>PricedOrder</code>, <code>PaidOrder</code>. 타입 시스템이 잘못된 연산을 컴파일 시점에 차단한다.</p>
   <div class="hai-callout"><code>UnpaidOrder</code>에 <code>ship()</code>을 호출하는 것은 <strong>타입 오류</strong>다 — <code>ship()</code>은 <code>PaidOrder</code>에만 존재한다.</div>
   <h2>5.2.3 Data Flow Diagram의 4가지 규칙</h2>
   <ol>
     <li>데이터(타입)와 변환(함수)이 번갈아 배치된다.</li>
-    <li>각 데이터 노드는 immutable. \"원본 변하지 않음\"을 항상 표기.</li>
-    <li>각 함수 노드는 순수. 부수효과가 있으면 명시적으로 표기(\"impure\").</li>
+    <li>각 데이터 노드는 immutable. “원본 변하지 않음”을 항상 표기.</li>
+    <li>각 함수 노드는 순수. 부수효과가 있으면 명시적으로 표기(“impure”).</li>
     <li>분기는 sum type(<code>Result</code>, <code>Option</code>)으로 표현.</li>
   </ol>
   <div class="hai-page-number">— 35 —</div>
@@ -1345,7 +1341,7 @@ sequenceDiagram
     <tr><td><code>void</code> 메서드</td><td>side effect 수행 (정상)</td><td>존재하지 않아야 함 (이상)</td></tr>
     <tr><td>다형성</td><td>Interface + 상속</td><td>Sum Type + Pattern Matching</td></tr>
     <tr><td>합성</td><td>Delegation (객체 위임)</td><td>Function Composition</td></tr>
-    <tr><td>중심 질문</td><td>\"누가 누구에게 메시지를 보내는가?\"</td><td>\"무엇이 무엇으로 변환되는가?\"</td></tr>
+    <tr><td>중심 질문</td><td>“누가 누구에게 메시지를 보내는가?”</td><td>“무엇이 무엇으로 변환되는가?”</td></tr>
     <tr><td>테스트 전략</td><td>Mock/Stub로 의존성 대체</td><td>순수 함수에 mock 불필요</td></tr>
     <tr><td>오류 처리</td><td>Exception</td><td>Result / Option</td></tr>
   </table>
@@ -1357,17 +1353,17 @@ sequenceDiagram
   </ul>
   <p>대부분의 실무 시스템은 두 모델이 혼재한다. 컨트롤러·리포지토리는 OOP UML로, 도메인 계산·이벤트 흐름은 FP 다이어그램으로 그리는 것이 자연스럽다.</p>
   <h2>5.3.2 다이어그램과 코드의 관계</h2>
-  <p>Martin은 \"코드가 다이어그램보다 종종 더 명확하고 경제적\"이라고 했다. FP에서도 마찬가지다 — 변환 파이프라인 자체가 이미 매우 선언적이므로, 다이어그램이 불필요한 경우가 많다. 그러나 다이어그램이 유용한 시점이 있다: <strong>(1)</strong> 동료에게 데이터 흐름을 설명할 때, <strong>(2)</strong> 중간 타입을 발견하는 설계 초기 단계, <strong>(3)</strong> pure/impure 경계를 시각화할 때.</p>
+  <p>Martin은 “코드가 다이어그램보다 종종 더 명확하고 경제적”이라고 했다. FP에서도 마찬가지다 — 변환 파이프라인 자체가 이미 매우 선언적이므로, 다이어그램이 불필요한 경우가 많다. 그러나 다이어그램이 유용한 시점이 있다: <strong>(1)</strong> 동료에게 데이터 흐름을 설명할 때, <strong>(2)</strong> 중간 타입을 발견하는 설계 초기 단계, <strong>(3)</strong> pure/impure 경계를 시각화할 때.</p>
   <div class="hai-page-number">— 36 —</div>
 </section>
 
 <!-- 37 / 5.4 -->
 <section class="hai-page">
   <h1>5.4 설계 절차</h1>
-  <p>OOP에서 Martin은 \"행위 우선(behavior first)\"을 권장한다 — sequence diagram으로 행위를 식별한 다음 클래스 구조를 도출. FP에서의 대응 절차는 <strong>\"변환 우선(transformation first)\"</strong>이다.</p>
+  <p>OOP에서 Martin은 “행위 우선(behavior first)”을 권장한다 — sequence diagram으로 행위를 식별한 다음 클래스 구조를 도출. FP에서의 대응 절차는 <strong>“변환 우선(transformation first)”</strong>이다.</p>
   <h2>5.4.1 5단계 절차</h2>
   <ol>
-    <li><strong>입력 타입과 출력 타입을 정의하라.</strong> \"무엇이 들어오고 무엇이 나가는가?\"가 출발점. OOP의 \"어떤 메시지가 오가는가?\"의 함수형 대응.</li>
+    <li><strong>입력 타입과 출력 타입을 정의하라.</strong> “무엇이 들어오고 무엇이 나가는가?”가 출발점. OOP의 “어떤 메시지가 오가는가?”의 함수형 대응.</li>
     <li><strong>중간 타입을 발견하라.</strong> 입력에서 출력까지 한 번에 가지 말 것. 의미 있는 중간 단계의 타입을 발견한다 (<code>UnpaidOrder → PricedOrder → PaidOrder</code>).</li>
     <li><strong>각 변환을 순수 함수로 정의하라.</strong> 두 인접한 타입 사이에 하나의 함수. 같은 입력은 같은 출력. 부수효과 없음.</li>
     <li><strong>실패 가능성을 Result/Option으로 표현하라.</strong> 변환이 실패할 수 있다면 반환 타입에 <code>Result</code> 또는 <code>Option</code>을 붙인다. 예외를 던지지 않는다.</li>
@@ -1395,7 +1391,7 @@ function persist(NewUser $u, UserRepo $repo): RegisteredUser { /* ... */ }</code
 <!-- 38 / 5.5 -->
 <section class="hai-page">
   <h1>5.5 Sum Type과 Pattern Matching</h1>
-  <p><strong>Sum Type</strong>(또는 tagged union, ADT)은 \"여러 변종 중 하나\"를 타입으로 표현한다. PHP에는 직접 지원 문법이 없지만, 인터페이스 + final 클래스로 동등한 구조를 만든다.</p>
+  <p><strong>Sum Type</strong>(또는 tagged union, ADT)은 “여러 변종 중 하나”를 타입으로 표현한다. PHP에는 직접 지원 문법이 없지만, 인터페이스 + final 클래스로 동등한 구조를 만든다.</p>
   <h2>5.5.1 Sum Type 표현</h2>
 <pre><code>interface PaymentResult {}
 
@@ -1426,7 +1422,7 @@ final readonly class PaymentDeclined implements PaymentResult
             new JsonResponse(['error' =&gt; $r-&gt;reason], 402),
     };
 }</code></pre>
-  <p><code>match (true)</code>는 PHP에서 sum type 분기를 표현하는 표준 관용구다. 컴파일러가 \"누락된 변종\"을 잡아주지 않으므로 PHPStan·Psalm 같은 정적 분석과 결합한다.</p>
+  <p><code>match (true)</code>는 PHP에서 sum type 분기를 표현하는 표준 관용구다. 컴파일러가 “누락된 변종”을 잡아주지 않으므로 PHPStan·Psalm 같은 정적 분석과 결합한다.</p>
   <h2>5.5.3 Sum Type vs 상속</h2>
   <table>
     <tr><th>축</th><th>상속 (OOP 다형성)</th><th>Sum Type</th></tr>
@@ -1435,7 +1431,7 @@ final readonly class PaymentDeclined implements PaymentResult
     <tr><td>새 변종 추가</td><td>새 클래스 (다른 코드 변경 없음)</td><td>모든 <code>match</code> 갱신 필요</td></tr>
     <tr><td>새 행위 추가</td><td>모든 클래스 갱신 필요</td><td>새 <code>match</code> 함수 추가</td></tr>
   </table>
-  <p>이 트레이드오프를 \"Expression Problem\"이라 부른다. 변종이 자주 추가되면 OOP, 행위가 자주 추가되면 Sum Type이 유리하다. 도메인 결과(<code>PaymentResult</code> 같은)는 보통 변종이 고정되고 행위가 다양해서 Sum Type이 적합하다.</p>
+  <p>이 트레이드오프를 “Expression Problem”이라 부른다. 변종이 자주 추가되면 OOP, 행위가 자주 추가되면 Sum Type이 유리하다. 도메인 결과(<code>PaymentResult</code> 같은)는 보통 변종이 고정되고 행위가 다양해서 Sum Type이 적합하다.</p>
   <div class="hai-page-number">— 38 —</div>
 </section>
 
@@ -1457,9 +1453,9 @@ final readonly class PaymentDeclined implements PaymentResult
     <li><strong>공역 (Codomain)</strong>: 출력이 속하는 집합 B.</li>
     <li><strong>치역 (Range)</strong>: 실제로 출력되는 원소들의 집합 (공역의 부분집합).</li>
   </ul>
-  <p>프로그래밍의 함수도 같다. <code>function greet(int $n): string</code>은 정수 집합에서 문자열 집합으로의 함수다. 같은 입력은 항상 같은 출력 — 이것이 \"순수 함수\"의 조건과 일치한다.</p>
+  <p>프로그래밍의 함수도 같다. <code>function greet(int $n): string</code>은 정수 집합에서 문자열 집합으로의 함수다. 같은 입력은 항상 같은 출력 — 이것이 “순수 함수”의 조건과 일치한다.</p>
   <h2>6.1.2 함수 합성</h2>
-  <p><code>f: A → B</code>와 <code>g: B → C</code>가 있을 때, 합성 함수 <code>g ∘ f: A → C</code>는 \"f를 먼저 적용하고 그 결과에 g를 적용\"한다. 합성이 가능하려면 <strong>f의 공역과 g의 정의역이 일치</strong>해야 한다.</p>
+  <p><code>f: A → B</code>와 <code>g: B → C</code>가 있을 때, 합성 함수 <code>g ∘ f: A → C</code>는 “f를 먼저 적용하고 그 결과에 g를 적용”한다. 합성이 가능하려면 <strong>f의 공역과 g의 정의역이 일치</strong>해야 한다.</p>
   <h2>6.1.3 합성의 두 성질</h2>
   <p><strong>(1) 결합법칙</strong>: <code>h ∘ (g ∘ f) = (h ∘ g) ∘ f</code>. 세 함수를 합성할 때 어느 둘을 먼저 합성해도 결과가 같다.</p>
   <p><strong>(2) 항등 함수의 존재</strong>: <code>id_A: A → A</code>, <code>id_A(x) = x</code>. 어떤 함수에도 항등 함수를 합성하면 그 함수가 그대로 유지된다 — <code>f ∘ id_A = f = id_B ∘ f</code>.</p>
@@ -1472,7 +1468,7 @@ $gf(5);  // "[6]"
 
 $id = fn (mixed $x): mixed =&gt; $x;         // 항등 함수
 $f(5) === $f($id(5));   // true</code></pre>
-  <p>이 두 성질(결합법칙 + 항등)을 만족하는 \"집합 + 함수\" 구조를 다음 절의 <strong>Category</strong>가 일반화한다.</p>
+  <p>이 두 성질(결합법칙 + 항등)을 만족하는 “집합 + 함수” 구조를 다음 절의 <strong>Category</strong>가 일반화한다.</p>
   <div class="hai-page-number">— 40 —</div>
 </section>
 
@@ -1486,9 +1482,9 @@ $f(5) === $f($id(5));   // true</code></pre>
     <li><strong>대상(object)</strong>들의 모음.</li>
     <li>두 대상 사이의 <strong>화살표(morphism)</strong>들.</li>
     <li>화살표들의 <strong>합성</strong> — 결합법칙 성립.</li>
-    <li>각 대상에 \"항등 화살표\"가 존재.</li>
+    <li>각 대상에 “항등 화살표”가 존재.</li>
   </ol>
-  <p>6.1의 \"집합 + 함수\"는 이 4조건을 만족하므로 하나의 Category다. 이를 <strong>Set</strong>이라 부른다.</p>
+  <p>6.1의 “집합 + 함수”는 이 4조건을 만족하므로 하나의 Category다. 이를 <strong>Set</strong>이라 부른다.</p>
   <div class="hai-figure mermaid">
 classDiagram
   class StringT { type: string }
@@ -1510,9 +1506,9 @@ classDiagram
   </ul>
   <p>이 Category를 <strong>Php</strong>라 부르자. 본서의 모든 패턴(Functor·Monoid·Monad)은 이 Category Php 안에서 일어나는 일이다.</p>
   <h2>6.2.3 Functor — 구조 보존 사상</h2>
-  <p>Functor는 <strong>한 Category에서 다른 Category로, 구조를 보존하며 옮기는 것</strong>이다. \"구조를 보존한다\"는 두 가지를 의미한다 — <strong>(1)</strong> 대상이 대상으로 옮겨지고, <strong>(2)</strong> 화살표가 화살표로 옮겨지고, <strong>(3)</strong> 합성과 항등이 보존된다.</p>
-  <p>Php에서 Php로의 Functor를 <strong>Endofunctor</strong>라 한다. <code>List</code>, <code>Option</code>, <code>Result</code>가 모두 Endofunctor다 — 타입을 \"리스트로 감싼 타입\"으로 옮기고, 함수를 <code>array_map</code>으로 옮긴다. 합성이 보존된다는 사실이 3.1.2의 \"Functor 법칙 2\"다.</p>
-  <p>코드의 <code>map</code>은 \"화살표를 옮기는 부분\"의 구현체다. <strong>수학적 정의가 코드 형태를 결정했다.</strong></p>
+  <p>Functor는 <strong>한 Category에서 다른 Category로, 구조를 보존하며 옮기는 것</strong>이다. “구조를 보존한다”는 두 가지를 의미한다 — <strong>(1)</strong> 대상이 대상으로 옮겨지고, <strong>(2)</strong> 화살표가 화살표로 옮겨지고, <strong>(3)</strong> 합성과 항등이 보존된다.</p>
+  <p>Php에서 Php로의 Functor를 <strong>Endofunctor</strong>라 한다. <code>List</code>, <code>Option</code>, <code>Result</code>가 모두 Endofunctor다 — 타입을 “리스트로 감싼 타입”으로 옮기고, 함수를 <code>array_map</code>으로 옮긴다. 합성이 보존된다는 사실이 3.1.2의 “Functor 법칙 2”다.</p>
+  <p>코드의 <code>map</code>은 “화살표를 옮기는 부분”의 구현체다. <strong>수학적 정의가 코드 형태를 결정했다.</strong></p>
   <div class="hai-page-number">— 41 —</div>
 </section>
 
@@ -1520,7 +1516,7 @@ classDiagram
 <section class="hai-page">
   <h1>6.3 Monoid in Endofunctors</h1>
   <p>함수형 커뮤니티의 유명한 문장이 있다.</p>
-  <div class="hai-callout"><em>\"A monad is just a monoid in the category of endofunctors.\"</em><br>(Monad는 endofunctor의 category에서의 monoid일 뿐이다.)</div>
+  <div class="hai-callout"><em>“A monad is just a monoid in the category of endofunctors.”</em><br>(Monad는 endofunctor의 category에서의 monoid일 뿐이다.)</div>
   <p>이 문장은 농담처럼 인용되지만, 실제로 정확한 수학적 진술이다. 본 절은 지금까지 배운 것으로 이 문장을 해석한다.</p>
   <h2>6.3.1 Monoid와 Monad 법칙의 평행</h2>
   <table>
@@ -1532,16 +1528,16 @@ classDiagram
     <tr><td>결합법칙: <code>(a*b)*c = a*(b*c)</code></td><td>법칙 3: 체이닝 순서 무관</td></tr>
   </table>
   <p>구조가 정확히 일치한다. Monad는 Monoid의 법칙과 동일한 법칙을 따른다.</p>
-  <h2>6.3.2 \"어디서?\" — Endofunctor의 Category</h2>
-  <p>일반적 Monoid는 \"값들의 집합\"(정수·문자열 등) 위에서 정의된다. Monad의 Monoid 구조는 <strong>\"endofunctor들의 모음\"</strong> 위에서 정의된다.</p>
-  <p>endofunctor들(<code>List</code>·<code>Option</code>·<code>Result</code>)을 모으면 새로운 Category를 만들 수 있다. 이를 \"endofunctor의 category\"라 한다. 이 category 안에서 하나의 endofunctor(예: <code>Option</code>)를 골라, <strong>flatten을 결합 연산으로, unit을 항등원으로</strong> 삼으면 — Monoid의 법칙이 성립한다. 이것이 Monad다.</p>
+  <h2>6.3.2 “어디서?” — Endofunctor의 Category</h2>
+  <p>일반적 Monoid는 “값들의 집합”(정수·문자열 등) 위에서 정의된다. Monad의 Monoid 구조는 <strong>“endofunctor들의 모음”</strong> 위에서 정의된다.</p>
+  <p>endofunctor들(<code>List</code>·<code>Option</code>·<code>Result</code>)을 모으면 새로운 Category를 만들 수 있다. 이를 “endofunctor의 category”라 한다. 이 category 안에서 하나의 endofunctor(예: <code>Option</code>)를 골라, <strong>flatten을 결합 연산으로, unit을 항등원으로</strong> 삼으면 — Monoid의 법칙이 성립한다. 이것이 Monad다.</p>
   <h2>6.3.3 문장 해석</h2>
   <ul>
-    <li><strong>\"a monoid\"</strong> — 결합 연산(flatten)과 항등원(unit)이 있고 결합법칙이 성립하는 구조.</li>
-    <li><strong>\"in the category of endofunctors\"</strong> — <code>List</code>·<code>Option</code>·<code>Result</code> 같은 endofunctor들이 이루는 Category 안에서.</li>
-    <li><strong>\"A monad is just...\"</strong> — 둘을 합치면 monad다.</li>
+    <li><strong>“a monoid”</strong> — 결합 연산(flatten)과 항등원(unit)이 있고 결합법칙이 성립하는 구조.</li>
+    <li><strong>“in the category of endofunctors”</strong> — <code>List</code>·<code>Option</code>·<code>Result</code> 같은 endofunctor들이 이루는 Category 안에서.</li>
+    <li><strong>“A monad is just...”</strong> — 둘을 합치면 monad다.</li>
   </ul>
-  <p>이 문장을 이해한 순간, Functor·Monoid·Monad가 하나의 그림으로 연결된다. 표면적으로 다른 \"map을 가진 컨테이너\"·\"결합 가능한 값\"·\"flatMap을 가진 컨테이너\"가 사실은 같은 추상의 다른 시각이다.</p>
+  <p>이 문장을 이해한 순간, Functor·Monoid·Monad가 하나의 그림으로 연결된다. 표면적으로 다른 “map을 가진 컨테이너”·“결합 가능한 값”·“flatMap을 가진 컨테이너”가 사실은 같은 추상의 다른 시각이다.</p>
   <p>이 책의 모든 코드는 이 추상의 PHP 차원의 구체화다.</p>
   <div class="hai-page-number">— 42 —</div>
 </section>
@@ -1556,10 +1552,10 @@ classDiagram
     <li><strong>Pure Function</strong> — 같은 입력, 같은 출력. 부수효과는 경계로.</li>
     <li><strong>Higher-Order Function</strong> — <code>map</code>·<code>filter</code>·<code>reduce</code>가 루프를 대체.</li>
     <li><strong>Functor</strong> — 컨텍스트를 유지하며 값을 변환.</li>
-    <li><strong>Monoid · fold</strong> — \"합치기\"의 보편 패턴.</li>
+    <li><strong>Monoid · fold</strong> — “합치기”의 보편 패턴.</li>
     <li><strong>Monad · flatMap</strong> — 컨텍스트 안에서 연산을 합성.</li>
     <li><strong>Result · Option</strong> — null과 예외의 타입 안전한 대체.</li>
-    <li><strong>Sum Type</strong> — \"여러 변종 중 하나\"를 타입으로 표현.</li>
+    <li><strong>Sum Type</strong> — “여러 변종 중 하나”를 타입으로 표현.</li>
     <li><strong>Type-Signature · Data Flow Diagram</strong> — UML의 함수형 대응.</li>
   </ul>
   <h2>다음 학습 자원</h2>
